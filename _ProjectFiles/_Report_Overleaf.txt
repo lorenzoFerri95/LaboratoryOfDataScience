@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[italian]{babel}
+\usepackage{tabularx}
+\usepackage{lscape}
+\usepackage[title]{appendix}
+\usepackage{rotating}
+\usepackage[margin=3.0cm]{geometry}
+\usepackage{natbib}
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\graphicspath{ {figures/} }
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{chngcntr}
+\usepackage{amsmath}
+\addtolength{\topmargin}{2cm}
+\addtolength{\textheight}{1.1cm}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{multicol}
+
+\pagenumbering{roman}
+
+\title{\includegraphics[width=7cm]{UNIPI_logo.png}\\Laboratory of Data Science Report}
+\author{
+Federica Di Pasquale (493195) \\ email:  \href{federica.dipasquale@hotmail.com}{federica.dipasquale@hotmail.com} \and
+Ferri Lorenzo (607828) \\ email:  \href{mailto:lorenzoferri1995@gmail.com}{lorenzoferri1995@gmail.com}
+}
+\date{Anno accademico 2020/2021}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Assignment 0}
+prova
+
+\section{Assignment 1}
+
+\section{Assignment 2}
+
+\section{Assignment 3}
+
+
+
+\end{document}

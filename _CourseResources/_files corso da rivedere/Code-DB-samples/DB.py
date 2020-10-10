@@ -6,7 +6,7 @@ Spyder Editor
 This is a temporary script file.
 """
 
-import pyodbc 
+import pyodbc
 
 server = 'tcp:apa.di.unipi.it' 
 database = 'Foodmart' 
