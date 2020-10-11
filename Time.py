@@ -1,4 +1,10 @@
 
+from csv import DictReader
+import pyodbc
+
+import calendar
+import datetime 
+
 
 def getQuarter(month):
     if month <= 3:
@@ -10,28 +16,21 @@ def getQuarter(month):
     return 'Q4'
 
 
-'''
-'Friday'  '20130322'
-'Saturday'
-'Sunday'
-'Monday'
-'Tuesday'
-'Wednesday'
-'Thursday'
-'''
+#  http://calendario.eugeniosongia.com/formula.htm
+
+def getDayOfWeek(date_Ymd):
+    day_name= list(calendar.day_name)
+    day = datetime.datetime.strptime(date_Ymd, '%Y%m%d').weekday()
+    return day_name[day]
+
 
 
 
 if __name__ == "__main__":
 
-    from csv import DictReader
-
     time_file = open("time.csv")
     time_dict = DictReader(time_file)
 
-
-
-    import pyodbc
 
     driver = '{ODBC Driver 17 for SQL Server}'
     server = 'tcp:apa.di.unipi.it'
@@ -43,20 +42,15 @@ if __name__ == "__main__":
     )
 
     cnxn = pyodbc.connect(connectionString)
-
     cursor = cnxn.cursor()
 
     sql='INSERT INTO PROVA_Time(time_code, year, quarter, month, week, day, day_of_week) VALUES(?,?,?,?,?,?,?)'
 
-    #sql='DELETE FROM PROVA_Time'
-    #cursor.execute(sql)
-
     for row in time_dict:
         cursor.execute(sql,
         (row['time_code'], row['year'], getQuarter(int(row['month'])),
-        row['month'], row['week'], row['day'], 0 ) )
-        break
-
+        row['month'], row['week'], row['day'], getDayOfWeek(row['time_code']) ) )
+    
     cnxn.commit()
 
     time_file.close()
