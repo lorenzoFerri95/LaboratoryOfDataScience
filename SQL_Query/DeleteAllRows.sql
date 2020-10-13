@@ -1,0 +1,1 @@
+DELETE FROM PROVA_Time
