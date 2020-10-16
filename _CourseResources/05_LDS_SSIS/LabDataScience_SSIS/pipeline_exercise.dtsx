@@ -1,0 +1,56 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/16/2020 8:16:00 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-08J8O6D"
+  DTS:CreatorName="DESKTOP-08J8O6D\loren"
+  DTS:DTSID="{5BF080B2-7A69-4895-B998-A442727D9752}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="1040"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{8E1050DA-E854-4DB9-B0A9-01AF42CE30A4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Attività Flusso di dati"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Attività Flusso di dati"
+      DTS:DTSID="{C44238EE-7B99-42F6-8232-507B6C5D755C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Attività Flusso di dati"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Questa sezione CDATA contiene le informazioni sul layout del pacchetto e include informazioni quali coordinate (x,y), larghezza e altezza.-->
+<!--Se si modifica manualmente la sezione e si commette un errore, è possibile eliminarla. -->
+<!--Sarà comunque possibile caricare manualmente il pacchetto, ma le informazioni precedenti sul layout verranno perse e gli elementi verranno nuovamente disposti nell'area di progettazione all'interno dell'apposita finestra.-->
+<Objects
+  Version="8">
+  <!--Ogni nodo seguente conterrà proprietà che non influiscono sul comportamento di runtime.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Attività Flusso di dati"
+          TopLeft="87,74" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
