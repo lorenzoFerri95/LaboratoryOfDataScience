@@ -8,7 +8,7 @@
 \usepackage{lscape}
 \usepackage[title]{appendix}
 \usepackage{rotating}
-\usepackage[margin=3.0cm]{geometry}
+\usepackage[margin=2.5cm]{geometry}
 \usepackage{natbib}
 \usepackage[T1]{fontenc}
 \usepackage{wrapfig}
@@ -17,8 +17,8 @@
 \usepackage{float}
 \usepackage{chngcntr}
 \usepackage{amsmath}
-\addtolength{\topmargin}{2cm}
-\addtolength{\textheight}{1.1cm}
+\addtolength{\topmargin}{0.5cm}
+\addtolength{\textheight}{0cm}
 \usepackage{float}
 \usepackage{subfig}
 \usepackage{multicol}
@@ -28,7 +28,7 @@
 \title{\includegraphics[width=7cm]{UNIPI_logo.png}\\Laboratory of Data Science Report}
 \author{
 Federica Di Pasquale (493195) \\ email:  \href{federica.dipasquale@hotmail.com}{federica.dipasquale@hotmail.com} \and
-Ferri Lorenzo (607828) \\ email:  \href{mailto:lorenzoferri1995@gmail.com}{lorenzoferri1995@gmail.com}
+Ferri Lorenzo (607828) \\ email:  \href{mailto:l.ferri11@studenti.unipi.it}{l.ferri11@studenti.unipi.it}
 }
 \date{Anno accademico 2020/2021}
 
@@ -41,11 +41,35 @@ Ferri Lorenzo (607828) \\ email:  \href{mailto:lorenzoferri1995@gmail.com}{loren
 \pagenumbering{arabic}
 
 \section{Assignment 0}
-prova
+Il Constellation Schema assegnato è stato riprodotto mediante l'interfaccia grafica di SQL Server Management Studio. Successivamente è stato estratto il codice SQL che produce lo schema, presente nel file "01\_DB\_creation.sql". Da notare che valori nulli sono ammessi solo per gli attributi diversi dalle Chiavi Primarie presenti nelle Dimension Tables. Nelle tre Fact Table non sono ammessi valori nulli per le Chiavi Esterne, al fine di non perdere ennuple successivamente ad una Giunzione. \newline
+Sono stati imposti vincoli di Chiave Primaria nelle Dimension Tables e di Chiave Esterna nelle Fact Tables, dunque i file vengono forniti nell'ordine in cui devono essere eseguiti per riempire prima le Dimensions e poi le Facts.
 
 \section{Assignment 1}
 
 \section{Assignment 2}
+Le Dimension Tables sono state riempite con i due file: "02\_dimensions.py", per tutte le dimensioni tranne Time, e "03\_time\_dimension.py", per la sola dimensione Time.
+
+\begin{itemize}
+
+    \item \textbf{Dimensions:}
+
+    \item \textbf{Time Dimension:} \newline
+    Sono state preparate le funzioni getQuarter(month) e getDayOfWeek(day, month, year), che ottengono rispettivamente il quarter dato il mese e il giorno della settimana data la data del giorno. La seconda funzione ha l'obiettivo di calcolare il resto della divisione di x/7, dove x è dato dalla formula:
+    
+    \begin{equation}
+    x = year + (year-1)//4 - (year-1)//100 + (year-1)//400 + t
+    \end{equation}
+    
+    questo resto sarà l'indice del giorno della settimana partendo da 'Sabato'. Per ottenere x c'è bisogno di calcolare t, cioè il numero di giorni trascorsi dall'inizio dell'anno. Per farlo si è diviso il calcolo in:
+    
+    \begin{equation}
+    t = daysToMonth(month, year) + day
+    \end{equation}
+    
+    dove la funzione daysToMonth(month, year) è una recursione che, dato il mese e l'anno (che serve per verificare se l'anno è bisestile), calcola il numero di giorni trascorsi fino all'inizio del mese corrente sommando i giorni dei mesi a ritroso lungo l'anno. \\\\
+    Il riempimento della tabella Time è avvenuto, come per le altre dimensioni, leggendo il contenuto del file "time.csv" e assegnandolo ad una Dictionary con la funzione DictReader(). Dopo essersi connessi al DB ed aver definito la query parametrica di inserzione, si è iterato sulle righe presenti nella Dictionary per ottenere i valori da passare ai parametri della query che ha riemepito il DB, applicandovi prima le funzioni sopra citate quando necessario.
+    
+\end{itemize}
 
 \section{Assignment 3}
 

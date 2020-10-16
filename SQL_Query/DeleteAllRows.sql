@@ -1,1 +1,3 @@
-DELETE FROM PROVA_Time
+USE [Group5HWMart]
+GO
+DELETE FROM Time

@@ -1,0 +1,1037 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/13/2020 11:22:46 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-ALGRQQ9"
+  DTS:CreatorName="DESKTOP-ALGRQQ9\Master big Data"
+  DTS:DTSID="{C01EA374-C06B-4B7E-AEC3-998CF3A14F5C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="1040"
+  DTS:ObjectName="ExportToCsv"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{B822E46C-3EF2-4459-A8E4-BCE9192069CE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[apa.di.unipi.it.lbi.roberto]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C1CB32D3-DD3F-4FAD-B2BC-52C6167BE0B1}"
+      DTS:ObjectName="apa.di.unipi.it.lbi.roberto">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=apa.di.unipi.it;User ID=roberto;Initial Catalog=lbi;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAglNCUt1zUU6ikNtXRfGM2QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAOn06WXqxHiSOG4RpsIh9HW6oZBnaWsta2ljHHCfLvvwAAAAAOgAAAAAIAACAAAADB318BRlX2tz1dOiN7PT7BgXvK7EHVLKI3ygPQ1Ag2TCAAAACv6fRHS6RU3g4oeeAM7UQAST+91wASW2TwUwsUBLLqIEAAAACa9uEAoUivvtrwjiKgAZhT7CWXrTANCUJ5AA2vcCrR8+22MJXD2OYu+x2Rn7eY33p/s21MlR5TTI9H9uVCRCJS</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CensusToCsv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{DB4D0BFB-5253-4764-97C3-D3BD3678B43D}"
+      DTS:ObjectName="CensusToCsv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Master big Data\Desktop\LDS\LDS First Project\census.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{5DF9F919-B67B-441C-84A1-230CF27BA05C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="17"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age"
+              DTS:DTSID="{369D0030-99DA-4A09-8937-5C717207F6F7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="256"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="workclass"
+              DTS:DTSID="{2B6EB670-D9AF-49F3-A2FF-2F3A9D99E8C3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fnlwgt"
+              DTS:DTSID="{89ED8724-3BAA-4468-BDDB-D7E2C6C50D53}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="256"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="education"
+              DTS:DTSID="{8EA35227-97C3-4446-9891-5B04372DF23F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="17"
+              DTS:TextQualified="True"
+              DTS:ObjectName="education_num"
+              DTS:DTSID="{FFC5FEC4-40E9-42AE-BE9C-89720399425D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="256"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="marital_status"
+              DTS:DTSID="{631D4B10-792C-4C6C-BDEF-AFD1AF4BD232}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="256"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="occupation"
+              DTS:DTSID="{DBD110DC-EC99-40E9-AA07-5F7953028CDF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="256"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="relationship"
+              DTS:DTSID="{7CE900ED-3F76-4F24-AE46-626154B76CED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="256"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="race"
+              DTS:DTSID="{F91D5990-4685-4CE1-BC3D-BA2DB2EE296C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="256"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sex"
+              DTS:DTSID="{F6DDB959-7BB1-4D9D-8AA7-602FE93BDAD2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="capital_gain"
+              DTS:DTSID="{18B285F7-7EE4-401E-A4BD-DADD75E72E78}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="capital_loss"
+              DTS:DTSID="{C77478F2-A026-4D9C-9F8B-527E1928C944}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="17"
+              DTS:TextQualified="True"
+              DTS:ObjectName="hours_per_week"
+              DTS:DTSID="{FCC947B5-A24F-4A88-87D4-946A9A9FE27E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="256"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="native_country"
+              DTS:DTSID="{86B07C1C-D58E-4147-9429-D5F45EFFC7AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="256"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="class"
+              DTS:DTSID="{4C524F43-85D1-4AB6-80A2-B6463BF36811}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Attività Flusso di dati"
+      DTS:DTSID="{4067815D-C21C-4BFD-8FFC-87B2D9555EA9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow\Destinazione file flat"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destinazione file flat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+              description="Destinazione file flat"
+              localeId="1033"
+              name="Destinazione file flat">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifica se i dati verranno sovrascritti o accodati nel file di destinazione."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il testo da scrivere nel file di destinazione prima della scrittura dei dati."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Quando il qualificatore di testo è abilitato, specifica se il qualificatore di testo nei dati scritti nel file di destinazione verrà o meno preceduto da un carattere di escape."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow\Destinazione file flat.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CensusToCsv]"
+                  connectionManagerRefId="Package.ConnectionManagers[CensusToCsv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat]"
+                  hasSideEffects="true"
+                  name="Input destinazione file flat">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[id]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].Columns[age]"
+                      cachedDataType="ui1"
+                      cachedName="age"
+                      externalMetadataColumnId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[age]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[age]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].Columns[workclass]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="workclass"
+                      externalMetadataColumnId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[workclass]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[workclass]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].Columns[fnlwgt]"
+                      cachedDataType="i4"
+                      cachedName="fnlwgt"
+                      externalMetadataColumnId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[fnlwgt]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[fnlwgt]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].Columns[education]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="education"
+                      externalMetadataColumnId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[education]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[education]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].Columns[education_num]"
+                      cachedDataType="ui1"
+                      cachedName="education_num"
+                      externalMetadataColumnId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[education_num]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[education_num]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].Columns[marital_status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="marital_status"
+                      externalMetadataColumnId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[marital_status]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[marital_status]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].Columns[occupation]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="occupation"
+                      externalMetadataColumnId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[occupation]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[occupation]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].Columns[relationship]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="relationship"
+                      externalMetadataColumnId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[relationship]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[relationship]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].Columns[race]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="race"
+                      externalMetadataColumnId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[race]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[race]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].Columns[sex]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="sex"
+                      externalMetadataColumnId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[sex]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[sex]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].Columns[capital_gain]"
+                      cachedDataType="i4"
+                      cachedName="capital_gain"
+                      externalMetadataColumnId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[capital_gain]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[capital_gain]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].Columns[capital_loss]"
+                      cachedDataType="i4"
+                      cachedName="capital_loss"
+                      externalMetadataColumnId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[capital_loss]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[capital_loss]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].Columns[hours_per_week]"
+                      cachedDataType="ui1"
+                      cachedName="hours_per_week"
+                      externalMetadataColumnId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[hours_per_week]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[hours_per_week]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].Columns[native_country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="native_country"
+                      externalMetadataColumnId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[native_country]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[native_country]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].Columns[class]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="class"
+                      externalMetadataColumnId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[class]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[class]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[age]"
+                      dataType="ui1"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[workclass]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="workclass" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[fnlwgt]"
+                      dataType="i4"
+                      name="fnlwgt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[education]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="education" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[education_num]"
+                      dataType="ui1"
+                      name="education_num" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[marital_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="marital_status" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[occupation]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="occupation" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="relationship" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[race]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="race" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[sex]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="sex" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[capital_gain]"
+                      dataType="i4"
+                      name="capital_gain" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[capital_loss]"
+                      dataType="i4"
+                      name="capital_loss" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[hours_per_week]"
+                      dataType="ui1"
+                      name="hours_per_week" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[native_country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="native_country" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[class]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="class" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow\Origine OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+              description="Origine OLE DB"
+              name="Origine OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowset">[dbo].[census]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL da eseguire."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Variabile che contiene il comando SQL da eseguire."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la modalità utilizzata per accedere al database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mapping tra i parametri nel comando SQL e le variabili."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow\Origine OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.lbi.roberto]"
+                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.lbi.roberto]"
+                  description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB]"
+                  name="Output origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[id]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[age]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[age]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[age]"
+                      name="age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[workclass]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[workclass]"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[workclass]"
+                      name="workclass"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[fnlwgt]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[fnlwgt]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[fnlwgt]"
+                      name="fnlwgt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[education]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[education]"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[education]"
+                      name="education"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[education_num]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[education_num]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[education_num]"
+                      name="education_num"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[marital_status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[marital_status]"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[marital_status]"
+                      name="marital_status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[occupation]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[occupation]"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[occupation]"
+                      name="occupation"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[relationship]"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[relationship]"
+                      name="relationship"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[race]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[race]"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[race]"
+                      name="race"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[sex]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[sex]"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[sex]"
+                      name="sex"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[capital_gain]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[capital_gain]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[capital_gain]"
+                      name="capital_gain"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[capital_loss]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[capital_loss]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[capital_loss]"
+                      name="capital_loss"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[hours_per_week]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[hours_per_week]"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[hours_per_week]"
+                      name="hours_per_week"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[native_country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[native_country]"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[native_country]"
+                      name="native_country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[class]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[class]"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].Columns[class]"
+                      name="class"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[age]"
+                      dataType="ui1"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[workclass]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="workclass" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[fnlwgt]"
+                      dataType="i4"
+                      name="fnlwgt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[education]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="education" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[education_num]"
+                      dataType="ui1"
+                      name="education_num" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[marital_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="marital_status" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[occupation]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="occupation" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="relationship" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[race]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="race" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[sex]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="sex" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[capital_gain]"
+                      dataType="i4"
+                      name="capital_gain" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[capital_loss]"
+                      dataType="i4"
+                      name="capital_loss" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[hours_per_week]"
+                      dataType="ui1"
+                      name="hours_per_week" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[native_country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="native_country" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[class]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="class" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB]"
+                  isErrorOut="true"
+                  name="Output errori origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[age]"
+                      dataType="ui1"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[workclass]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[workclass]"
+                      name="workclass" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[fnlwgt]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[fnlwgt]"
+                      name="fnlwgt" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[education]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[education]"
+                      name="education" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[education_num]"
+                      dataType="ui1"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[education_num]"
+                      name="education_num" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[marital_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[marital_status]"
+                      name="marital_status" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[occupation]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[occupation]"
+                      name="occupation" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[relationship]"
+                      name="relationship" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[race]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[race]"
+                      name="race" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[sex]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[sex]"
+                      name="sex" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[capital_gain]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[capital_gain]"
+                      name="capital_gain" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[capital_loss]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[capital_loss]"
+                      name="capital_loss" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[hours_per_week]"
+                      dataType="ui1"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[hours_per_week]"
+                      name="hours_per_week" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[native_country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[native_country]"
+                      name="native_country" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[class]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[class]"
+                      name="class" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow.Paths[Output origine OLE DB]"
+              endId="Package\Data Flow\Destinazione file flat.Inputs[Input destinazione file flat]"
+              name="Output origine OLE DB"
+              startId="Package\Data Flow\Origine OLE DB.Outputs[Output origine OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\OpenNotepad"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Attività Esegui processo"
+      DTS:DTSID="{946F0177-870B-47DF-AE3D-AB8AAF86D92F}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="OpenNotepad"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="notepad.exe"
+          Arguments="C:\Users\Master big Data\Desktop\LDS\LDS First Project" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Vincolo]"
+      DTS:CreationName=""
+      DTS:DTSID="{AB0BACB9-27CF-402F-850C-916747DC683B}"
+      DTS:From="Package\Data Flow"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Vincolo"
+      DTS:To="Package\OpenNotepad" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Questa sezione CDATA contiene le informazioni sul layout del pacchetto e include informazioni quali coordinate (x,y), larghezza e altezza.-->
+<!--Se si modifica manualmente la sezione e si commette un errore, è possibile eliminarla. -->
+<!--Sarà comunque possibile caricare manualmente il pacchetto, ma le informazioni precedenti sul layout verranno perse e gli elementi verranno nuovamente disposti nell'area di progettazione all'interno dell'apposita finestra.-->
+<Objects
+  Version="8">
+  <!--Ogni nodo seguente conterrà proprietà che non influiscono sul comportamento di runtime.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Data Flow"
+          TopLeft="87,37" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\OpenNotepad"
+          TopLeft="115,157" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Vincolo]"
+          TopLeft="150,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36.5,78"
+              Start="0,0"
+              End="36.5,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35"
+                    Point2="0,39"
+                    Point3="4,39" />
+                  <mssgle:LineSegment
+                    End="32.5,39" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32.5,39"
+                    Point2="36.5,39"
+                    Point3="36.5,43" />
+                  <mssgle:LineSegment
+                    End="36.5,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Data Flow\Origine OLE DB"
+          TopLeft="77,62" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Data Flow\Destinazione file flat"
+          TopLeft="164,197" />
+        <EdgeLayout
+          Id="Package\Data Flow.Paths[Output origine OLE DB]"
+          TopLeft="153,104">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98,93"
+              Start="0,0"
+              End="98,85.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.5"
+                    Point2="0,46.5"
+                    Point3="4,46.5" />
+                  <mssgle:LineSegment
+                    End="94,46.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="94,46.5"
+                    Point2="98,46.5"
+                    Point3="98,50.5" />
+                  <mssgle:LineSegment
+                    End="98,85.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="41,51.5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow\Origine OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

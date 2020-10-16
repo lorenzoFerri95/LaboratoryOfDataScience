@@ -1,2 +1,4 @@
+USE [Group5HWMart]
+GO
 ALTER TABLE [Time]
 ALTER COLUMN [quarter] VARCHAR(50) NOT NULL
