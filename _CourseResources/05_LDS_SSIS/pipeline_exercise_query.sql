@@ -1,4 +1,4 @@
-﻿SELECT product_id, (SUM(store_sales) - SUM(store_cost))/SUM(unit_sales) AS avg_gain
+﻿SELECT product_id, SUM(store_sales - store_cost)/SUM(unit_sales) AS avg_gain
 FROM sales_fact
 GROUP BY product_id
 ORDER BY avg_gain DESC

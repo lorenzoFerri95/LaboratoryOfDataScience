@@ -1,0 +1,1556 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/20/2020 12:20:51 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-08J8O6D"
+  DTS:CreatorName="DESKTOP-08J8O6D\loren"
+  DTS:DTSID="{D6BABEB2-6A61-4564-A2DF-15EF07C0762B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="1040"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{E54F4EF1-6238-411E-85F8-682D4CEFF19A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[apa.di.unipi.it.lbi.group5]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8171CEF7-44BD-4B20-8CB4-59E8577F9C49}"
+      DTS:ObjectName="apa.di.unipi.it.lbi.group5">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=apa.di.unipi.it;User ID=group5;Initial Catalog=lbi;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwZInZSjMckCek7XqOgKtagAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAe3lfjA3kwfWSHH0S/o/upv8ofwUvy3BNkN+FTii1I7gAAAAAOgAAAAAIAACAAAAAWIs5viktDwZdCXkw/z3pdB/cpNgXCPinElP+Ms43/ARAAAAClCiaUZvfQhwArOPH5IX4SQAAAAKzlVpj29F7KpS/tEzfwX/VXqfhAmUmpj+pBh9ckDlKTQIghoOcoAQmRzosQKX2XlSKaO5HV15yBOJcE9rOB09U</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Attività Flusso di dati"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Attività Flusso di dati"
+      DTS:DTSID="{D091B1BC-55F4-4272-B9EE-3DC1640BEEB6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Attività Flusso di dati"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Attività Flusso di dati\Campionamento percentuale"
+              componentClassID="Microsoft.PctSampling"
+              contactInfo="Campionamento percentuale;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+              description="Esegue campionamenti casuali in una percentuale di righe da un flusso di dati di input. Ad esempio, utilizzarlo due volte per creare un modello di data mining: creare un campione di modello a scopo formativo e uno a scopo di test."
+              name="Campionamento percentuale">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica le dimensioni del campione in percentuale."
+                  expressionType="Notify"
+                  name="SamplingValue">30</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il valore di inizializzazione per il generatore di numeri casuali."
+                  name="SamplingSeed">0</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Attività Flusso di dati\Campionamento percentuale.Inputs[Campionamento percentuale Input 1]"
+                  name="Campionamento percentuale Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\Campionamento percentuale.Outputs[selected_males]"
+                  exclusionGroup="1"
+                  name="selected_males"
+                  synchronousInputId="Package\Attività Flusso di dati\Campionamento percentuale.Inputs[Campionamento percentuale Input 1]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Output per le righe nel campione"
+                      name="Selected">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\Campionamento percentuale.Outputs[Output non selezionato campionamento]"
+                  exclusionGroup="1"
+                  name="Output non selezionato campionamento"
+                  synchronousInputId="Package\Attività Flusso di dati\Campionamento percentuale.Inputs[Campionamento percentuale Input 1]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Output per le righe nel campione"
+                      name="Selected">false</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\Campionamento percentuale 1"
+              componentClassID="Microsoft.PctSampling"
+              contactInfo="Campionamento percentuale;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+              description="Esegue campionamenti casuali in una percentuale di righe da un flusso di dati di input. Ad esempio, utilizzarlo due volte per creare un modello di data mining: creare un campione di modello a scopo formativo e uno a scopo di test."
+              name="Campionamento percentuale 1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica le dimensioni del campione in percentuale."
+                  expressionType="Notify"
+                  name="SamplingValue">30</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il valore di inizializzazione per il generatore di numeri casuali."
+                  name="SamplingSeed">0</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Attività Flusso di dati\Campionamento percentuale 1.Inputs[Campionamento percentuale Input 1]"
+                  name="Campionamento percentuale Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\Campionamento percentuale 1.Outputs[selected_females]"
+                  exclusionGroup="1"
+                  name="selected_females"
+                  synchronousInputId="Package\Attività Flusso di dati\Campionamento percentuale 1.Inputs[Campionamento percentuale Input 1]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Output per le righe nel campione"
+                      name="Selected">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\Campionamento percentuale 1.Outputs[Output non selezionato campionamento]"
+                  exclusionGroup="1"
+                  name="Output non selezionato campionamento"
+                  synchronousInputId="Package\Attività Flusso di dati\Campionamento percentuale 1.Inputs[Campionamento percentuale Input 1]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Output per le righe nel campione"
+                      name="Selected">false</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\Suddivisione condizionale"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Suddivisione condizionale;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+              description="Indirizza righe di dati a output diversi a seconda del contenuto dei dati. Usare le condizioni (espressioni SSIS) per specificare le righe da indirizzare. Ad esempio, separare i record da eliminare da quelli pronti per essere caricati oppure indirizzare unicamente un subset di record."
+              name="Suddivisione condizionale"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Attività Flusso di dati\Suddivisione condizionale.Inputs[Input suddivisione condizionale]"
+                  description="Input della trasformazione Suddivisione condizionale"
+                  name="Input suddivisione condizionale">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Suddivisione condizionale.Inputs[Input suddivisione condizionale].Columns[sex]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="sex"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[sex]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\Suddivisione condizionale.Outputs[Males]"
+                  description="Output 1 della trasformazione Suddivisione condizionale"
+                  errorOrTruncationOperation="Calcolo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Males"
+                  synchronousInputId="Package\Attività Flusso di dati\Suddivisione condizionale.Inputs[Input suddivisione condizionale]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifica l'espressione. Questa versione dell'espressione utilizza gli identificatori di derivazione anziché i nomi di colonna."
+                      name="Expression">#{Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[sex]} == "Male"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifica la versione descrittiva dell'espressione. Questa versione dell'espressione utilizza i nomi di colonna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">sex == "Male"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la posizione della condizione nell'elenco delle condizioni valutate dalla trasformazione. L'ordine di valutazione è crescente, dal valore più basso al più alto."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\Suddivisione condizionale.Outputs[Females]"
+                  description="Output 2 della trasformazione Suddivisione condizionale"
+                  errorOrTruncationOperation="Calcolo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Females"
+                  synchronousInputId="Package\Attività Flusso di dati\Suddivisione condizionale.Inputs[Input suddivisione condizionale]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifica l'espressione. Questa versione dell'espressione utilizza gli identificatori di derivazione anziché i nomi di colonna."
+                      name="Expression">#{Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[sex]} == "Female"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifica la versione descrittiva dell'espressione. Questa versione dell'espressione utilizza i nomi di colonna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">sex == "Female"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la posizione della condizione nell'elenco delle condizioni valutate dalla trasformazione. L'ordine di valutazione è crescente, dal valore più basso al più alto."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\Suddivisione condizionale.Outputs[default_output]"
+                  description="Output predefinito per la trasformazione Suddivisione condizionale"
+                  exclusionGroup="1"
+                  name="default_output"
+                  synchronousInputId="Package\Attività Flusso di dati\Suddivisione condizionale.Inputs[Input suddivisione condizionale]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\Suddivisione condizionale.Outputs[Output errori suddivisione condizionale]"
+                  description="Output degli errori per la trasformazione Suddivisione condizionale"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori suddivisione condizionale"
+                  synchronousInputId="Package\Attività Flusso di dati\Suddivisione condizionale.Inputs[Input suddivisione condizionale]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Suddivisione condizionale.Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Suddivisione condizionale.Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Suddivisione condizionale.Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Suddivisione condizionale.Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\TableScan(census)"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+              description="Origine OLE DB"
+              name="TableScan(census)"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowset">[dbo].[census]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL da eseguire."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variabile che contiene il comando SQL da eseguire."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la modalità utilizzata per accedere al database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mapping tra i parametri nel comando SQL e le variabili."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Attività Flusso di dati\TableScan(census).Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.lbi.group5]"
+                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.lbi.group5]"
+                  description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB]"
+                  name="Output origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[id]"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[age]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[age]"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[age]"
+                      name="age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[workclass]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[workclass]"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[workclass]"
+                      name="workclass"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[fnlwgt]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[fnlwgt]"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[fnlwgt]"
+                      name="fnlwgt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[education]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[education]"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[education]"
+                      name="education"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[education_num]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[education_num]"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[education_num]"
+                      name="education_num"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[marital_status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[marital_status]"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[marital_status]"
+                      name="marital_status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[occupation]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[occupation]"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[occupation]"
+                      name="occupation"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[relationship]"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[relationship]"
+                      name="relationship"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[race]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[race]"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[race]"
+                      name="race"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[sex]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[sex]"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[sex]"
+                      name="sex"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[capital_gain]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[capital_gain]"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[capital_gain]"
+                      name="capital_gain"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[capital_loss]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[capital_loss]"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[capital_loss]"
+                      name="capital_loss"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[hours_per_week]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[hours_per_week]"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[hours_per_week]"
+                      name="hours_per_week"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[native_country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[native_country]"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[native_country]"
+                      name="native_country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[class]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[class]"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[class]"
+                      name="class"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[age]"
+                      dataType="ui1"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[workclass]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="workclass" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[fnlwgt]"
+                      dataType="i4"
+                      name="fnlwgt" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[education]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="education" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[education_num]"
+                      dataType="ui1"
+                      name="education_num" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[marital_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="marital_status" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[occupation]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="occupation" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="relationship" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[race]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="race" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[sex]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="sex" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[capital_gain]"
+                      dataType="i4"
+                      name="capital_gain" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[capital_loss]"
+                      dataType="i4"
+                      name="capital_loss" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[hours_per_week]"
+                      dataType="ui1"
+                      name="hours_per_week" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[native_country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="native_country" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].ExternalColumns[class]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="class" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB]"
+                  isErrorOut="true"
+                  name="Output errori origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[age]"
+                      dataType="ui1"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[workclass]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[workclass]"
+                      name="workclass" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[fnlwgt]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[fnlwgt]"
+                      name="fnlwgt" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[education]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[education]"
+                      name="education" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[education_num]"
+                      dataType="ui1"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[education_num]"
+                      name="education_num" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[marital_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[marital_status]"
+                      name="marital_status" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[occupation]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[occupation]"
+                      name="occupation" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[relationship]"
+                      name="relationship" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[race]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[race]"
+                      name="race" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[sex]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[sex]"
+                      name="sex" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[capital_gain]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[capital_gain]"
+                      name="capital_gain" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[capital_loss]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[capital_loss]"
+                      name="capital_loss" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[hours_per_week]"
+                      dataType="ui1"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[hours_per_week]"
+                      name="hours_per_week" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[native_country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[native_country]"
+                      name="native_country" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[class]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[class]"
+                      name="class" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\Unione input multipli"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Unione input multipli;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+              description="Combina righe di più flussi di dati senza ordinarle. Ad esempio, aggiungere nuovamente le righe al flusso di dati dopo avere corretto gli errori. Se l'ordinamento è importante, è consigliabile utilizzare la trasformazione Unione."
+              name="Unione input multipli"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1]"
+                  name="Unione input multipli Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[age]"
+                      cachedDataType="ui1"
+                      cachedName="age"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[age]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[age]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[workclass]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="workclass"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[workclass]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[workclass]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[fnlwgt]"
+                      cachedDataType="i4"
+                      cachedName="fnlwgt"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[fnlwgt]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[fnlwgt]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[education]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="education"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[education]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[education]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[education_num]"
+                      cachedDataType="ui1"
+                      cachedName="education_num"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[education_num]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[education_num]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[marital_status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="marital_status"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[marital_status]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[marital_status]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[occupation]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="occupation"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[occupation]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[occupation]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[relationship]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="relationship"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[relationship]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[relationship]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[race]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="race"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[race]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[race]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[sex]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="sex"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[sex]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[sex]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[capital_gain]"
+                      cachedDataType="i4"
+                      cachedName="capital_gain"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[capital_gain]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[capital_gain]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[capital_loss]"
+                      cachedDataType="i4"
+                      cachedName="capital_loss"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[capital_loss]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[capital_loss]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[hours_per_week]"
+                      cachedDataType="ui1"
+                      cachedName="hours_per_week"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[hours_per_week]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[hours_per_week]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[native_country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="native_country"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[native_country]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[native_country]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1].Columns[class]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="class"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[class]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[class]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1]"
+                  hasSideEffects="true"
+                  name="Input unione input multipli 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1].Columns[age]"
+                      cachedDataType="ui1"
+                      cachedName="age"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[age]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[age]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1].Columns[workclass]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="workclass"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[workclass]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[workclass]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1].Columns[fnlwgt]"
+                      cachedDataType="i4"
+                      cachedName="fnlwgt"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[fnlwgt]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[fnlwgt]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1].Columns[education]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="education"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[education]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[education]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1].Columns[education_num]"
+                      cachedDataType="ui1"
+                      cachedName="education_num"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[education_num]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[education_num]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1].Columns[marital_status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="marital_status"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[marital_status]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[marital_status]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1].Columns[occupation]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="occupation"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[occupation]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[occupation]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1].Columns[relationship]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="relationship"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[relationship]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[relationship]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1].Columns[race]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="race"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[race]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[race]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1].Columns[sex]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="sex"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[sex]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[sex]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1].Columns[capital_gain]"
+                      cachedDataType="i4"
+                      cachedName="capital_gain"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[capital_gain]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[capital_gain]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1].Columns[capital_loss]"
+                      cachedDataType="i4"
+                      cachedName="capital_loss"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[capital_loss]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[capital_loss]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1].Columns[hours_per_week]"
+                      cachedDataType="ui1"
+                      cachedName="hours_per_week"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[hours_per_week]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[hours_per_week]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1].Columns[native_country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="native_country"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[native_country]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[native_country]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1].Columns[class]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="256"
+                      cachedName="class"
+                      lineageId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB].Columns[class]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID derivazione colonna output"
+                          name="OutputColumnLineageID">#{Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[class]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 2]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Input unione input multipli 2">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1]"
+                  name="Unione input multipli Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[age]"
+                      dataType="ui1"
+                      lineageId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[workclass]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[workclass]"
+                      name="workclass" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[fnlwgt]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[fnlwgt]"
+                      name="fnlwgt" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[education]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[education]"
+                      name="education" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[education_num]"
+                      dataType="ui1"
+                      lineageId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[education_num]"
+                      name="education_num" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[marital_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[marital_status]"
+                      name="marital_status" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[occupation]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[occupation]"
+                      name="occupation" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[relationship]"
+                      name="relationship" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[race]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[race]"
+                      name="race" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[sex]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[sex]"
+                      name="sex" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[capital_gain]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[capital_gain]"
+                      name="capital_gain" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[capital_loss]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[capital_loss]"
+                      name="capital_loss" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[hours_per_week]"
+                      dataType="ui1"
+                      lineageId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[hours_per_week]"
+                      name="hours_per_week" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[native_country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[native_country]"
+                      name="native_country" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[class]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      lineageId="Package\Attività Flusso di dati\Unione input multipli.Outputs[Unione input multipli Output 1].Columns[class]"
+                      name="class" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Attività Flusso di dati.Paths[Females]"
+              endId="Package\Attività Flusso di dati\Campionamento percentuale.Inputs[Campionamento percentuale Input 1]"
+              name="Females"
+              startId="Package\Attività Flusso di dati\Suddivisione condizionale.Outputs[Females]" />
+            <path
+              refId="Package\Attività Flusso di dati.Paths[Males]"
+              endId="Package\Attività Flusso di dati\Campionamento percentuale 1.Inputs[Campionamento percentuale Input 1]"
+              name="Males"
+              startId="Package\Attività Flusso di dati\Suddivisione condizionale.Outputs[Males]" />
+            <path
+              refId="Package\Attività Flusso di dati.Paths[Output origine OLE DB]"
+              endId="Package\Attività Flusso di dati\Suddivisione condizionale.Inputs[Input suddivisione condizionale]"
+              name="Output origine OLE DB"
+              startId="Package\Attività Flusso di dati\TableScan(census).Outputs[Output origine OLE DB]" />
+            <path
+              refId="Package\Attività Flusso di dati.Paths[selected_females]"
+              endId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Input unione input multipli 1]"
+              name="selected_females"
+              startId="Package\Attività Flusso di dati\Campionamento percentuale 1.Outputs[selected_females]" />
+            <path
+              refId="Package\Attività Flusso di dati.Paths[selected_males]"
+              endId="Package\Attività Flusso di dati\Unione input multipli.Inputs[Unione input multipli Input 1]"
+              name="selected_males"
+              startId="Package\Attività Flusso di dati\Campionamento percentuale.Outputs[selected_males]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Questa sezione CDATA contiene le informazioni sul layout del pacchetto e include informazioni quali coordinate (x,y), larghezza e altezza.-->
+<!--Se si modifica manualmente la sezione e si commette un errore, è possibile eliminarla. -->
+<!--Sarà comunque possibile caricare manualmente il pacchetto, ma le informazioni precedenti sul layout verranno perse e gli elementi verranno nuovamente disposti nell'area di progettazione all'interno dell'apposita finestra.-->
+<Objects
+  Version="8">
+  <!--Ogni nodo seguente conterrà proprietà che non influiscono sul comportamento di runtime.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Attività Flusso di dati"
+          TopLeft="146,89" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Attività Flusso di dati">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Attività Flusso di dati\TableScan(census)"
+          TopLeft="283,381" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Attività Flusso di dati\Suddivisione condizionale"
+          TopLeft="272,302" />
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output origine OLE DB]"
+          TopLeft="368.75,381">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-37"
+              Start="0,0"
+              End="0,-29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="214,42"
+          Id="Package\Attività Flusso di dati\Campionamento percentuale"
+          TopLeft="148,206" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Attività Flusso di dati\Campionamento percentuale 1"
+          TopLeft="448,206" />
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Females]"
+          TopLeft="371,302">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-116,-54"
+              Start="0,0"
+              End="-116,-46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-23"
+                    Point2="0,-27"
+                    Point3="-4,-27" />
+                  <mssgle:LineSegment
+                    End="-112,-27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-112,-27"
+                    Point2="-116,-27"
+                    Point3="-116,-31" />
+                  <mssgle:LineSegment
+                    End="-116,-46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-76.602578125,-22,37.20515625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Males]"
+          TopLeft="402.666666666667,302">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="156.833333333333,-54"
+              Start="0,0"
+              End="156.833333333333,-46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-17.8597194388778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-17.8597194388778"
+                    Point2="0,-21.8597194388778"
+                    Point3="4,-21.8597194388778" />
+                  <mssgle:LineSegment
+                    End="152.833333333333,-21.8597194388778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="152.833333333333,-21.8597194388778"
+                    Point2="156.833333333333,-21.8597194388778"
+                    Point3="156.833333333333,-25.8597194388778" />
+                  <mssgle:LineSegment
+                    End="156.833333333333,-46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="65.3940885416667,-16.8597194388778,26.04515625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Attività Flusso di dati\Unione input multipli"
+          TopLeft="313,123" />
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[selected_males]"
+          TopLeft="255,206">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="146,-41"
+              Start="0,0"
+              End="146,-33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-16.5"
+                    Point2="0,-20.5"
+                    Point3="4,-20.5" />
+                  <mssgle:LineSegment
+                    End="142,-20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="142,-20.5"
+                    Point2="146,-20.5"
+                    Point3="146,-24.5" />
+                  <mssgle:LineSegment
+                    End="146,-33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="38.69234375,-15.5,68.6153125,11.0625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[selected_females]"
+          TopLeft="559.5,206">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-130.5,-41"
+              Start="0,0"
+              End="-130.5,-33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-20.3783783783784" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-20.3783783783784"
+                    Point2="0,-24.3783783783784"
+                    Point3="-4,-24.3783783783784" />
+                  <mssgle:LineSegment
+                    End="-126.5,-24.3783783783784" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-126.5,-24.3783783783784"
+                    Point2="-130.5,-24.3783783783784"
+                    Point3="-130.5,-28.3783783783784" />
+                  <mssgle:LineSegment
+                    End="-130.5,-33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-103.77765625,-19.3783783783784,77.0553125,11.111328125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Attività Flusso di dati\TableScan(census)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="10/16/2020 8:16:00 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1040"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{1946491B-D580-4631-A8D8-4F5E99D7F724}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{07F14007-4D6C-4B03-B550-F728D90113ED}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwZInZSjMckCek7XqOgKtagAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB/03Z5DUpDybPxmxBSjeWCG8xDpkm8V86/7auxlEoqVwAAAAAOgAAAAAIAACAAAAAfT3RjZuQKUbowA5tbWanN59b77xFy06OdQQ5BjV0YjhAAAABLWNGetwXD6TmOJJdyK1iVQAAAACe8JBvjOFi2FVZrNc2a5MymuPsakEG8HWzld7l6wdgZl6tCzweNBRICWmrNofQKLGF0SPvwUnMhlQeLFIFLWQ0</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwZInZSjMckCek7XqOgKtagAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAmqhTxxcRhIvikr1aWMOC16NzqbuS8jy9ma5irqDzirQAAAAAOgAAAAAIAACAAAADK55hIodhaur8f0vyrbHpwaIVdrA5WxRDiU36pxdofWhAAAABTB1CxN5szg85nK446j0+2QAAAALxto1VZHb+dPk6LmUBdTbmPW5LKDmjmpmJwP66T0iPA6sT+O/XtkHKxvKRn2fXpP2KTfwzbTdZu+3caP2O022M</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -171,6 +171,186 @@
               </outputs>
             </component>
             <component
+              refId="Package\Attività Flusso di dati\FROM sales_fact"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+              description="Origine OLE DB"
+              name="FROM sales_fact"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowset">[dbo].[sales_fact]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL da eseguire."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variabile che contiene il comando SQL da eseguire."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la modalità utilizzata per accedere al database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mapping tra i parametri nel comando SQL e le variabili."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Attività Flusso di dati\FROM sales_fact.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.FoodMart.group5]"
+                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.FoodMart.group5]"
+                  description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB]"
+                  name="Output origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].Columns[product_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].ExternalColumns[product_id]"
+                      lineageId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].Columns[store_sales]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].ExternalColumns[store_sales]"
+                      lineageId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].Columns[store_sales]"
+                      name="store_sales"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].Columns[store_cost]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].ExternalColumns[store_cost]"
+                      lineageId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].Columns[store_cost]"
+                      name="store_cost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].Columns[unit_sales]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].ExternalColumns[unit_sales]"
+                      lineageId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].Columns[unit_sales]"
+                      name="unit_sales"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].ExternalColumns[fact_id]"
+                      dataType="i4"
+                      name="fact_id" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].ExternalColumns[time_id]"
+                      dataType="i4"
+                      name="time_id" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].ExternalColumns[customer_id]"
+                      dataType="i4"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].ExternalColumns[promotion_id]"
+                      dataType="i4"
+                      name="promotion_id" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].ExternalColumns[store_id]"
+                      dataType="i4"
+                      name="store_id" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].ExternalColumns[store_sales]"
+                      dataType="cy"
+                      name="store_sales" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].ExternalColumns[store_cost]"
+                      dataType="cy"
+                      name="store_cost" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].ExternalColumns[unit_sales]"
+                      dataType="r8"
+                      name="unit_sales" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output errori origine OLE DB]"
+                  isErrorOut="true"
+                  name="Output errori origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output errori origine OLE DB].Columns[product_id]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output errori origine OLE DB].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output errori origine OLE DB].Columns[store_sales]"
+                      dataType="cy"
+                      lineageId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output errori origine OLE DB].Columns[store_sales]"
+                      name="store_sales" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output errori origine OLE DB].Columns[store_cost]"
+                      dataType="cy"
+                      lineageId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output errori origine OLE DB].Columns[store_cost]"
+                      name="store_cost" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output errori origine OLE DB].Columns[unit_sales]"
+                      dataType="r8"
+                      lineageId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output errori origine OLE DB].Columns[unit_sales]"
+                      name="unit_sales" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Attività Flusso di dati\Gropu By( {product_id\}, {SUM(gain), SUM(unit_sales)\} )"
               componentClassID="Microsoft.Aggregate"
               contactInfo="Aggregazione;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;3"
@@ -215,12 +395,12 @@
                       refId="Package\Attività Flusso di dati\Gropu By( {product_id\}, {SUM(gain), SUM(unit_sales)\} ).Inputs[Input aggregazione 1].Columns[unit_sales]"
                       cachedDataType="r8"
                       cachedName="unit_sales"
-                      lineageId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].Columns[unit_sales]" />
+                      lineageId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].Columns[unit_sales]" />
                     <inputColumn
                       refId="Package\Attività Flusso di dati\Gropu By( {product_id\}, {SUM(gain), SUM(unit_sales)\} ).Inputs[Input aggregazione 1].Columns[product_id]"
                       cachedDataType="i4"
                       cachedName="product_id"
-                      lineageId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].Columns[product_id]" />
+                      lineageId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].Columns[product_id]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -251,7 +431,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
-                          name="AggregationColumnId">#{Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].Columns[product_id]}</property>
+                          name="AggregationColumnId">#{Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].Columns[product_id]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifica il tipo di aggregazione."
@@ -303,7 +483,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
-                          name="AggregationColumnId">#{Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].Columns[unit_sales]}</property>
+                          name="AggregationColumnId">#{Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].Columns[unit_sales]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifica il tipo di aggregazione."
@@ -341,12 +521,12 @@
                       refId="Package\Attività Flusso di dati\Project(store_sales - store_cost) AS gain.Inputs[Input colonna derivata].Columns[store_sales]"
                       cachedDataType="cy"
                       cachedName="store_sales"
-                      lineageId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].Columns[store_sales]" />
+                      lineageId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].Columns[store_sales]" />
                     <inputColumn
                       refId="Package\Attività Flusso di dati\Project(store_sales - store_cost) AS gain.Inputs[Input colonna derivata].Columns[store_cost]"
                       cachedDataType="cy"
                       cachedName="store_cost"
-                      lineageId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].Columns[store_cost]" />
+                      lineageId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].Columns[store_cost]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -372,7 +552,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Espressione colonna derivata"
-                          name="Expression">#{Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].Columns[store_sales]} - #{Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].Columns[store_cost]}</property>
+                          name="Expression">#{Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].Columns[store_sales]} - #{Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB].Columns[store_cost]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -668,186 +848,6 @@ where [refTable].[product_id] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Attività Flusso di dati\TableScan(sales_fact)"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
-              description="Origine OLE DB"
-              name="TableScan(sales_fact)"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
-                  name="OpenRowset">[dbo].[sales_fact]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="Comando SQL da eseguire."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="Variabile che contiene il comando SQL da eseguire."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifica la modalità utilizzata per accedere al database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="Mapping tra i parametri nel comando SQL e le variabili."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Attività Flusso di dati\TableScan(sales_fact).Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.FoodMart.group5]"
-                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.FoodMart.group5]"
-                  description="Connessione di run-time OLE DB utilizzata per accedere al database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB]"
-                  name="Output origine OLE DB">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].Columns[product_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversione"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].ExternalColumns[product_id]"
-                      lineageId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].Columns[product_id]"
-                      name="product_id"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].Columns[store_sales]"
-                      dataType="cy"
-                      errorOrTruncationOperation="Conversione"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].ExternalColumns[store_sales]"
-                      lineageId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].Columns[store_sales]"
-                      name="store_sales"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].Columns[store_cost]"
-                      dataType="cy"
-                      errorOrTruncationOperation="Conversione"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].ExternalColumns[store_cost]"
-                      lineageId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].Columns[store_cost]"
-                      name="store_cost"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].Columns[unit_sales]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversione"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].ExternalColumns[unit_sales]"
-                      lineageId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].Columns[unit_sales]"
-                      name="unit_sales"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].ExternalColumns[fact_id]"
-                      dataType="i4"
-                      name="fact_id" />
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].ExternalColumns[product_id]"
-                      dataType="i4"
-                      name="product_id" />
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].ExternalColumns[time_id]"
-                      dataType="i4"
-                      name="time_id" />
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].ExternalColumns[customer_id]"
-                      dataType="i4"
-                      name="customer_id" />
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].ExternalColumns[promotion_id]"
-                      dataType="i4"
-                      name="promotion_id" />
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].ExternalColumns[store_id]"
-                      dataType="i4"
-                      name="store_id" />
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].ExternalColumns[store_sales]"
-                      dataType="cy"
-                      name="store_sales" />
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].ExternalColumns[store_cost]"
-                      dataType="cy"
-                      name="store_cost" />
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB].ExternalColumns[unit_sales]"
-                      dataType="r8"
-                      name="unit_sales" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output errori origine OLE DB]"
-                  isErrorOut="true"
-                  name="Output errori origine OLE DB">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output errori origine OLE DB].Columns[product_id]"
-                      dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output errori origine OLE DB].Columns[product_id]"
-                      name="product_id" />
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output errori origine OLE DB].Columns[store_sales]"
-                      dataType="cy"
-                      lineageId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output errori origine OLE DB].Columns[store_sales]"
-                      name="store_sales" />
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output errori origine OLE DB].Columns[store_cost]"
-                      dataType="cy"
-                      lineageId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output errori origine OLE DB].Columns[store_cost]"
-                      name="store_cost" />
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output errori origine OLE DB].Columns[unit_sales]"
-                      dataType="r8"
-                      lineageId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output errori origine OLE DB].Columns[unit_sales]"
-                      name="unit_sales" />
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Attività Flusso di dati\Write to TXT"
               componentClassID="Microsoft.FlatFileDestination"
               contactInfo="Destinazione file flat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
@@ -944,7 +944,7 @@ where [refTable].[product_id] = ?</property>
               refId="Package\Attività Flusso di dati.Paths[Output origine OLE DB]"
               endId="Package\Attività Flusso di dati\Project(store_sales - store_cost) AS gain.Inputs[Input colonna derivata]"
               name="Output origine OLE DB"
-              startId="Package\Attività Flusso di dati\TableScan(sales_fact).Outputs[Output origine OLE DB]" />
+              startId="Package\Attività Flusso di dati\FROM sales_fact.Outputs[Output origine OLE DB]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -975,33 +975,39 @@ where [refTable].[product_id] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="159,42"
-          Id="Package\Attività Flusso di dati\Sort({avg_gain\})"
-          TopLeft="266,72" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Attività Flusso di dati\Star Join Index"
-          TopLeft="274,147" />
-        <NodeLayout
-          Size="182,42"
-          Id="Package\Attività Flusso di dati\TableScan(sales_fact)"
-          TopLeft="256,454" />
-        <NodeLayout
-          Size="346,42"
-          Id="Package\Attività Flusso di dati\Gropu By( {product_id\}, {SUM(gain), SUM(unit_sales)\} )"
-          TopLeft="174,297" />
+          Size="157,42"
+          Id="Package\Attività Flusso di dati\FROM sales_fact"
+          TopLeft="272,460" />
         <NodeLayout
           Size="270,42"
           Id="Package\Attività Flusso di dati\Project(store_sales - store_cost) AS gain"
           TopLeft="215,380" />
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output origine OLE DB]"
+          TopLeft="350.25,460">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-38"
+              Start="0,0"
+              End="0,-30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <NodeLayout
-          Size="122,42"
-          Id="Package\Attività Flusso di dati\avg_gain"
-          TopLeft="286,225" />
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Attività Flusso di dati\Write to TXT"
-          TopLeft="278,0" />
+          Size="346,42"
+          Id="Package\Attività Flusso di dati\Gropu By( {product_id\}, {SUM(gain), SUM(unit_sales)\} )"
+          TopLeft="174,297" />
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output colonna derivata]"
           TopLeft="348.5,380">
@@ -1024,6 +1030,10 @@ where [refTable].[product_id] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Attività Flusso di dati\avg_gain"
+          TopLeft="286,225" />
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output aggregazione 1]"
           TopLeft="347,297">
@@ -1046,20 +1056,24 @@ where [refTable].[product_id] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Attività Flusso di dati\Star Join Index"
+          TopLeft="274,147" />
         <EdgeLayout
-          Id="Package\Attività Flusso di dati.Paths[Output origine OLE DB]"
-          TopLeft="348.5,454">
+          Id="Package\Attività Flusso di dati.Paths[Output colonna derivata1]"
+          TopLeft="348,225">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-32"
+              EndConnector="0,-36"
               Start="0,0"
-              End="0,-24.5">
+              End="0,-28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-24.5" />
+                    End="0,-28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1068,28 +1082,10 @@ where [refTable].[product_id] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Attività Flusso di dati.Paths[Output ordinamento]"
-          TopLeft="346.5,72">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-30"
-              Start="0,0"
-              End="0,-22.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-22.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Attività Flusso di dati\Sort({avg_gain\})"
+          TopLeft="266,72" />
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca]"
           TopLeft="347.25,147">
@@ -1114,20 +1110,24 @@ where [refTable].[product_id] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Attività Flusso di dati\Write to TXT"
+          TopLeft="278,0" />
         <EdgeLayout
-          Id="Package\Attività Flusso di dati.Paths[Output colonna derivata1]"
-          TopLeft="348,225">
+          Id="Package\Attività Flusso di dati.Paths[Output ordinamento]"
+          TopLeft="346.5,72">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-36"
+              EndConnector="0,-30"
               Start="0,0"
-              End="0,-28.5">
+              End="0,-22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-28.5" />
+                    End="0,-22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1140,12 +1140,25 @@ where [refTable].[product_id] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Attività Flusso di dati\FROM sales_fact">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Attività Flusso di dati\Star Join Index">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1155,23 +1168,10 @@ where [refTable].[product_id] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Attività Flusso di dati\TableScan(sales_fact)">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
