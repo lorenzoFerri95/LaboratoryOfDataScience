@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>LabDataScience_SSIS</Name>
-    <LastWriteTime>2020-10-19T22:17:44.8842871Z</LastWriteTime>
+    <LastWriteTime>2020-10-23T09:06:22.219474Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -18,7 +18,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>pipeline_exercise.dtsx</Name>
-      <LastWriteTime>2020-10-19T22:17:40.9486636Z</LastWriteTime>
+      <LastWriteTime>2020-10-19T22:31:48.8429013Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>stratified_subsampling.dtsx</Name>
+      <LastWriteTime>2020-10-23T09:06:19.3826864Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>dissimilarity_index.dtsx</Name>
+      <LastWriteTime>2020-10-20T10:34:03.2865959Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

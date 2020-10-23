@@ -5,6 +5,12 @@ Created on Sun Oct 14 18:01:46 2018
 @author: Anna
 """
 
+'''
+il problema che dobbiamo risolvere quì è fare un sample di dati dove le percentuali di oggetti con valori
+diversi dell'attributo 'sex' vengono presenrvate. (es. se all'inizio il dataset è composto da 60% Maschi e 40% Femmine
+allora dopo il sample le percentuali di Maschi e Femmine devono essere le stesse).
+'''
+
 import pyodbc
 import csv
 import random
@@ -19,7 +25,7 @@ def randomCsv(cursor, file_w, tot, to_sel):
         ran = random.random()
         #print ("to_sel %f tot %f prob %f rand %f " %(to_sel, tot, prob,ran))
         if ran < prob:
-            file_w.writerow(row)
+            file_w.writerow(row)  # si scrive la riga solo se il numero casuale è minore della probabilità desiderata
             to_sel= to_sel - 1
         tot = tot - 1
      
@@ -40,17 +46,22 @@ connectionString = 'DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DAT
 cnxn = pyodbc.connect(connectionString)
 cursor = cnxn.cursor()
 
+# questa query fa un raggruppamento per Sex (maschi e femmine) e conta gli oggetti in ogni gruppo
+
 query = "SELECT " + columnStrat + ", COUNT(*)" + " FROM " + tableStrat + " GROUP BY " + columnStrat
 cursor.execute(query)          
-#scan result of the query to capture the distribution of records wrt the columnStrat
+
 first = True
 cnxnInn = pyodbc.connect(connectionString)
+
+# il risultato della query ha solo due righe (una per ogni valore del sex)
+# iteriamo per queste due righe e otteniamo i valori del conteggio per ogni gruppo
 
 for row in cursor:
     colValue = row[0]
     nRows = row[1]
     print(colValue + ', ' + str(nRows))
-    selRows = (int)(nRows * PERCENTAGE);
+    selRows = int((nRows * PERCENTAGE))   # numero di righe da selezionare casualmente (numero righe * 30%)
     #SQL-Server specific syntax for random selection
     innerQuery = "SELECT  *" +" FROM " + tableStrat + " WHERE " + columnStrat + "='"+colValue+"'"
     cursorInn = cnxnInn.cursor()

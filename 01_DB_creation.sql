@@ -34,8 +34,8 @@ CREATE TABLE [group5].[Ram_product] (
 );
 
 CREATE TABLE [group5].[Time] (
-    [time_code]   INT          NOT NULL,
-    [year]        INT          NULL,
+    [time_code]   DATE         NOT NULL,
+    [year]        INT		   NULL,
     [quarter]     VARCHAR (50) NULL,
     [month]       INT          NULL,
     [week]        INT          NULL,
@@ -64,7 +64,7 @@ CREATE TABLE [group5].[Geography] (
 
 CREATE TABLE [group5].[Cpu_sales] (
     [cpu_code]       INT        NOT NULL,
-    [time_code]      INT        NOT NULL,
+    [time_code]      DATE       NOT NULL,
     [geo_code]       INT        NOT NULL,
     [vendor_code]    INT        NOT NULL,
     [sales_usd]      BIGINT     NOT NULL,
@@ -77,7 +77,7 @@ CREATE TABLE [group5].[Cpu_sales] (
 
 CREATE TABLE [group5].[Gpu_sales] (
     [gpu_code]       INT        NOT NULL,
-    [time_code]      INT        NOT NULL,
+    [time_code]      DATE       NOT NULL,
     [geo_code]       INT        NOT NULL,
     [vendor_code]    INT        NOT NULL,
     [sales_usd]      BIGINT     NOT NULL,
@@ -90,7 +90,7 @@ CREATE TABLE [group5].[Gpu_sales] (
 
 CREATE TABLE [group5].[Ram_sales] (
     [ram_code]       INT        NOT NULL,
-    [time_code]      INT        NOT NULL,
+    [time_code]      DATE       NOT NULL,
     [geo_code]       INT        NOT NULL,
     [vendor_code]    INT        NOT NULL,
     [sales_usd]      BIGINT     NOT NULL,

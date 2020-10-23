@@ -1,6 +1,7 @@
 # Load dimensions' tables to SQL Server
 
 import pyodbc
+from sys import argv
 from csv import reader
 
 # Connection to SQL Server

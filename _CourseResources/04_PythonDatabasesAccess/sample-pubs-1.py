@@ -5,12 +5,14 @@ Created on Sun Oct 14 22:44:23 2018
 @author: Anna
 """
 
+# accesso al database e print del risultato della query
+
 import pyodbc
 
 #connect to data source, using userName and userPWD
 server = 'tcp:apa.di.unipi.it' 
 database = 'pubs' 
-username = 'lbi' 
+username = 'lds' 
 password = 'pisa' 
 connectionString = 'DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password
 cnxn = pyodbc.connect(connectionString)

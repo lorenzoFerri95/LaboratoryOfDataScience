@@ -12,7 +12,7 @@ import pyodbc
 
 server = 'tcp:apa.di.unipi.it' 
 database = 'lbi' 
-username = 'lbi' 
+username = 'lds' 
 password = 'pisa' 
 connectionString = 'DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password
 cnxn = pyodbc.connect(connectionString)

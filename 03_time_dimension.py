@@ -4,7 +4,7 @@ import pyodbc
 
 
 def getQuarter(month):
-    """ ottenere il quarter dato il mese """
+    """ottenere il quarter dato il mese """
     month = int(month)
 
     if month <= 3:
@@ -16,11 +16,11 @@ def getQuarter(month):
     return 'Q4'
 
 
-''' formula che abbiamo usato per ottenere il giorno della settimana dalla data:
+'''formula che abbiamo usato per ottenere il giorno della settimana dalla data:
 http://calendario.eugeniosongia.com/formula.htm'''
 
 def daysToMonth(month, year):
-    """ dato il mese ed anno si ottiene il numero di giorni trascorsi\
+    """dato il mese ed anno si ottiene il numero di giorni trascorsi\
     dall'inizio dell'anno all'inizio del mese.
     questa funzione è usata nella funzione per ottenere il giorno della settimana"""
 
@@ -40,7 +40,7 @@ def daysToMonth(month, year):
 
 
 def getDayOfWeek(day, month, year):
-    ''' data la data in formato numerico si ottiene il giorno della settimana con la formula'''
+    """data la data in formato numerico si ottiene il giorno della settimana con la formula"""
 
     day = int(day)
     month = int(month)
@@ -52,12 +52,16 @@ def getDayOfWeek(day, month, year):
     return weekDays[day_num]
 
 
+def to_date(date):
+    """ trasforma la data in formato yyyymmdd nel formato yyyy-mm-dd,\
+    accettato da SQL Server come formato standard per la data"""
+    return date[:4] + '-' + date[4:6] + '-' + date[6:]
+
 
 if __name__ == "__main__":
 
     time_file = open("time.csv")
     time_dict = DictReader(time_file)
-
 
     driver = '{ODBC Driver 17 for SQL Server}'
     server = 'tcp:apa.di.unipi.it'
@@ -77,8 +81,8 @@ if __name__ == "__main__":
 
     for row in time_dict:
         cursor.execute(sql,
-        (row['time_code'], row['year'], getQuarter(row['month']), row['month'], row['week'], row['day'],
-        getDayOfWeek(row['day'], row['month'], row['year']) ) )
+        (to_date(row['time_code']), row['year'], getQuarter(row['month']), row['month'],
+        row['week'], row['day'], getDayOfWeek(row['day'], row['month'], row['year']) ) )
     
     cnxn.commit()
 

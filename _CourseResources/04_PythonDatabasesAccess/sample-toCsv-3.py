@@ -5,6 +5,8 @@ Created on Sun Oct 14 23:48:50 2018
 @author: Anna
 """
 
+# questo programma esegue una query sul DB e poi scrive i risultati riga per riga in un file CSV.
+
 from datetime import timedelta
 import pyodbc
 import csv
@@ -22,7 +24,7 @@ def toCsv(query_cursor, file_writer):
 #connect to data source, using userName and userPWD
 server = 'tcp:apa.di.unipi.it' 
 database = 'pubs' 
-username = 'lbi' 
+username = 'lds' 
 password = 'pisa' 
 outfile = 'output.csv'
 connectionString = 'DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password
