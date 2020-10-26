@@ -4,6 +4,9 @@
 import pyodbc
 from csv import DictReader
 
+def to_date(date):
+    return date[:4] + '-' + date[4:6] + '-' + date[6:]
+
 # Connection to SQL Server
 server = 'tcp:apa.di.unipi.it'
 database = 'Group5HWMart'
@@ -24,9 +27,9 @@ fact = DictReader(fact_file)
 fields = ["time_code", "geo_code", "vendor_code", "sales_uds", "sales_currency"]
 
 # Build queries
-gpu_sql = "INSERT INTO [Group5HWMart].[group5].[Gpu_sales] VALUES (?,?,?,?,?,?)" 
-cpu_sql = "INSERT INTO [Group5HWMart].[group5].[Cpu_sales] VALUES (?,?,?,?,?,?)" 
-ram_sql = "INSERT INTO [Group5HWMart].[group5].[Ram_sales] VALUES (?,?,?,?,?,?)" 
+gpu_sql = "INSERT INTO [Group5HWMart].[group5].[Gpu_sales](gpu_code, time_code, geo_code, vendor_code, sales_usd, sales_currency) VALUES (?,?,?,?,?,?)" 
+cpu_sql = "INSERT INTO [Group5HWMart].[group5].[Cpu_sales](cpu_code, time_code, geo_code, vendor_code, sales_usd, sales_currency) VALUES (?,?,?,?,?,?)" 
+ram_sql = "INSERT INTO [Group5HWMart].[group5].[Ram_sales](ram_code, time_code, geo_code, vendor_code, sales_usd, sales_currency) VALUES (?,?,?,?,?,?)" 
 
 # Initialize lists of values to insert
 gpu_values = []
@@ -34,10 +37,9 @@ cpu_values = []
 ram_values = []
 
 # Scan fact.csv and insert each record in the right list of values
-
 for line in fact:
-    # Format "error" in sales_uds column: delete "." in the middle 
-    line["sales_uds"] = line["sales_uds"].replace(".", "")
+    # Change Date type
+    line["time_code"] = to_date(line["time_code"])
     
     # Build record with all fields except [gpu|cpu|ram]_code
     record = [line[col] for col in fields]
