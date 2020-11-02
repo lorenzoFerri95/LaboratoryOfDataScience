@@ -11,8 +11,8 @@
   DTS:LocaleID="1040"
   DTS:ObjectName="Package2"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{8E571849-0386-4BDE-BB45-3426527D0411}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{10B18DA8-5B9A-4E4B-B0F5-4AAD8CACDE86}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,11 +23,66 @@
       DTS:ObjectName="apa.di.unipi.it.Group5HWMart.group5">
       <DTS:ObjectData>
         <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=apa.di.unipi.it;User ID=group5;Initial Catalog=Group5HWMart;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5AC0207B-BD2D-41AD-88EF-E9EC2DB7517E}"
+      DTS:ObjectName="apa.di.unipi.it.Group5HWMart.group5 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=apa.di.unipi.it;User ID=group5;Initial Catalog=Group5HWMart;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwZInZSjMckCek7XqOgKtagAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD9QF2jgDsw4dBpfS49HG4OWdu/cUozdbUT15Uv8lRm4wAAAAAOgAAAAAIAACAAAACOQBPlAGKwzg4AQGdq9gjMZnBcdqBhhpIIjuKjHnpWmBAAAACx53D1NvJI1wmdx7OCcDG7QAAAAJRxPQbhI7PKVGgjlBUxyCUQqe5FnVGfAcuPaXvz+TK//cu/6O63gzimUG4dEdTWUwuchs5UvdiNNFwXeqzquwM</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAP/9j3jPlQnQ6JAaHOPB78C/cnhaT/u2vz6Vyq8uOI0QAAAAAOgAAAAAIAACAAAABTaVc0ugnTTAW+bwXnTug3vDIvMIslIV7Z5oD64pcErhAAAACdWJoohNG+39PtE3CiZ6NFQAAAAA66QepxVNLRd5D0yBAaf+Xsw/Um+77rNBhWevUUD4BnSi22TiA+SvJrcSDTUQZajRMi4nu86NeHpwnAn1qwLY8</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A1FBBCC5-E271-480F-9315-8AC3E197F926}"
+      DTS:ObjectName="apa.di.unipi.it.Group5HWMart.group5 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=apa.di.unipi.it;User ID=group5;Initial Catalog=Group5HWMart;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACz4/chEqWHTD7od9nQ9EU57cSuZ/7PQ91tdY36i1iVJQAAAAAOgAAAAAIAACAAAADmJGQtN5jnW5qmNsj1vikpMvB06sBXALVBdVZMBE3fEBAAAAB+gVUGMYCN304pN5b8VT4dQAAAADRP6ngiyiKwvZWPwxYFor5IuRcCJ5+JVXO2FypCagauYAusy+fiNOBWMaJmH/MMKNqwKKB8zonzLDYb3JKPGmo</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{165687F2-8413-40F2-898C-383771336A80}"
+      DTS:ObjectName="apa.di.unipi.it.Group5HWMart.group5 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=apa.di.unipi.it;User ID=group5;Initial Catalog=Group5HWMart;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADbwlFIWL3ci4qae6pIiGdjjHMBKAulTVXJmPEV3z6UvAAAAAAOgAAAAAIAACAAAABF/qHASvVPQx/uJLSLpFpSJdqmDLv+5XQV5XEZZbjBsxAAAAD645RF9BHVfm5y17rgKb+0QAAAAIR//cgwVnnjpreie1vJJy3AxAewqlTNTEGUT0HCsNMyeYb8GpT0+WSMd3ba9JclkoLWXcTiSUB/pd17rdr8tNA</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 4]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7BA36769-72E8-4E8C-B5D7-02980A6E10A3}"
+      DTS:ObjectName="apa.di.unipi.it.Group5HWMart.group5 4">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=apa.di.unipi.it;User ID=group5;Initial Catalog=Group5HWMart;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAoN/xWZJi0wRLnrZbLEw4tce0lel9CiMQp4S05kpWWdwAAAAAOgAAAAAIAACAAAABjbTt/b44F2FE2onwqmEbB0y7YCIRCnioTj8mUe98a3BAAAABmfdIRU1v9fn3jaPhqn9AfQAAAALbbVLW7W53IRjliB79ojknc9rB8eIdIkTNmQ0QfGFYKa2xRgQY1A1l7pGadQm7Pzw1bvNAZKWckzPV+Zi6255k</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -292,8 +347,8 @@
               <connections>
                 <connection
                   refId="Package\Attività Flusso di dati\Origine OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5]"
-                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5]"
+                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 1]"
                   description="Connessione di run-time OLE DB utilizzata per accedere al database."
                   name="OleDbConnection" />
               </connections>
@@ -359,7 +414,7 @@
                       name="vendor_code" />
                     <externalMetadataColumn
                       refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[sales_usd]"
-                      dataType="i8"
+                      dataType="r8"
                       name="sales_usd" />
                     <externalMetadataColumn
                       refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[sales_currency]"
@@ -389,7 +444,7 @@
                       name="geo_code" />
                     <outputColumn
                       refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[sales_usd]"
-                      dataType="i8"
+                      dataType="r8"
                       lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[sales_usd]"
                       name="sales_usd" />
                     <outputColumn
@@ -479,8 +534,8 @@ where [refTable].[cpu_code] = ?</property>
               <connections>
                 <connection
                   refId="Package\Attività Flusso di dati\Ricerca.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5]"
-                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5]"
+                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 2]"
                   description="Gestione connessione utilizzata per accedere ai dati di ricerca."
                   name="OleDbConnection" />
               </connections>
@@ -639,8 +694,8 @@ where [refTable].[time_code] = ?</property>
               <connections>
                 <connection
                   refId="Package\Attività Flusso di dati\Ricerca 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5]"
-                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5]"
+                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 3]"
+                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 3]"
                   description="Gestione connessione utilizzata per accedere ai dati di ricerca."
                   name="OleDbConnection" />
               </connections>
@@ -797,8 +852,8 @@ where [refTable].[geo_code] = ?</property>
               <connections>
                 <connection
                   refId="Package\Attività Flusso di dati\Ricerca 2.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5]"
-                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5]"
+                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 4]"
+                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 4]"
                   description="Gestione connessione utilizzata per accedere ai dati di ricerca."
                   name="OleDbConnection" />
               </connections>
@@ -927,7 +982,7 @@ where [refTable].[geo_code] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="177,42"
+          Size="176.8,41.6"
           Id="Package\Attività Flusso di dati"
           TopLeft="165,94" />
       </GraphLayout>
@@ -939,13 +994,25 @@ where [refTable].[geo_code] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="152,42"
-          Id="Package\Attività Flusso di dati\Origine OLE DB"
-          TopLeft="267,420" />
-        <NodeLayout
-          Size="113,42"
+          Size="112.8,41.6"
           Id="Package\Attività Flusso di dati\Ricerca"
           TopLeft="283,352" />
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\Attività Flusso di dati\Aggregazione"
+          TopLeft="267,131" />
+        <NodeLayout
+          Size="121.6,41.6"
+          Id="Package\Attività Flusso di dati\Ricerca 2"
+          TopLeft="274,202" />
+        <NodeLayout
+          Size="121.6,41.6"
+          Id="Package\Attività Flusso di dati\Ricerca 1"
+          TopLeft="275,285" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Attività Flusso di dati\Origine OLE DB"
+          TopLeft="267,420" />
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output origine OLE DB]"
           TopLeft="341.25,420">
@@ -968,66 +1035,6 @@ where [refTable].[geo_code] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="122,42"
-          Id="Package\Attività Flusso di dati\Ricerca 1"
-          TopLeft="275,285" />
-        <EdgeLayout
-          Id="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca]"
-          TopLeft="337.75,352">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-25"
-              Start="0,0"
-              End="0,-17.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-17.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-66.78587890625,-14.5546875,133.5717578125,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="122,42"
-          Id="Package\Attività Flusso di dati\Ricerca 2"
-          TopLeft="274,202" />
-        <EdgeLayout
-          Id="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca1]"
-          TopLeft="335.5,285">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-41"
-              Start="0,0"
-              End="0,-33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-66.78587890625,-22.5546875,133.5717578125,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="143,42"
-          Id="Package\Attività Flusso di dati\Aggregazione"
-          TopLeft="267,131" />
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca2]"
           TopLeft="336.75,202">
@@ -1052,19 +1059,77 @@ where [refTable].[geo_code] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca1]"
+          TopLeft="335.5,285">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-41"
+              Start="0,0"
+              End="0,-33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-66.78587890625,-22.5546875,133.5717578125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca]"
+          TopLeft="337.75,352">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-25"
+              Start="0,0"
+              End="0,-17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-66.78587890625,-14.5546875,133.5717578125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Attività Flusso di dati\Origine OLE DB">
+    design-time-name="Package\Attività Flusso di dati\Ricerca 1">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[group5].[Time]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -1080,29 +1145,6 @@ where [refTable].[geo_code] = ?</property>
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[group5].[Cpu_product]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Attività Flusso di dati\Ricerca 1">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[group5].[Time]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -1134,6 +1176,19 @@ where [refTable].[geo_code] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Attività Flusso di dati\Origine OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
