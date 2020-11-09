@@ -11,8 +11,8 @@
   DTS:LocaleID="1040"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{372CD6CF-228A-4E5B-81B7-39A86E26E980}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{3F1B7DA3-A06E-4EAA-A1F5-8F7E9E2F11B0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAA/JnDn3EqCljUQoCsVKlY3IkF+5yOycPGIpWZ2S698QAAAAAOgAAAAAIAACAAAAAO9+L/v3mAANCiDvmvwY7Fz4bEBxN/S+90Tg3aN3ljlhAAAAC8aQSIIT3kHvYfAbGxjGAQQAAAADo6VWyqWohAsiARH0BnIqo2TYFbqa9eiKp6aEinha3DjzJFmOuA933yo1AX+H95m2rWEiGSG790U+DceXU25T0</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAABEoohp4RGAA/aA0xwosxgnQxVGEKU6HBL2gPjGyDB7AAAAAAOgAAAAAIAACAAAABycVfuo/tAfOQ4JzRVqYdhw5HsgyF3XOZMuV4r1SEqrRAAAADbBNpAEIoZlNYRoV36g+AtQAAAACdfmFMZvDvzVUYYCl6XlpK/Os0SYgUgiW5lNx/l9MSrhBopkbYbx755Ih5jIs+4N8zTQmv86zyAzN8qHkPZobg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -52,7 +52,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAZl6IixTd9JFPp4bJm40O+PR9ouCgKBn3W0prCLdr0gAAAAAAOgAAAAAIAACAAAAAmCNj18OVS+RSbK9tiaXx884W8suOLv1IhO2Lb0ujJDBAAAABj6vbESnZKDtWHnwI/SgO+QAAAAH3wocsfIrO1PLDCanfCjezFv6U1R+7uwLgxLl8iihojCWsSSr+anBLkqeQz0LjXxsjfuPJuiwdnOU0rX5xMnIE</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC7vVRrVNWdWRXO3eNaC0DlIAQNN4atPRLehFp2hAxCfgAAAAAOgAAAAAIAACAAAACRBlQ/SlzNf16q/c5troYe3oU1WYSwtlMKVwiEzEn8TxAAAAA9798pEXIicfyJ4aGPAqGqQAAAAL0rEJOq/kSpkWzErzjRr6Vj9CSoyBWDthijGhzLOVNAPxPt7loi1j5oeKCzY6WLnQ1ijxChpA4rzWM9KKDD+RU</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -67,7 +67,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADa2zYiRV9EcNKflQ20PANA9plJbUJoCER8tmrrH+OvgQAAAAAOgAAAAAIAACAAAAAg9seA56DTbAA/NtE8aFAl36DYFxyUP0qV1S71FiiayBAAAABmZeHK5NRENqbFE7y7RnmiQAAAAG9AJ5JHyrdSh+ToVMk6AEa169kTdkjdLCUXKUrvNFTAlBN2AF5XsDGlLFcxzcSHw9YpaLdep1cuvZJ3LmA3Zc4</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACR1ehoIjFKOYZR3IZ3szwsUixeLXSRYn//SZQo6SdY+gAAAAAOgAAAAAIAACAAAAA2REJj1nzEOANxS9wN58PXmN8jhRUd/6b5+IEWZArwOBAAAACBD07d/3aTeq1rvalLtAmTQAAAALTgXvsl44sC4gQyR3LgB81lMCwf20KW8XToUGkZfm1bMld7wDuZhENdHqalx3jyyZITbyHXBAxrq7KhPxeoxpM</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -82,7 +82,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABfbgySKHD284Tl7LmTTE8LmXbKzNLLXNCuetfpB0qqGQAAAAAOgAAAAAIAACAAAADdnG+DtvNFsR/f3JQVMVl8S4O3D+5H9ifkwetOupHyyxAAAABmaJsiwN7HTzSzmijPhithQAAAAIEWeNiosyqdiwd1qeEotGGNyFHye8F40FJ6/+NiDBjpGACE6/soY3hmHZWPDp6p2GKtFlkTAJK6QV78LzhfSHE</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACdqWhsMp7gpAvNEwWsTuiuqGLcOpYgFjiI+Kvc2KPxcwAAAAAOgAAAAAIAACAAAABuZeHMkAlttvarGxoyzdex6tIDnbnrvvAP9nP9pN9bDxAAAABnIKebNgcWd8HeRNO2h2JZQAAAAN/SAYjLs8czIOy3JnpB6f50h7xm46iKCwdx8Wz4wOimHT+xHPOgF3az8A3dNYqQYp0E75XbVRDD4frxdchyLmU</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -108,7 +108,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="year"
-              DTS:DTSID="{3F93DC67-ACB7-4606-9909-244910965630}"
+              DTS:DTSID="{852FD42D-4D52-43CB-B4A2-C46B400A8867}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -117,7 +117,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="brand"
-              DTS:DTSID="{6CB55298-C12B-41C5-903C-F999C9F26DB8}"
+              DTS:DTSID="{6955B3FA-8C5A-4A2F-AAB9-96CD7136525C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -125,7 +125,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="total_sales_usd"
-              DTS:DTSID="{44091E73-5DE7-4628-B5ED-9CF68AA8EC3A}"
+              DTS:DTSID="{13DBCD49-6A0E-4E66-9123-D7EC8E434692}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -149,11 +149,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Attività Flusso di dati\Aggregazione"
+              refId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\})"
               componentClassID="Microsoft.Aggregate"
               contactInfo="Aggregazione;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;3"
               description="Aggrega i dati con funzioni quali Media, Somma, Conta numeri, Max e Min. Ad esempio, raggruppare i dati per calcolare la somma delle vendite per prodotto o la media giornaliera delle visite."
-              name="Aggregazione"
+              name="GroupBy({year, brand}, {SUM(sales_usd) AS tot_sales_usd})"
               version="3">
               <properties>
                 <property
@@ -181,33 +181,33 @@
               </properties>
               <inputs>
                 <input
-                  refId="Package\Attività Flusso di dati\Aggregazione.Inputs[Input aggregazione 1]"
+                  refId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Inputs[Input aggregazione 1]"
                   name="Input aggregazione 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Attività Flusso di dati\Aggregazione.Inputs[Input aggregazione 1].Columns[year]"
+                      refId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Inputs[Input aggregazione 1].Columns[year]"
                       cachedDataType="i4"
                       cachedName="year"
-                      lineageId="Package\Attività Flusso di dati\Ricerca 1.Outputs[Output corrispondenza ricerca].Columns[year]" />
+                      lineageId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Outputs[Output corrispondenza ricerca].Columns[year]" />
                     <inputColumn
-                      refId="Package\Attività Flusso di dati\Aggregazione.Inputs[Input aggregazione 1].Columns[brand]"
+                      refId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Inputs[Input aggregazione 1].Columns[brand]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="brand"
-                      lineageId="Package\Attività Flusso di dati\Ricerca.Outputs[Output corrispondenza ricerca].Columns[brand]" />
+                      lineageId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Outputs[Output corrispondenza ricerca].Columns[brand]" />
                     <inputColumn
-                      refId="Package\Attività Flusso di dati\Aggregazione.Inputs[Input aggregazione 1].Columns[sales_usd]"
+                      refId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Inputs[Input aggregazione 1].Columns[sales_usd]"
                       cachedDataType="r8"
                       cachedName="sales_usd"
-                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[sales_usd]" />
+                      lineageId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].Columns[sales_usd]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Attività Flusso di dati\Aggregazione.Outputs[Output aggregazione 1]"
+                  refId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Outputs[Output aggregazione 1]"
                   name="Output aggregazione 1">
                   <properties>
                     <property
@@ -222,16 +222,16 @@
                   </properties>
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Aggregazione.Outputs[Output aggregazione 1].Columns[year]"
+                      refId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Outputs[Output aggregazione 1].Columns[year]"
                       dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Aggregazione.Outputs[Output aggregazione 1].Columns[year]"
+                      lineageId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Outputs[Output aggregazione 1].Columns[year]"
                       name="year">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
-                          name="AggregationColumnId">#{Package\Attività Flusso di dati\Ricerca 1.Outputs[Output corrispondenza ricerca].Columns[year]}</property>
+                          name="AggregationColumnId">#{Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Outputs[Output corrispondenza ricerca].Columns[year]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifica il tipo di aggregazione."
@@ -248,18 +248,18 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Aggregazione.Outputs[Output aggregazione 1].Columns[brand]"
+                      refId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Outputs[Output aggregazione 1].Columns[brand]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Attività Flusso di dati\Aggregazione.Outputs[Output aggregazione 1].Columns[brand]"
+                      lineageId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Outputs[Output aggregazione 1].Columns[brand]"
                       name="brand">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
-                          name="AggregationColumnId">#{Package\Attività Flusso di dati\Ricerca.Outputs[Output corrispondenza ricerca].Columns[brand]}</property>
+                          name="AggregationColumnId">#{Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Outputs[Output corrispondenza ricerca].Columns[brand]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifica il tipo di aggregazione."
@@ -276,16 +276,16 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Aggregazione.Outputs[Output aggregazione 1].Columns[total_sales_usd]"
+                      refId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Outputs[Output aggregazione 1].Columns[total_sales_usd]"
                       dataType="r8"
-                      lineageId="Package\Attività Flusso di dati\Aggregazione.Outputs[Output aggregazione 1].Columns[total_sales_usd]"
+                      lineageId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Outputs[Output aggregazione 1].Columns[total_sales_usd]"
                       name="total_sales_usd">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
-                          name="AggregationColumnId">#{Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[sales_usd]}</property>
+                          name="AggregationColumnId">#{Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].Columns[sales_usd]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifica il tipo di aggregazione."
@@ -307,89 +307,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Attività Flusso di dati\Destinazione file flat"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Destinazione file flat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
-              description="Destinazione file flat"
-              localeId="2057"
-              name="Destinazione file flat"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifica se i dati verranno sovrascritti o accodati nel file di destinazione."
-                  name="Overwrite">true</property>
-                <property
-                  dataType="System.Null"
-                  description="Specifica il testo da scrivere nel file di destinazione prima della scrittura dei dati."
-                  expressionType="Notify"
-                  name="Header" />
-                <property
-                  dataType="System.Boolean"
-                  description="Quando il qualificatore di testo è abilitato, specifica se il qualificatore di testo nei dati scritti nel file di destinazione verrà o meno preceduto da un carattere di escape."
-                  name="EscapeQualifier">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Attività Flusso di dati\Destinazione file flat.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[gpu_tot_sales]"
-                  connectionManagerRefId="Package.ConnectionManagers[gpu_tot_sales]"
-                  name="FlatFileConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat]"
-                  hasSideEffects="true"
-                  name="Input destinazione file flat">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].Columns[year]"
-                      cachedDataType="i4"
-                      cachedName="year"
-                      externalMetadataColumnId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[year]"
-                      lineageId="Package\Attività Flusso di dati\Ordinamento.Outputs[Output ordinamento].Columns[year]" />
-                    <inputColumn
-                      refId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].Columns[brand]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="brand"
-                      externalMetadataColumnId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[brand]"
-                      lineageId="Package\Attività Flusso di dati\Ordinamento.Outputs[Output ordinamento].Columns[brand]" />
-                    <inputColumn
-                      refId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].Columns[total_sales_usd]"
-                      cachedDataType="r8"
-                      cachedName="total_sales_usd"
-                      cachedSortKeyPosition="-1"
-                      externalMetadataColumnId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[total_sales_usd]"
-                      lineageId="Package\Attività Flusso di dati\Ordinamento.Outputs[Output ordinamento].Columns[total_sales_usd]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[year]"
-                      dataType="i4"
-                      name="year" />
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[brand]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="brand" />
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[total_sales_usd]"
-                      dataType="r8"
-                      name="total_sales_usd" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-            </component>
-            <component
-              refId="Package\Attività Flusso di dati\Ordinamento"
+              refId="Package\Attività Flusso di dati\Sort({tot_sales_usd\})"
               componentClassID="Microsoft.Sort"
               contactInfo="Ordinamento;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
               description="Ordina i dati di input in ordine crescente o decrescente quando non possono essere ordinati come la relativa origine. Ad esempio, ordinare i dati delle vendite per 'customer id' prima che vengano scritti in un file flat e recapitati a un altro reparto. Nota: questa trasformazione non è consigliata per i flussi di dati di grandi dimensioni."
-              name="Ordinamento"
+              name="Sort({tot_sales_usd})"
               version="1">
               <properties>
                 <property
@@ -404,14 +326,14 @@
               </properties>
               <inputs>
                 <input
-                  refId="Package\Attività Flusso di dati\Ordinamento.Inputs[Input ordinamento]"
+                  refId="Package\Attività Flusso di dati\Sort({tot_sales_usd\}).Inputs[Input ordinamento]"
                   name="Input ordinamento">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Attività Flusso di dati\Ordinamento.Inputs[Input ordinamento].Columns[year]"
+                      refId="Package\Attività Flusso di dati\Sort({tot_sales_usd\}).Inputs[Input ordinamento].Columns[year]"
                       cachedDataType="i4"
                       cachedName="year"
-                      lineageId="Package\Attività Flusso di dati\Aggregazione.Outputs[Output aggregazione 1].Columns[year]">
+                      lineageId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Outputs[Output aggregazione 1].Columns[year]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -424,12 +346,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Attività Flusso di dati\Ordinamento.Inputs[Input ordinamento].Columns[brand]"
+                      refId="Package\Attività Flusso di dati\Sort({tot_sales_usd\}).Inputs[Input ordinamento].Columns[brand]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="brand"
-                      lineageId="Package\Attività Flusso di dati\Aggregazione.Outputs[Output aggregazione 1].Columns[brand]">
+                      lineageId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Outputs[Output aggregazione 1].Columns[brand]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -442,10 +364,10 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Attività Flusso di dati\Ordinamento.Inputs[Input ordinamento].Columns[total_sales_usd]"
+                      refId="Package\Attività Flusso di dati\Sort({tot_sales_usd\}).Inputs[Input ordinamento].Columns[total_sales_usd]"
                       cachedDataType="r8"
                       cachedName="total_sales_usd"
-                      lineageId="Package\Attività Flusso di dati\Aggregazione.Outputs[Output aggregazione 1].Columns[total_sales_usd]">
+                      lineageId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Outputs[Output aggregazione 1].Columns[total_sales_usd]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -463,42 +385,42 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Attività Flusso di dati\Ordinamento.Outputs[Output ordinamento]"
+                  refId="Package\Attività Flusso di dati\Sort({tot_sales_usd\}).Outputs[Output ordinamento]"
                   isSorted="true"
                   name="Output ordinamento">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Ordinamento.Outputs[Output ordinamento].Columns[year]"
+                      refId="Package\Attività Flusso di dati\Sort({tot_sales_usd\}).Outputs[Output ordinamento].Columns[year]"
                       dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Ordinamento.Outputs[Output ordinamento].Columns[year]"
+                      lineageId="Package\Attività Flusso di dati\Sort({tot_sales_usd\}).Outputs[Output ordinamento].Columns[year]"
                       name="year">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
-                          name="SortColumnId">#{Package\Attività Flusso di dati\Aggregazione.Outputs[Output aggregazione 1].Columns[year]}</property>
+                          name="SortColumnId">#{Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Outputs[Output aggregazione 1].Columns[year]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Ordinamento.Outputs[Output ordinamento].Columns[brand]"
+                      refId="Package\Attività Flusso di dati\Sort({tot_sales_usd\}).Outputs[Output ordinamento].Columns[brand]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Attività Flusso di dati\Ordinamento.Outputs[Output ordinamento].Columns[brand]"
+                      lineageId="Package\Attività Flusso di dati\Sort({tot_sales_usd\}).Outputs[Output ordinamento].Columns[brand]"
                       name="brand">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
-                          name="SortColumnId">#{Package\Attività Flusso di dati\Aggregazione.Outputs[Output aggregazione 1].Columns[brand]}</property>
+                          name="SortColumnId">#{Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Outputs[Output aggregazione 1].Columns[brand]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Ordinamento.Outputs[Output ordinamento].Columns[total_sales_usd]"
+                      refId="Package\Attività Flusso di dati\Sort({tot_sales_usd\}).Outputs[Output ordinamento].Columns[total_sales_usd]"
                       dataType="r8"
-                      lineageId="Package\Attività Flusso di dati\Ordinamento.Outputs[Output ordinamento].Columns[total_sales_usd]"
+                      lineageId="Package\Attività Flusso di dati\Sort({tot_sales_usd\}).Outputs[Output ordinamento].Columns[total_sales_usd]"
                       name="total_sales_usd"
                       sortKeyPosition="-1">
                       <properties>
@@ -506,7 +428,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
-                          name="SortColumnId">#{Package\Attività Flusso di dati\Aggregazione.Outputs[Output aggregazione 1].Columns[total_sales_usd]}</property>
+                          name="SortColumnId">#{Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Outputs[Output aggregazione 1].Columns[total_sales_usd]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -515,165 +437,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Attività Flusso di dati\Origine OLE DB"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
-              description="Origine OLE DB"
-              name="Origine OLE DB"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
-                  name="OpenRowset">[group5].[Gpu_sales]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="Comando SQL da eseguire."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="Variabile che contiene il comando SQL da eseguire."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifica la modalità utilizzata per accedere al database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="Mapping tra i parametri nel comando SQL e le variabili."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Attività Flusso di dati\Origine OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 1]"
-                  description="Connessione di run-time OLE DB utilizzata per accedere al database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB]"
-                  name="Output origine OLE DB">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[gpu_code]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversione"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[gpu_code]"
-                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[gpu_code]"
-                      name="gpu_code"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[time_code]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Conversione"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[time_code]"
-                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[time_code]"
-                      name="time_code"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[sales_usd]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversione"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[sales_usd]"
-                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[sales_usd]"
-                      name="sales_usd"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[gpu_code]"
-                      dataType="i4"
-                      name="gpu_code" />
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[time_code]"
-                      dataType="dbDate"
-                      name="time_code" />
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[geo_code]"
-                      dataType="i4"
-                      name="geo_code" />
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[vendor_code]"
-                      dataType="i4"
-                      name="vendor_code" />
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[sales_usd]"
-                      dataType="r8"
-                      name="sales_usd" />
-                    <externalMetadataColumn
-                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[sales_currency]"
-                      dataType="r8"
-                      name="sales_currency" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB]"
-                  isErrorOut="true"
-                  name="Output errori origine OLE DB">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[gpu_code]"
-                      dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[gpu_code]"
-                      name="gpu_code" />
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[time_code]"
-                      dataType="dbDate"
-                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[time_code]"
-                      name="time_code" />
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                    <outputColumn
-                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[sales_usd]"
-                      dataType="r8"
-                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[sales_usd]"
-                      name="sales_usd" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Attività Flusso di dati\Ricerca"
+              refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code)"
               componentClassID="Microsoft.Lookup"
               contactInfo="Ricerca;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;6"
               description="Crea un join delle colonne aggiuntive al flusso di dati cercando valori in una tabella. Ad esempio, creare un join della colonna 'employee id' alla tabella dei dipendenti per ottenere data di assunzione e nome del dipendente. Questa trasformazione è consigliata quando la memoria disponibile è sufficiente per la tabella di ricerca."
-              name="Ricerca"
+              name="StarJoinIndexFilter(Gpu_product, IdxGpu_code)"
               usesDispositions="true"
               version="6">
               <properties>
@@ -725,7 +493,7 @@ where [refTable].[gpu_code] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifica l'elenco di identificatori di derivazione corrispondenti ai parametri utilizzati dall'istruzione SQL nella proprietà SQLCommand. Le voci nell'elenco sono separate da punti e virgola."
-                  name="ParameterMap">#{Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[gpu_code]};</property>
+                  name="ParameterMap">#{Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].Columns[gpu_code]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
@@ -737,7 +505,7 @@ where [refTable].[gpu_code] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Attività Flusso di dati\Ricerca.Connections[OleDbConnection]"
+                  refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 3]"
                   connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 3]"
                   description="Gestione connessione utilizzata per accedere ai dati di ricerca."
@@ -745,14 +513,14 @@ where [refTable].[gpu_code] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Attività Flusso di dati\Ricerca.Inputs[Input ricerca]"
+                  refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Inputs[Input ricerca]"
                   name="Input ricerca">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Attività Flusso di dati\Ricerca.Inputs[Input ricerca].Columns[gpu_code]"
+                      refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Inputs[Input ricerca].Columns[gpu_code]"
                       cachedDataType="i4"
                       cachedName="gpu_code"
-                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[gpu_code]">
+                      lineageId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].Columns[gpu_code]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -770,20 +538,20 @@ where [refTable].[gpu_code] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Attività Flusso di dati\Ricerca.Outputs[Output corrispondenza ricerca]"
+                  refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Outputs[Output corrispondenza ricerca]"
                   errorOrTruncationOperation="Ricerca"
                   errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Output corrispondenza ricerca"
-                  synchronousInputId="Package\Attività Flusso di dati\Ricerca.Inputs[Input ricerca]">
+                  synchronousInputId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Inputs[Input ricerca]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Ricerca.Outputs[Output corrispondenza ricerca].Columns[brand]"
+                      refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Outputs[Output corrispondenza ricerca].Columns[brand]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Copia colonna"
                       length="50"
-                      lineageId="Package\Attività Flusso di dati\Ricerca.Outputs[Output corrispondenza ricerca].Columns[brand]"
+                      lineageId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Outputs[Output corrispondenza ricerca].Columns[brand]"
                       name="brand"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -797,30 +565,30 @@ where [refTable].[gpu_code] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Attività Flusso di dati\Ricerca.Outputs[Output nessuna corrispondenza ricerca]"
+                  refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Outputs[Output nessuna corrispondenza ricerca]"
                   description="Output ricerca che gestisce le righe senza voci corrispondenti nel set di dati di riferimento. Usare questo output quando la proprietà NoMatchBehavior è impostata su &quot;Invia le righe senza voci corrispondenti all'output nessuna corrispondenza&quot;."
                   exclusionGroup="1"
                   name="Output nessuna corrispondenza ricerca"
-                  synchronousInputId="Package\Attività Flusso di dati\Ricerca.Inputs[Input ricerca]">
+                  synchronousInputId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Inputs[Input ricerca]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Attività Flusso di dati\Ricerca.Outputs[Output errori ricerca]"
+                  refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Outputs[Output errori ricerca]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Output errori ricerca"
-                  synchronousInputId="Package\Attività Flusso di dati\Ricerca.Inputs[Input ricerca]">
+                  synchronousInputId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Inputs[Input ricerca]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Ricerca.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Outputs[Output errori ricerca].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Ricerca.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      lineageId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Outputs[Output errori ricerca].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Ricerca.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Outputs[Output errori ricerca].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Ricerca.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      lineageId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Outputs[Output errori ricerca].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -829,11 +597,11 @@ where [refTable].[gpu_code] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Attività Flusso di dati\Ricerca 1"
+              refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code)"
               componentClassID="Microsoft.Lookup"
               contactInfo="Ricerca;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;6"
               description="Crea un join delle colonne aggiuntive al flusso di dati cercando valori in una tabella. Ad esempio, creare un join della colonna 'employee id' alla tabella dei dipendenti per ottenere data di assunzione e nome del dipendente. Questa trasformazione è consigliata quando la memoria disponibile è sufficiente per la tabella di ricerca."
-              name="Ricerca 1"
+              name="StarJoinIndexFilter(Time, IdxTime_code)"
               usesDispositions="true"
               version="6">
               <properties>
@@ -885,7 +653,7 @@ where [refTable].[time_code] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifica l'elenco di identificatori di derivazione corrispondenti ai parametri utilizzati dall'istruzione SQL nella proprietà SQLCommand. Le voci nell'elenco sono separate da punti e virgola."
-                  name="ParameterMap">#{Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[time_code]};</property>
+                  name="ParameterMap">#{Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].Columns[time_code]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
@@ -897,7 +665,7 @@ where [refTable].[time_code] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Attività Flusso di dati\Ricerca 1.Connections[OleDbConnection]"
+                  refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 4]"
                   connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 4]"
                   description="Gestione connessione utilizzata per accedere ai dati di ricerca."
@@ -905,14 +673,14 @@ where [refTable].[time_code] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Attività Flusso di dati\Ricerca 1.Inputs[Input ricerca]"
+                  refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Inputs[Input ricerca]"
                   name="Input ricerca">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Attività Flusso di dati\Ricerca 1.Inputs[Input ricerca].Columns[time_code]"
+                      refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Inputs[Input ricerca].Columns[time_code]"
                       cachedDataType="dbDate"
                       cachedName="time_code"
-                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[time_code]">
+                      lineageId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].Columns[time_code]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -930,18 +698,18 @@ where [refTable].[time_code] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Attività Flusso di dati\Ricerca 1.Outputs[Output corrispondenza ricerca]"
+                  refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Outputs[Output corrispondenza ricerca]"
                   errorOrTruncationOperation="Ricerca"
                   errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Output corrispondenza ricerca"
-                  synchronousInputId="Package\Attività Flusso di dati\Ricerca 1.Inputs[Input ricerca]">
+                  synchronousInputId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Inputs[Input ricerca]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Ricerca 1.Outputs[Output corrispondenza ricerca].Columns[year]"
+                      refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Outputs[Output corrispondenza ricerca].Columns[year]"
                       dataType="i4"
                       errorOrTruncationOperation="Copia colonna"
-                      lineageId="Package\Attività Flusso di dati\Ricerca 1.Outputs[Output corrispondenza ricerca].Columns[year]"
+                      lineageId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Outputs[Output corrispondenza ricerca].Columns[year]"
                       name="year"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -955,30 +723,30 @@ where [refTable].[time_code] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Attività Flusso di dati\Ricerca 1.Outputs[Output nessuna corrispondenza ricerca]"
+                  refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Outputs[Output nessuna corrispondenza ricerca]"
                   description="Output ricerca che gestisce le righe senza voci corrispondenti nel set di dati di riferimento. Usare questo output quando la proprietà NoMatchBehavior è impostata su &quot;Invia le righe senza voci corrispondenti all'output nessuna corrispondenza&quot;."
                   exclusionGroup="1"
                   name="Output nessuna corrispondenza ricerca"
-                  synchronousInputId="Package\Attività Flusso di dati\Ricerca 1.Inputs[Input ricerca]">
+                  synchronousInputId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Inputs[Input ricerca]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Attività Flusso di dati\Ricerca 1.Outputs[Output errori ricerca]"
+                  refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Outputs[Output errori ricerca]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Output errori ricerca"
-                  synchronousInputId="Package\Attività Flusso di dati\Ricerca 1.Inputs[Input ricerca]">
+                  synchronousInputId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Inputs[Input ricerca]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Ricerca 1.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Outputs[Output errori ricerca].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Ricerca 1.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      lineageId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Outputs[Output errori ricerca].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Ricerca 1.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      refId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Outputs[Output errori ricerca].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Ricerca 1.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      lineageId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Outputs[Output errori ricerca].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -986,33 +754,265 @@ where [refTable].[time_code] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Attività Flusso di dati\TableScan(Gpu_sales)"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+              description="Origine OLE DB"
+              name="TableScan(Gpu_sales)"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowset">[group5].[Gpu_sales]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL da eseguire."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variabile che contiene il comando SQL da eseguire."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la modalità utilizzata per accedere al database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mapping tra i parametri nel comando SQL e le variabili."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5 1]"
+                  description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB]"
+                  name="Output origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].Columns[gpu_code]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].ExternalColumns[gpu_code]"
+                      lineageId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].Columns[gpu_code]"
+                      name="gpu_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].Columns[time_code]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].ExternalColumns[time_code]"
+                      lineageId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].Columns[time_code]"
+                      name="time_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].Columns[sales_usd]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].ExternalColumns[sales_usd]"
+                      lineageId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].Columns[sales_usd]"
+                      name="sales_usd"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].ExternalColumns[gpu_code]"
+                      dataType="i4"
+                      name="gpu_code" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].ExternalColumns[time_code]"
+                      dataType="dbDate"
+                      name="time_code" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].ExternalColumns[geo_code]"
+                      dataType="i4"
+                      name="geo_code" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].ExternalColumns[vendor_code]"
+                      dataType="i4"
+                      name="vendor_code" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].ExternalColumns[sales_usd]"
+                      dataType="r8"
+                      name="sales_usd" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].ExternalColumns[sales_currency]"
+                      dataType="r8"
+                      name="sales_currency" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output errori origine OLE DB]"
+                  isErrorOut="true"
+                  name="Output errori origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output errori origine OLE DB].Columns[gpu_code]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output errori origine OLE DB].Columns[gpu_code]"
+                      name="gpu_code" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output errori origine OLE DB].Columns[time_code]"
+                      dataType="dbDate"
+                      lineageId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output errori origine OLE DB].Columns[time_code]"
+                      name="time_code" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output errori origine OLE DB].Columns[sales_usd]"
+                      dataType="r8"
+                      lineageId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output errori origine OLE DB].Columns[sales_usd]"
+                      name="sales_usd" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\WriteFile(gpu_tot_sales)"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destinazione file flat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+              description="Destinazione file flat"
+              localeId="2057"
+              name="WriteFile(gpu_tot_sales)"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifica se i dati verranno sovrascritti o accodati nel file di destinazione."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il testo da scrivere nel file di destinazione prima della scrittura dei dati."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Quando il qualificatore di testo è abilitato, specifica se il qualificatore di testo nei dati scritti nel file di destinazione verrà o meno preceduto da un carattere di escape."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Attività Flusso di dati\WriteFile(gpu_tot_sales).Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[gpu_tot_sales]"
+                  connectionManagerRefId="Package.ConnectionManagers[gpu_tot_sales]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Attività Flusso di dati\WriteFile(gpu_tot_sales).Inputs[Input destinazione file flat]"
+                  hasSideEffects="true"
+                  name="Input destinazione file flat">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\WriteFile(gpu_tot_sales).Inputs[Input destinazione file flat].Columns[year]"
+                      cachedDataType="i4"
+                      cachedName="year"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\WriteFile(gpu_tot_sales).Inputs[Input destinazione file flat].ExternalColumns[year]"
+                      lineageId="Package\Attività Flusso di dati\Sort({tot_sales_usd\}).Outputs[Output ordinamento].Columns[year]" />
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\WriteFile(gpu_tot_sales).Inputs[Input destinazione file flat].Columns[brand]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="brand"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\WriteFile(gpu_tot_sales).Inputs[Input destinazione file flat].ExternalColumns[brand]"
+                      lineageId="Package\Attività Flusso di dati\Sort({tot_sales_usd\}).Outputs[Output ordinamento].Columns[brand]" />
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\WriteFile(gpu_tot_sales).Inputs[Input destinazione file flat].Columns[total_sales_usd]"
+                      cachedDataType="r8"
+                      cachedName="total_sales_usd"
+                      cachedSortKeyPosition="-1"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\WriteFile(gpu_tot_sales).Inputs[Input destinazione file flat].ExternalColumns[total_sales_usd]"
+                      lineageId="Package\Attività Flusso di dati\Sort({tot_sales_usd\}).Outputs[Output ordinamento].Columns[total_sales_usd]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\WriteFile(gpu_tot_sales).Inputs[Input destinazione file flat].ExternalColumns[year]"
+                      dataType="i4"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\WriteFile(gpu_tot_sales).Inputs[Input destinazione file flat].ExternalColumns[brand]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="brand" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\WriteFile(gpu_tot_sales).Inputs[Input destinazione file flat].ExternalColumns[total_sales_usd]"
+                      dataType="r8"
+                      name="total_sales_usd" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\Attività Flusso di dati.Paths[Output aggregazione 1]"
-              endId="Package\Attività Flusso di dati\Ordinamento.Inputs[Input ordinamento]"
+              endId="Package\Attività Flusso di dati\Sort({tot_sales_usd\}).Inputs[Input ordinamento]"
               name="Output aggregazione 1"
-              startId="Package\Attività Flusso di dati\Aggregazione.Outputs[Output aggregazione 1]" />
+              startId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Outputs[Output aggregazione 1]" />
             <path
               refId="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca]"
-              endId="Package\Attività Flusso di dati\Ricerca 1.Inputs[Input ricerca]"
+              endId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Inputs[Input ricerca]"
               name="Output corrispondenza ricerca"
-              startId="Package\Attività Flusso di dati\Ricerca.Outputs[Output corrispondenza ricerca]" />
+              startId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Outputs[Output corrispondenza ricerca]" />
             <path
               refId="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca1]"
-              endId="Package\Attività Flusso di dati\Aggregazione.Inputs[Input aggregazione 1]"
+              endId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Inputs[Input aggregazione 1]"
               name="Output corrispondenza ricerca"
-              startId="Package\Attività Flusso di dati\Ricerca 1.Outputs[Output corrispondenza ricerca]" />
+              startId="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code).Outputs[Output corrispondenza ricerca]" />
             <path
               refId="Package\Attività Flusso di dati.Paths[Output ordinamento]"
-              endId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat]"
+              endId="Package\Attività Flusso di dati\WriteFile(gpu_tot_sales).Inputs[Input destinazione file flat]"
               name="Output ordinamento"
-              startId="Package\Attività Flusso di dati\Ordinamento.Outputs[Output ordinamento]" />
+              startId="Package\Attività Flusso di dati\Sort({tot_sales_usd\}).Outputs[Output ordinamento]" />
             <path
               refId="Package\Attività Flusso di dati.Paths[Output origine OLE DB]"
-              endId="Package\Attività Flusso di dati\Ricerca.Inputs[Input ricerca]"
+              endId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Inputs[Input ricerca]"
               name="Output origine OLE DB"
-              startId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB]" />
+              startId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1031,7 +1031,7 @@ where [refTable].[time_code] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="177.333333333334,42"
+          Size="177.6,41.6"
           Id="Package\Attività Flusso di dati"
           TopLeft="136,88" />
       </GraphLayout>
@@ -1043,43 +1043,43 @@ where [refTable].[time_code] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="174,42"
-          Id="Package\Attività Flusso di dati\Destinazione file flat"
-          TopLeft="277,14" />
+          Size="304,41.6"
+          Id="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code)"
+          TopLeft="220.999998467309,312.235294106922" />
         <NodeLayout
-          Size="122,42"
-          Id="Package\Attività Flusso di dati\Ricerca 1"
-          TopLeft="300,236" />
-        <NodeLayout
-          Size="152,42"
-          Id="Package\Attività Flusso di dati\Origine OLE DB"
+          Size="182.4,41.6"
+          Id="Package\Attività Flusso di dati\TableScan(Gpu_sales)"
           TopLeft="284.375000009313,389.368421078389" />
         <NodeLayout
-          Size="140,42"
-          Id="Package\Attività Flusso di dati\Ordinamento"
-          TopLeft="291,85" />
+          Size="180,41.6"
+          Id="Package\Attività Flusso di dati\Sort({tot_sales_usd\})"
+          TopLeft="295.2857143587,85" />
         <NodeLayout
-          Size="113.333333333334,42"
-          Id="Package\Attività Flusso di dati\Ricerca"
-          TopLeft="311,313" />
+          Size="192.8,41.6"
+          Id="Package\Attività Flusso di dati\WriteFile(gpu_tot_sales)"
+          TopLeft="287.000000170299,14.7647058930777" />
         <NodeLayout
-          Size="142.666666666667,42"
-          Id="Package\Attività Flusso di dati\Aggregazione"
-          TopLeft="284,155" />
+          Size="270.4,41.6"
+          Id="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code)"
+          TopLeft="243.571427610456,232.176470534612" />
+        <NodeLayout
+          Size="366.4,41.6"
+          Id="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\})"
+          TopLeft="201.857141458258,158.823529465388" />
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output origine OLE DB]"
-          TopLeft="364.02083333799,389.368421078389">
+          TopLeft="374.287499238311,389.368421078389">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-34.3684210783887"
+              EndConnector="0,-35.533126971467"
               Start="0,0"
-              End="0,-26.8684210783887">
+              End="0,-28.033126971467">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-26.8684210783887" />
+                    End="0,-28.033126971467" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1090,18 +1090,18 @@ where [refTable].[time_code] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output ordinamento]"
-          TopLeft="362.5,85">
+          TopLeft="384.342857264499,85">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-29"
+              EndConnector="0,-28.6352941069223"
               Start="0,0"
-              End="0,-21.5">
+              End="0,-21.1352941069223">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-21.5" />
+                    End="0,-21.1352941069223" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1112,66 +1112,66 @@ where [refTable].[time_code] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca1]"
-          TopLeft="358.25,236">
+          TopLeft="381.914284534357,232.176470534612">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-39"
+              EndConnector="0,-31.7529410692235"
               Start="0,0"
-              End="0,-31.5">
+              End="0,-24.2529410692235">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-31.5" />
+                    End="0,-24.2529410692235" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-66.78587890625,-21.5546875,133.5717578125,11.609375"
+              BoundingBox="-66.78587890625,-17.9311580346117,133.5717578125,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca]"
-          TopLeft="364.25,313">
+          TopLeft="375.885713038883,312.235294106922">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-35"
+              EndConnector="0,-38.45882357231"
               Start="0,0"
-              End="0,-27.5">
+              End="0,-30.95882357231">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-27.5" />
+                    End="0,-30.95882357231" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-66.78587890625,-19.5546875,133.5717578125,11.609375"
+              BoundingBox="-66.78587890625,-21.284099286155,133.5717578125,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output aggregazione 1]"
-          TopLeft="358.25,155">
+          TopLeft="385.171427908479,158.823529465388">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-28"
+              EndConnector="0,-32.2235294653883"
               Start="0,0"
-              End="0,-20.5">
+              End="0,-24.7235294653883">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-20.5" />
+                    End="0,-24.7235294653883" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1184,22 +1184,22 @@ where [refTable].[time_code] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Attività Flusso di dati\Ricerca 1">
+    design-time-name="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code)">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[group5].[Time]</Value>
+          type="q3:string">[group5].[Gpu_product]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1207,7 +1207,7 @@ where [refTable].[time_code] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Attività Flusso di dati\Origine OLE DB">
+    design-time-name="Package\Attività Flusso di dati\TableScan(Gpu_sales)">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1220,22 +1220,22 @@ where [refTable].[time_code] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Attività Flusso di dati\Ricerca">
+    design-time-name="Package\Attività Flusso di dati\StarJoinIndexFilter(Time, IdxTime_code)">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[group5].[Gpu_product]</Value>
+          type="q3:string">[group5].[Time]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

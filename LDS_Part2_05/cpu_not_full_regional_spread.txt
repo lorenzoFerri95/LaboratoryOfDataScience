@@ -1,0 +1,87 @@
+name
+Amd Opteron 1385
+Amd Opteron 4238
+Amd Athlon X4 760K
+Amd Epyc 7601
+Amd Epyc 7281
+Amd Epyc 7351
+Amd A4-6320
+Amd Opteron 6348
+Amd Epyc 7351P
+Amd Opteron 6172
+Amd Athlon Ii X3 425
+Amd Opteron 3380
+Amd Opteron 6380
+Amd A4-4020
+Amd Phenom Ii X2 545
+Amd Fx-8150
+Amd Opteron 275
+Amd Opteron 875
+Amd A8-6500
+Amd Phenom Ii X4 955
+Amd Epyc 7401
+Amd Opteron 6274
+Amd Epyc 7401P
+Amd Opteron 2382
+Amd Athlon Ii X3 435
+Amd A8-5600K
+Amd Fx-6100
+Amd Phenom Ii X4 840
+Amd Phenom Ii X2 555
+Amd Athlon 64 X2 6000+
+Amd Athlon Ii X2 250
+Amd Opteron 6204
+Amd Opteron 6168
+Amd Opteron 6276
+Amd Opteron 6376
+Amd Opteron 6370P
+Amd Opteron 6338P
+Amd Opteron 2384
+Amd A8-3870K
+Amd Sempron 145
+Amd Fx-4320
+Amd Fx-4130
+Amd Athlon X4 840
+Amd Phenom Ii X2 565
+Amd Epyc 7451
+Amd Opteron 8214
+Amd Opteron 6378
+Amd Athlon X2 340
+Amd Opteron 4386
+Amd Athlon Ii X4 631
+Amd Athlon X4 750K
+Amd Opteron 4130
+Amd Opteron 270
+Amd Opteron 870
+Amd Athlon Ii X3 455
+Amd Opteron 6308
+Amd Sempron 64 Le-1100
+Amd Opteron 8216
+Amd Opteron 248
+Amd Athlon Ii X2 270
+Amd Phenom Ii X3 720
+Amd Athlon 64 3800+
+Amd Athlon 64 X2 5600+
+Amd Epyc 7501
+Amd A6-6420K
+Amd Epyc 7251
+Amd Opteron 3320 Ee
+Amd Opteron 4234
+Amd Opteron 4334
+Amd Ryzen 7 Pro 1700X
+Amd Sempron 130
+Amd A8-5500
+Amd Athlon Ii X3 450
+Amd A6-3650
+Amd Opteron 252
+Amd Opteron 6328
+Amd Epyc 7301
+Amd Epyc 7551
+Amd Athlon X2 370K
+Amd Opteron 3350 He
+Amd Opteron 6344
+Amd A8-3850
+Amd Epyc 7551P
+Amd Opteron 6282 Se
+Amd Athlon Ii X3 460
+Amd Athlon X2 4450E
