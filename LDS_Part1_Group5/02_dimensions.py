@@ -30,10 +30,11 @@ for filename, table in files_tables:
     
     # Build query
     tablename = "[Group5HWMart].[group5].["+ table +"]"
-    placeholders = ["?" for i in range(len(header))]
-    placeholders = str(tuple(placeholders)).replace("'", "")
+    placeholders = "?"
+    for i in range(len(header) - 1): 
+        placeholders += ",?"
     
-    query = "INSERT INTO "+ tablename + " VALUES " + placeholders
+    query = "INSERT INTO "+ tablename + " VALUES " + "("+placeholders+")"
     
     # Execute queries
     for line in file:
