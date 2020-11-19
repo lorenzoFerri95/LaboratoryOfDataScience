@@ -1,4 +1,4 @@
-year,brand,total_sales_usd
+year,brand,tot_sales_usd
 2013,HIS,6934.3940718425029
 2013,VTX3D,21794.647161865389
 2013,Matrox,36165.115013851915

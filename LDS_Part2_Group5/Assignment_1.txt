@@ -1,0 +1,109 @@
+cpu_code,cpu_name
+56,Amd A8-6500
+69,Amd Athlon 5350
+131,Amd Athlon Ii X3 425
+262,Amd Opteron 3380
+327,Amd Opteron 8214
+191,Amd Epyc 7351
+230,Amd Opteron 1385
+163,Amd Athlon X4 760K
+52,Amd A8-3850
+136,Amd Athlon Ii X3 455
+195,Amd Epyc 7451
+190,Amd Epyc 7301
+303,Amd Opteron 6282 Se
+189,Amd Epyc 7281
+135,Amd Athlon Ii X3 450
+313,Amd Opteron 6344
+119,Amd Athlon Ii X2 250
+315,Amd Opteron 6348
+267,Amd Opteron 4238
+344,Amd Opteron 870
+209,Amd Fx-6100
+320,Amd Opteron 6376
+144,Amd Athlon Ii X4 631
+194,Amd Epyc 7401P
+153,Amd Athlon X2 340
+361,Amd Phenom Ii X3 720
+157,Amd Athlon X2 4450E
+329,Amd Opteron 8216
+265,Amd Opteron 4130
+102,Amd Athlon 64 X2 5600+
+55,Amd A8-5600K
+298,Amd Opteron 6274
+323,Amd Opteron 6378
+257,Amd Opteron 3320 Ee
+37,Amd A4-6320
+244,Amd Opteron 2384
+192,Amd Epyc 7351P
+368,Amd Phenom Ii X4 840
+259,Amd Opteron 3350 He
+156,Amd Athlon X2 370K
+242,Amd Opteron 2382
+356,Amd Phenom Ii X2 565
+309,Amd Opteron 6328
+137,Amd Athlon Ii X3 460
+252,Amd Opteron 252
+445,Amd Sempron 3850
+197,Amd Epyc 7551
+42,Amd A6-3650
+32,Amd A4-5300
+428,Amd Sempron 130
+273,Amd Opteron 4386
+300,Amd Opteron 6276
+31,Amd A4-4020
+351,Amd Phenom Ii X2 545
+164,Amd Athlon X4 840
+196,Amd Epyc 7501
+152,Amd Athlon X2 340
+446,Amd Sempron 64 Le-1100
+290,Amd Opteron 6204
+54,Amd A8-5500
+367,Amd Phenom Ii X4 840
+305,Amd Opteron 6308
+378,Amd Phenom Ii X4 955
+104,Amd Athlon 64 X2 6000+
+166,Amd Athlon X4 845
+436,Amd Sempron 2650
+193,Amd Epyc 7401
+318,Amd Opteron 6370P
+132,Amd Athlon Ii X3 435
+126,Amd Athlon Ii X2 270
+255,Amd Opteron 275
+353,Amd Phenom Ii X2 555
+314,Amd Opteron 6344
+307,Amd Opteron 6320
+266,Amd Opteron 4234
+270,Amd Opteron 4334
+188,Amd Epyc 7251
+284,Amd Opteron 6172
+68,Amd Athlon 5150
+430,Amd Sempron 145
+282,Amd Opteron 6168
+254,Amd Opteron 270
+345,Amd Opteron 875
+168,Amd Athlon X4 860K
+274,Amd Opteron 4386
+170,Amd Athlon X4 870K
+30,Amd A4-4020
+34,Amd A4-6300
+218,Amd Fx-8150
+199,Amd Epyc 7601
+422,Amd Ryzen 7 Pro 1700X
+324,Amd Opteron 6380
+311,Amd Opteron 6338P
+322,Amd Opteron 6378
+207,Amd Fx-4320
+251,Amd Opteron 248
+79,Amd Athlon 64 3800+
+172,Amd Athlon X4 880K
+202,Amd Fx-4130
+120,Amd Athlon Ii X2 250
+155,Amd Athlon X2 370K
+28,Amd A4-4000
+162,Amd Athlon X4 750K
+53,Amd A8-3870K
+46,Amd A6-6420K
+38,Amd A4-6320
+310,Amd Opteron 6328
+198,Amd Epyc 7551P
