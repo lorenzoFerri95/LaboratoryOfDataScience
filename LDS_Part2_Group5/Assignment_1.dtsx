@@ -11,8 +11,8 @@
   DTS:LocaleID="1040"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="46"
-  DTS:VersionGUID="{526B5A00-D82F-42E3-95CE-EDC6B63E74D8}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{E2C893F2-C35E-4BB5-8FBF-EF02617F8FCE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACWJUwckAvh3KFm8I+7KEH9OzsaWTgylEvb9HAzE+d6WAAAAAAOgAAAAAIAACAAAABsstGt0nwMOvTXRZw3Hr+8vnUgQ7V46cJY49nI6Rav/xAAAADya4RaQwiPOzLLtfnIkc7aQAAAAH++zUS4djZvRCPFbpwzdaSOACb/uWE1LSfE46CqFQ9JzjDbV6qgThRRNh5IarMc+XocOUzhq/TMuTExlsDBZBY</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD4x/rzCWtuXcxn21sElBRoWKBpw3xc7XUuBrgWTolxbAAAAAAOgAAAAAIAACAAAAAIFxplggre5aJwXm3rvmfxkUL6o+yJsU6O6DNYpLsSMhAAAAC1ZedRJXA/HI+m3iQZbZjRQAAAAH7WkGuJe+1mtV1WdTUnuhJHOetsa9lNIE5AbVlK8PMlc++cbZTGRM0Ibooqz9uU7i2HinlGX5HyCC/ceXg5JMM</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -124,20 +124,20 @@
               </outputs>
             </component>
             <component
-              refId="Package\Attività Flusso di dati\Filter(AMD)"
+              refId="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD)"
               componentClassID="Microsoft.ConditionalSplit"
               contactInfo="Suddivisione condizionale;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
               description="Indirizza righe di dati a output diversi a seconda del contenuto dei dati. Usare le condizioni (espressioni SSIS) per specificare le righe da indirizzare. Ad esempio, separare i record da eliminare da quelli pronti per essere caricati oppure indirizzare unicamente un subset di record."
-              name="Filter(AMD)"
+              name="Filter(brand &lt;equal&gt; AMD)"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Attività Flusso di dati\Filter(AMD).Inputs[Input suddivisione condizionale]"
+                  refId="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD).Inputs[Input suddivisione condizionale]"
                   description="Input della trasformazione Suddivisione condizionale"
                   name="Input suddivisione condizionale">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Attività Flusso di dati\Filter(AMD).Inputs[Input suddivisione condizionale].Columns[brand]"
+                      refId="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD).Inputs[Input suddivisione condizionale].Columns[brand]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -149,13 +149,13 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Attività Flusso di dati\Filter(AMD).Outputs[AMD_sales]"
+                  refId="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD).Outputs[AMD_sales]"
                   description="Output 1 della trasformazione Suddivisione condizionale"
                   errorOrTruncationOperation="Calcolo"
                   errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="AMD_sales"
-                  synchronousInputId="Package\Attività Flusso di dati\Filter(AMD).Inputs[Input suddivisione condizionale]"
+                  synchronousInputId="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD).Inputs[Input suddivisione condizionale]"
                   truncationRowDisposition="FailComponent">
                   <properties>
                     <property
@@ -177,11 +177,11 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Attività Flusso di dati\Filter(AMD).Outputs[AMD]"
+                  refId="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD).Outputs[not_AMD_sales]"
                   description="Output predefinito per la trasformazione Suddivisione condizionale"
                   exclusionGroup="1"
-                  name="AMD"
-                  synchronousInputId="Package\Attività Flusso di dati\Filter(AMD).Inputs[Input suddivisione condizionale]">
+                  name="not_AMD_sales"
+                  synchronousInputId="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD).Inputs[Input suddivisione condizionale]">
                   <properties>
                     <property
                       dataType="System.Boolean"
@@ -190,23 +190,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Attività Flusso di dati\Filter(AMD).Outputs[Output errori suddivisione condizionale]"
+                  refId="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD).Outputs[Output errori suddivisione condizionale]"
                   description="Output degli errori per la trasformazione Suddivisione condizionale"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Output errori suddivisione condizionale"
-                  synchronousInputId="Package\Attività Flusso di dati\Filter(AMD).Inputs[Input suddivisione condizionale]">
+                  synchronousInputId="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD).Inputs[Input suddivisione condizionale]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Filter(AMD).Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                      refId="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD).Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Filter(AMD).Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                      lineageId="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD).Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Filter(AMD).Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                      refId="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD).Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Filter(AMD).Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                      lineageId="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD).Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -215,20 +215,20 @@
               </outputs>
             </component>
             <component
-              refId="Package\Attività Flusso di dati\Filter(Germany)"
+              refId="Package\Attività Flusso di dati\Filter(country &lt;equal&gt; Germany)"
               componentClassID="Microsoft.ConditionalSplit"
               contactInfo="Suddivisione condizionale;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
               description="Indirizza righe di dati a output diversi a seconda del contenuto dei dati. Usare le condizioni (espressioni SSIS) per specificare le righe da indirizzare. Ad esempio, separare i record da eliminare da quelli pronti per essere caricati oppure indirizzare unicamente un subset di record."
-              name="Filter(Germany)"
+              name="Filter(country &lt;equal&gt; Germany)"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Attività Flusso di dati\Filter(Germany).Inputs[Input suddivisione condizionale]"
+                  refId="Package\Attività Flusso di dati\Filter(country &lt;equal&gt; Germany).Inputs[Input suddivisione condizionale]"
                   description="Input della trasformazione Suddivisione condizionale"
                   name="Input suddivisione condizionale">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Attività Flusso di dati\Filter(Germany).Inputs[Input suddivisione condizionale].Columns[country]"
+                      refId="Package\Attività Flusso di dati\Filter(country &lt;equal&gt; Germany).Inputs[Input suddivisione condizionale].Columns[country]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -240,13 +240,13 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Attività Flusso di dati\Filter(Germany).Outputs[Germany_sales]"
+                  refId="Package\Attività Flusso di dati\Filter(country &lt;equal&gt; Germany).Outputs[Germany_sales]"
                   description="Output 1 della trasformazione Suddivisione condizionale"
                   errorOrTruncationOperation="Calcolo"
                   errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Germany_sales"
-                  synchronousInputId="Package\Attività Flusso di dati\Filter(Germany).Inputs[Input suddivisione condizionale]"
+                  synchronousInputId="Package\Attività Flusso di dati\Filter(country &lt;equal&gt; Germany).Inputs[Input suddivisione condizionale]"
                   truncationRowDisposition="FailComponent">
                   <properties>
                     <property
@@ -268,11 +268,11 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Attività Flusso di dati\Filter(Germany).Outputs[Germany]"
+                  refId="Package\Attività Flusso di dati\Filter(country &lt;equal&gt; Germany).Outputs[not_Germany_sales]"
                   description="Output predefinito per la trasformazione Suddivisione condizionale"
                   exclusionGroup="1"
-                  name="Germany"
-                  synchronousInputId="Package\Attività Flusso di dati\Filter(Germany).Inputs[Input suddivisione condizionale]">
+                  name="not_Germany_sales"
+                  synchronousInputId="Package\Attività Flusso di dati\Filter(country &lt;equal&gt; Germany).Inputs[Input suddivisione condizionale]">
                   <properties>
                     <property
                       dataType="System.Boolean"
@@ -281,23 +281,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Attività Flusso di dati\Filter(Germany).Outputs[Output errori suddivisione condizionale]"
+                  refId="Package\Attività Flusso di dati\Filter(country &lt;equal&gt; Germany).Outputs[Output errori suddivisione condizionale]"
                   description="Output degli errori per la trasformazione Suddivisione condizionale"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Output errori suddivisione condizionale"
-                  synchronousInputId="Package\Attività Flusso di dati\Filter(Germany).Inputs[Input suddivisione condizionale]">
+                  synchronousInputId="Package\Attività Flusso di dati\Filter(country &lt;equal&gt; Germany).Inputs[Input suddivisione condizionale]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Filter(Germany).Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                      refId="Package\Attività Flusso di dati\Filter(country &lt;equal&gt; Germany).Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Filter(Germany).Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                      lineageId="Package\Attività Flusso di dati\Filter(country &lt;equal&gt; Germany).Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Filter(Germany).Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                      refId="Package\Attività Flusso di dati\Filter(country &lt;equal&gt; Germany).Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Filter(Germany).Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                      lineageId="Package\Attività Flusso di dati\Filter(country &lt;equal&gt; Germany).Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -362,10 +362,10 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Attività Flusso di dati\Filter(nbr_distinct_regions &lt; nbr_distinct_regions_2).Outputs[regional_spread]"
+                  refId="Package\Attività Flusso di dati\Filter(nbr_distinct_regions &lt; nbr_distinct_regions_2).Outputs[full_regional_spread]"
                   description="Output predefinito per la trasformazione Suddivisione condizionale"
                   exclusionGroup="1"
-                  name="regional_spread"
+                  name="full_regional_spread"
                   synchronousInputId="Package\Attività Flusso di dati\Filter(nbr_distinct_regions &lt; nbr_distinct_regions_2).Inputs[Input suddivisione condizionale]">
                   <properties>
                     <property
@@ -1714,12 +1714,12 @@ where [refTable].[geo_code] = ?</property>
               refId="Package\Attività Flusso di dati.Paths[AMD_sales]"
               endId="Package\Attività Flusso di dati\StarJoinIndexFilter(Geography, IdxGeo_code).Inputs[Input ricerca]"
               name="AMD_sales"
-              startId="Package\Attività Flusso di dati\Filter(AMD).Outputs[AMD_sales]" />
+              startId="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD).Outputs[AMD_sales]" />
             <path
               refId="Package\Attività Flusso di dati.Paths[Germany_sales]"
               endId="Package\Attività Flusso di dati\DuplicateTable.Inputs[Multicast Input 1]"
               name="Germany_sales"
-              startId="Package\Attività Flusso di dati\Filter(Germany).Outputs[Germany_sales]" />
+              startId="Package\Attività Flusso di dati\Filter(country &lt;equal&gt; Germany).Outputs[Germany_sales]" />
             <path
               refId="Package\Attività Flusso di dati.Paths[not_full_regional_spread]"
               endId="Package\Attività Flusso di dati\WriteFile(&quot;Assignment_1&quot;).Inputs[Input destinazione file flat]"
@@ -1737,12 +1737,12 @@ where [refTable].[geo_code] = ?</property>
               startId="Package\Attività Flusso di dati\GroupBy({cpu_code, cpu_name, country\}, {COUNT(DISTINCT region) AS nbr_distinct_regions\}).Outputs[Output aggregazione 1]" />
             <path
               refId="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca]"
-              endId="Package\Attività Flusso di dati\Filter(AMD).Inputs[Input suddivisione condizionale]"
+              endId="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD).Inputs[Input suddivisione condizionale]"
               name="Output corrispondenza ricerca"
               startId="Package\Attività Flusso di dati\StarJoinIndexFilter(Cpu_product, IdxCpu_code).Outputs[Output corrispondenza ricerca]" />
             <path
               refId="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca1]"
-              endId="Package\Attività Flusso di dati\Filter(Germany).Inputs[Input suddivisione condizionale]"
+              endId="Package\Attività Flusso di dati\Filter(country &lt;equal&gt; Germany).Inputs[Input suddivisione condizionale]"
               name="Output corrispondenza ricerca"
               startId="Package\Attività Flusso di dati\StarJoinIndexFilter(Geography, IdxGeo_code).Outputs[Output corrispondenza ricerca]" />
             <path
@@ -1833,9 +1833,9 @@ where [refTable].[geo_code] = ?</property>
           Id="Package\Attività Flusso di dati\WriteFile(&quot;Assignment_1&quot;)"
           TopLeft="545.657151591048,12.3058825030871" />
         <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Attività Flusso di dati\Filter(Germany)"
-          TopLeft="577.857152697992,425.752946721147" />
+          Size="235.2,41.6"
+          Id="Package\Attività Flusso di dati\Filter(country &lt;equal&gt; Germany)"
+          TopLeft="542.142866375496,428.04706440038" />
         <NodeLayout
           Size="302.4,41.6"
           Id="Package\Attività Flusso di dati\StarJoinIndexFilter(Cpu_product, IdxCpu_code)"
@@ -1849,9 +1849,9 @@ where [refTable].[geo_code] = ?</property>
           Id="Package\Attività Flusso di dati\StarJoinIndexFilter(Geography, IdxGeo_code)"
           TopLeft="510.000008685249,505.941182444251" />
         <NodeLayout
-          Size="132,41.6"
-          Id="Package\Attività Flusso di dati\Filter(AMD)"
-          TopLeft="586.428581415391,580.882359965861" />
+          Size="206.4,41.6"
+          Id="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD)"
+          TopLeft="553.571437998694,578.588242286628" />
         <NodeLayout
           Size="148,41.6"
           Id="Package\Attività Flusso di dati\DuplicateTable"
@@ -1904,49 +1904,49 @@ where [refTable].[geo_code] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Germany_sales]"
-          TopLeft="653.771438424442,425.752946721147">
+          TopLeft="656.514295263194,428.04706440038">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-36.6588243015919"
+              EndConnector="0,-38.9529419808249"
               Start="0,0"
-              End="0,-29.1588243015919">
+              End="0,-31.4529419808249">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-29.1588243015919" />
+                    End="0,-31.4529419808249" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-34.20509765625,-20.384099650796,68.4101953125,11.609375"
+              BoundingBox="-34.20509765625,-21.5311584904125,68.4101953125,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[AMD_sales]"
-          TopLeft="654.61429505032,580.882359965861">
+          TopLeft="656.785723341972,578.588242286628">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-33.3411775216101"
+              EndConnector="0,-31.0470598423773"
               Start="0,0"
-              End="0,-25.8411775216101">
+              End="0,-23.5470598423773">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-25.8411775216101" />
+                    End="0,-23.5470598423773" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-24.76564453125,-18.4518387608051,49.5312890625,11.0625"
+              BoundingBox="-24.76564453125,-17.3047799211886,49.5312890625,11.0625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2108,49 +2108,49 @@ where [refTable].[geo_code] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca1]"
-          TopLeft="655.52858069162,505.941182444251">
+          TopLeft="658.271437530372,505.941182444251">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-38.5882357231039"
+              EndConnector="0,-36.294118043871"
               Start="0,0"
-              End="0,-31.0882357231039">
+              End="0,-28.794118043871">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-31.0882357231039" />
+                    End="0,-28.794118043871" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-66.78587890625,-21.348805361552,133.5717578125,11.609375"
+              BoundingBox="-66.78587890625,-20.2017465219355,133.5717578125,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca]"
-          TopLeft="654.67143787097,655.823537487472">
+          TopLeft="656.842866162622,655.823537487472">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-33.3411775216108"
+              EndConnector="0,-35.6352952008438"
               Start="0,0"
-              End="0,-25.8411775216108">
+              End="0,-28.1352952008438">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-25.8411775216108" />
+                    End="0,-28.1352952008438" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-66.78587890625,-18.7252762608054,133.5717578125,11.609375"
+              BoundingBox="-66.78587890625,-19.8723351004219,133.5717578125,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

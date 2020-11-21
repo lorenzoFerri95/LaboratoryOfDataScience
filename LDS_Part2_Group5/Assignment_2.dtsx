@@ -11,8 +11,8 @@
   DTS:LocaleID="1040"
   DTS:ObjectName="Package2"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{BE872778-FC50-4CC6-B277-F187838FFAAE}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{2BF920F9-4758-4944-B490-DF3E2B1C0771}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABfmomyHpdh3uLKzebmVPptNfe2Pya9yPwXkx+ozpttJQAAAAAOgAAAAAIAACAAAADQqY61jfmuNXqg7AkmVdF1SiL4K692E+mClR5uee8+oxAAAABcY5bJauyGppJ6Qj5EKbhNQAAAAFBbNHASINdUMlOxbRm1S65t/27JFGJ5nGXoi3TNWjmrDRF/7GIQDAZAopcB5ec79Zvt6kQR93Dk1yhFX4HKgtU</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC6CnfemkWLwqAHa0/jn36WPrCfq+5pZivEBjnEEfPqlgAAAAAOgAAAAAIAACAAAABF6lwqBcsmkMPatY2EfM0L4BbsLAmu2WbfFYo8XUUdNBAAAACgX8yx5tu48H2zRe338qMWQAAAANZKj/2R6hxIKEUl89Fn7bguMSwRA7MCjn/PUkcGxA4fl9vkVQ5s4kLweAqXdDyY7cuh8t70pxfMIUbu9I9Z+TE</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -141,25 +141,25 @@
               </outputs>
             </component>
             <component
-              refId="Package\Attività Flusso di dati\Filter(max_sales_usd)"
+              refId="Package\Attività Flusso di dati\Filter(total_sales_usd &lt;equal&gt; max_sales_usd)"
               componentClassID="Microsoft.ConditionalSplit"
               contactInfo="Suddivisione condizionale;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
               description="Indirizza righe di dati a output diversi a seconda del contenuto dei dati. Usare le condizioni (espressioni SSIS) per specificare le righe da indirizzare. Ad esempio, separare i record da eliminare da quelli pronti per essere caricati oppure indirizzare unicamente un subset di record."
-              name="Filter(max_sales_usd)"
+              name="Filter(total_sales_usd &lt;equal&gt; max_sales_usd)"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Attività Flusso di dati\Filter(max_sales_usd).Inputs[Input suddivisione condizionale]"
+                  refId="Package\Attività Flusso di dati\Filter(total_sales_usd &lt;equal&gt; max_sales_usd).Inputs[Input suddivisione condizionale]"
                   description="Input della trasformazione Suddivisione condizionale"
                   name="Input suddivisione condizionale">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Attività Flusso di dati\Filter(max_sales_usd).Inputs[Input suddivisione condizionale].Columns[total_sales_usd]"
+                      refId="Package\Attività Flusso di dati\Filter(total_sales_usd &lt;equal&gt; max_sales_usd).Inputs[Input suddivisione condizionale].Columns[total_sales_usd]"
                       cachedDataType="r8"
                       cachedName="total_sales_usd"
                       lineageId="Package\Attività Flusso di dati\SortMerge(country, year).Outputs[Output merge join].Columns[total_sales_usd]" />
                     <inputColumn
-                      refId="Package\Attività Flusso di dati\Filter(max_sales_usd).Inputs[Input suddivisione condizionale].Columns[max_sales_usd]"
+                      refId="Package\Attività Flusso di dati\Filter(total_sales_usd &lt;equal&gt; max_sales_usd).Inputs[Input suddivisione condizionale].Columns[max_sales_usd]"
                       cachedDataType="r8"
                       cachedName="max_sales_usd"
                       lineageId="Package\Attività Flusso di dati\SortMerge(country, year).Outputs[Output merge join].Columns[max_sales_usd]" />
@@ -169,13 +169,13 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Attività Flusso di dati\Filter(max_sales_usd).Outputs[max_sales_usd]"
+                  refId="Package\Attività Flusso di dati\Filter(total_sales_usd &lt;equal&gt; max_sales_usd).Outputs[max_sales_usd]"
                   description="Output 1 della trasformazione Suddivisione condizionale"
                   errorOrTruncationOperation="Calcolo"
                   errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="max_sales_usd"
-                  synchronousInputId="Package\Attività Flusso di dati\Filter(max_sales_usd).Inputs[Input suddivisione condizionale]"
+                  synchronousInputId="Package\Attività Flusso di dati\Filter(total_sales_usd &lt;equal&gt; max_sales_usd).Inputs[Input suddivisione condizionale]"
                   truncationRowDisposition="FailComponent">
                   <properties>
                     <property
@@ -197,11 +197,11 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Attività Flusso di dati\Filter(max_sales_usd).Outputs[max_sales]"
+                  refId="Package\Attività Flusso di dati\Filter(total_sales_usd &lt;equal&gt; max_sales_usd).Outputs[not_max_sales_usd]"
                   description="Output predefinito per la trasformazione Suddivisione condizionale"
                   exclusionGroup="1"
-                  name="max_sales"
-                  synchronousInputId="Package\Attività Flusso di dati\Filter(max_sales_usd).Inputs[Input suddivisione condizionale]">
+                  name="not_max_sales_usd"
+                  synchronousInputId="Package\Attività Flusso di dati\Filter(total_sales_usd &lt;equal&gt; max_sales_usd).Inputs[Input suddivisione condizionale]">
                   <properties>
                     <property
                       dataType="System.Boolean"
@@ -210,23 +210,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Attività Flusso di dati\Filter(max_sales_usd).Outputs[Output errori suddivisione condizionale]"
+                  refId="Package\Attività Flusso di dati\Filter(total_sales_usd &lt;equal&gt; max_sales_usd).Outputs[Output errori suddivisione condizionale]"
                   description="Output degli errori per la trasformazione Suddivisione condizionale"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Output errori suddivisione condizionale"
-                  synchronousInputId="Package\Attività Flusso di dati\Filter(max_sales_usd).Inputs[Input suddivisione condizionale]">
+                  synchronousInputId="Package\Attività Flusso di dati\Filter(total_sales_usd &lt;equal&gt; max_sales_usd).Inputs[Input suddivisione condizionale]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Filter(max_sales_usd).Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                      refId="Package\Attività Flusso di dati\Filter(total_sales_usd &lt;equal&gt; max_sales_usd).Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Filter(max_sales_usd).Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                      lineageId="Package\Attività Flusso di dati\Filter(total_sales_usd &lt;equal&gt; max_sales_usd).Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Filter(max_sales_usd).Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                      refId="Package\Attività Flusso di dati\Filter(total_sales_usd &lt;equal&gt; max_sales_usd).Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Filter(max_sales_usd).Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                      lineageId="Package\Attività Flusso di dati\Filter(total_sales_usd &lt;equal&gt; max_sales_usd).Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -281,7 +281,7 @@
                       refId="Package\Attività Flusso di dati\GroupBy({country, year, processor_manufacturer\}, {SUM(sales_usd) AS tot_sales_usd\}).Inputs[Input aggregazione 1].Columns[year]"
                       cachedDataType="i4"
                       cachedName="year"
-                      lineageId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output colonna derivata].Columns[year]" />
+                      lineageId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output colonna derivata].Columns[year]" />
                     <inputColumn
                       refId="Package\Attività Flusso di dati\GroupBy({country, year, processor_manufacturer\}, {SUM(sales_usd) AS tot_sales_usd\}).Inputs[Input aggregazione 1].Columns[processor_manufacturer]"
                       cachedCodepage="1252"
@@ -352,7 +352,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
-                          name="AggregationColumnId">#{Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output colonna derivata].Columns[year]}</property>
+                          name="AggregationColumnId">#{Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output colonna derivata].Columns[year]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifica il tipo di aggregazione."
@@ -586,20 +586,20 @@
               </outputs>
             </component>
             <component
-              refId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year )"
+              refId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year )"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Colonna derivata;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
               description="Crea nuovi valori di colonna applicando espressioni alle colonne di input della trasformazione. Creare nuove colonne oppure sovrascrivere quelle esistenti. Ad esempio, concatenare i valori delle colonne 'first name' e 'last name' per creare una colonna 'full name'."
-              name="Project( YEAR(time_code) AS year )"
+              name="Project( *, YEAR(time_code) AS year )"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Inputs[Input colonna derivata]"
+                  refId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Inputs[Input colonna derivata]"
                   description="Input della trasformazione Colonna derivata"
                   name="Input colonna derivata">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Inputs[Input colonna derivata].Columns[time_code]"
+                      refId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Inputs[Input colonna derivata].Columns[time_code]"
                       cachedDataType="dbDate"
                       cachedName="time_code"
                       lineageId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].Columns[time_code]" />
@@ -609,18 +609,18 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output colonna derivata]"
+                  refId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output colonna derivata]"
                   description="Output predefinito della trasformazione Colonna derivata"
                   exclusionGroup="1"
                   name="Output colonna derivata"
-                  synchronousInputId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Inputs[Input colonna derivata]">
+                  synchronousInputId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Inputs[Input colonna derivata]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output colonna derivata].Columns[year]"
+                      refId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output colonna derivata].Columns[year]"
                       dataType="i4"
                       errorOrTruncationOperation="Calcolo"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output colonna derivata].Columns[year]"
+                      lineageId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output colonna derivata].Columns[year]"
                       name="year"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -641,23 +641,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output errori colonna derivata]"
+                  refId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output errori colonna derivata]"
                   description="Output degli errori della trasformazione Colonna derivata"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Output errori colonna derivata"
-                  synchronousInputId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Inputs[Input colonna derivata]">
+                  synchronousInputId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Inputs[Input colonna derivata]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                      refId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output errori colonna derivata].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                      lineageId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output errori colonna derivata].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                      refId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                      lineageId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1718,7 +1718,7 @@ where [refTable].[gpu_code] = ?</property>
               refId="Package\Attività Flusso di dati.Paths[max_sales_usd]"
               endId="Package\Attività Flusso di dati\WriteFile(&quot;Assignment_2&quot;).Inputs[Input destinazione file flat]"
               name="max_sales_usd"
-              startId="Package\Attività Flusso di dati\Filter(max_sales_usd).Outputs[max_sales_usd]" />
+              startId="Package\Attività Flusso di dati\Filter(total_sales_usd &lt;equal&gt; max_sales_usd).Outputs[max_sales_usd]" />
             <path
               refId="Package\Attività Flusso di dati.Paths[Multicast Output 1]"
               endId="Package\Attività Flusso di dati\GroupBy({country, year\}, {MAX(sales_usd) AS max_sales_usd\}).Inputs[Input aggregazione 1]"
@@ -1738,7 +1738,7 @@ where [refTable].[gpu_code] = ?</property>
               refId="Package\Attività Flusso di dati.Paths[Output colonna derivata]"
               endId="Package\Attività Flusso di dati\StarJoinIndexFilter(Geography, IdxGeo_code).Inputs[Input ricerca]"
               name="Output colonna derivata"
-              startId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output colonna derivata]" />
+              startId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output colonna derivata]" />
             <path
               refId="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca]"
               endId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Inputs[Input ricerca]"
@@ -1751,7 +1751,7 @@ where [refTable].[gpu_code] = ?</property>
               startId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Outputs[Output corrispondenza ricerca]" />
             <path
               refId="Package\Attività Flusso di dati.Paths[Output merge join]"
-              endId="Package\Attività Flusso di dati\Filter(max_sales_usd).Inputs[Input suddivisione condizionale]"
+              endId="Package\Attività Flusso di dati\Filter(total_sales_usd &lt;equal&gt; max_sales_usd).Inputs[Input suddivisione condizionale]"
               name="Output merge join"
               startId="Package\Attività Flusso di dati\SortMerge(country, year).Outputs[Output merge join]" />
             <path
@@ -1771,7 +1771,7 @@ where [refTable].[gpu_code] = ?</property>
               startId="Package\Attività Flusso di dati\Sort({country, year\}) 2.Outputs[Output ordinamento]" />
             <path
               refId="Package\Attività Flusso di dati.Paths[Output origine OLE DB]"
-              endId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Inputs[Input colonna derivata]"
+              endId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Inputs[Input colonna derivata]"
               name="Output origine OLE DB"
               startId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB]" />
           </paths>
@@ -1804,26 +1804,6 @@ where [refTable].[gpu_code] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="380.8,41.6"
-          Id="Package\Attività Flusso di dati\GroupBy({country, year\}, {MAX(sales_usd) AS max_sales_usd\})"
-          TopLeft="482.857151080151,318.635297935644" />
-        <NodeLayout
-          Size="304,41.6"
-          Id="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code)"
-          TopLeft="303.57143374122,552.941182991211" />
-        <NodeLayout
-          Size="247.2,41.6"
-          Id="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year )"
-          TopLeft="330.714291346317,701.294126248279" />
-        <NodeLayout
-          Size="495.2,41.6"
-          Id="Package\Attività Flusso di dati\GroupBy({country, year, processor_manufacturer\}, {SUM(sales_usd) AS tot_sales_usd\})"
-          TopLeft="205.714289217579,471.117652431902" />
-        <NodeLayout
-          Size="181.6,41.6"
-          Id="Package\Attività Flusso di dati\Filter(max_sales_usd)"
-          TopLeft="408.571435529359,85.7882364523865" />
-        <NodeLayout
           Size="182.4,41.6"
           Id="Package\Attività Flusso di dati\TableScan(Gpu_sales)"
           TopLeft="370.57143033524,777.682357048744" />
@@ -1832,21 +1812,45 @@ where [refTable].[gpu_code] = ?</property>
           Id="Package\Attività Flusso di dati\SortMerge(country, year)"
           TopLeft="396.42857817971,158.200002005522" />
         <NodeLayout
+          Size="148,41.6"
+          Id="Package\Attività Flusso di dati\DuplicateTable"
+          TopLeft="382.857149377161,396.470592954166" />
+        <NodeLayout
+          Size="495.2,41.6"
+          Id="Package\Attività Flusso di dati\GroupBy({country, year, processor_manufacturer\}, {SUM(sales_usd) AS tot_sales_usd\})"
+          TopLeft="205.714289217579,471.117652431902" />
+        <NodeLayout
+          Size="202.4,41.6"
+          Id="Package\Attività Flusso di dati\WriteFile(&quot;Assignment_2&quot;)"
+          TopLeft="403.571435444209,13.0000001823201" />
+        <NodeLayout
           Size="187.2,41.6"
           Id="Package\Attività Flusso di dati\Sort({country, year\}) 1"
           TopLeft="182.142860244732,292.258826854072" />
+        <NodeLayout
+          Size="380.8,41.6"
+          Id="Package\Attività Flusso di dati\GroupBy({country, year\}, {MAX(sales_usd) AS max_sales_usd\})"
+          TopLeft="482.857151080151,318.635297935644" />
         <NodeLayout
           Size="293.6,41.6"
           Id="Package\Attività Flusso di dati\StarJoinIndexFilter(Geography, IdxGeo_code)"
           TopLeft="312.142862458618,631.705889978211" />
         <NodeLayout
+          Size="259.2,41.6"
+          Id="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year )"
+          TopLeft="330.714291346317,701.294126248279" />
+        <NodeLayout
+          Size="301.6,41.6"
+          Id="Package\Attività Flusso di dati\Filter(total_sales_usd &lt;equal&gt; max_sales_usd)"
+          TopLeft="346.428577328215,87.3176482385418" />
+        <NodeLayout
           Size="187.2,41.6"
           Id="Package\Attività Flusso di dati\Sort({country, year\}) 2"
           TopLeft="582.142867056692,248.02353256483" />
         <NodeLayout
-          Size="148,41.6"
-          Id="Package\Attività Flusso di dati\DuplicateTable"
-          TopLeft="382.857149377161,396.470592954166" />
+          Size="304,41.6"
+          Id="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code)"
+          TopLeft="303.57143374122,552.941182991211" />
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output aggregazione 11]"
           TopLeft="674.500009068422,318.635297935644">
@@ -1926,19 +1930,43 @@ where [refTable].[gpu_code] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Attività Flusso di dati.Paths[Output origine OLE DB]"
-          TopLeft="458.042860840778,777.682357048744">
+          Id="Package\Attività Flusso di dati.Paths[max_sales_usd]"
+          TopLeft="501.000006386212,87.3176482385418">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-34.7882308004649"
+              EndConnector="0,-32.7176480562217"
               Start="0,0"
-              End="0,-27.2882308004649">
+              End="0,-25.2176480562217">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-27.2882308004649" />
+                    End="0,-25.2176480562217" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-33.739609375,-18.1400740281108,67.47921875,11.0625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output origine OLE DB]"
+          TopLeft="461.042860840778,777.682357048744">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-34.788230800465"
+              Start="0,0"
+              End="0,-27.288230800465">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-27.288230800465" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2051,18 +2079,18 @@ where [refTable].[gpu_code] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output merge join]"
-          TopLeft="497.100006854534,158.200002005522">
+          TopLeft="496.028577753963,158.200002005522">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-30.8117655531352"
+              EndConnector="0,-29.2823537669802"
               Start="0,0"
-              End="0,-23.3117655531352">
+              End="0,-21.7823537669802">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-23.3117655531352" />
+                    End="0,-21.7823537669802" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2121,52 +2149,24 @@ where [refTable].[gpu_code] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output colonna derivata]"
-          TopLeft="456.628576902468,701.294126248279">
+          TopLeft="459.628576902468,701.294126248279">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-27.9882362700686"
+              EndConnector="0,-27.988236270068"
               Start="0,0"
-              End="0,-20.4882362700686">
+              End="0,-20.488236270068">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-20.4882362700686" />
+                    End="0,-20.488236270068" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="202.4,41.6"
-          Id="Package\Attività Flusso di dati\WriteFile(&quot;Assignment_2&quot;)"
-          TopLeft="403.571435444209,13.0000001823201" />
-        <EdgeLayout
-          Id="Package\Attività Flusso di dati.Paths[max_sales_usd]"
-          TopLeft="502.071435486784,85.7882364523865">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-31.1882362700664"
-              Start="0,0"
-              End="0,-23.6882362700664">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-23.6882362700664" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-33.739609375,-17.3753681350332,67.47921875,11.0625"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2191,7 +2191,7 @@ where [refTable].[gpu_code] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2201,7 +2201,7 @@ where [refTable].[gpu_code] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2214,7 +2214,7 @@ where [refTable].[gpu_code] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2224,7 +2224,7 @@ where [refTable].[gpu_code] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

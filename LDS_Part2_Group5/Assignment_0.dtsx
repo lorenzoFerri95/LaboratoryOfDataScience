@@ -11,8 +11,8 @@
   DTS:LocaleID="1040"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="51"
-  DTS:VersionGUID="{0265D0B6-D38C-4E97-8ACE-F78FC546E183}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{4059A248-4FA6-4A29-80F8-D441153C1602}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAClfOkTRbNZu+oZD0oYiE9F642AgIJJn6YlbMPwudT8iwAAAAAOgAAAAAIAACAAAACjuTjh8EwanFZvtNShfWbuAkGHVp6QaUkq3wogfOpDcBAAAAC+/jV+enW6RUnRNfUsqd7mQAAAADkcG9lJRCx+WoG/OYcy0m8Oc9Yvg6BAdenzflocEbxIZoIc8RqLug1jLZDoEMe7LVTtQmLKixNF7bHdF7/+m6w</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADRz7ILjgBwLVATfnxrTji9NDEiXhtmWmxJ+X9l3gKS5QAAAAAOgAAAAAIAACAAAAAzuGHJ6vzPnWqBNWivH1yECd8FzPjylzi/2wsOXXoVuBAAAAB3kcDXIBGGOCNV6PodOU5tQAAAAJhibGecheyvSCvEpfgdq510YQFCkfDWru/bxpNWTend4AZKR5n0M6SlonNJObK9mzsSbcEPZyzPK7qaxIyBckI</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -133,7 +133,7 @@
                       refId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Inputs[Input aggregazione 1].Columns[year]"
                       cachedDataType="i4"
                       cachedName="year"
-                      lineageId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output colonna derivata].Columns[year]" />
+                      lineageId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output colonna derivata].Columns[year]" />
                     <inputColumn
                       refId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Inputs[Input aggregazione 1].Columns[brand]"
                       cachedCodepage="1252"
@@ -176,7 +176,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
-                          name="AggregationColumnId">#{Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output colonna derivata].Columns[year]}</property>
+                          name="AggregationColumnId">#{Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output colonna derivata].Columns[year]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifica il tipo di aggregazione."
@@ -252,20 +252,20 @@
               </outputs>
             </component>
             <component
-              refId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year )"
+              refId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year )"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Colonna derivata;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
               description="Crea nuovi valori di colonna applicando espressioni alle colonne di input della trasformazione. Creare nuove colonne oppure sovrascrivere quelle esistenti. Ad esempio, concatenare i valori delle colonne 'first name' e 'last name' per creare una colonna 'full name'."
-              name="Project( YEAR(time_code) AS year )"
+              name="Project( *, YEAR(time_code) AS year )"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Inputs[Input colonna derivata]"
+                  refId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Inputs[Input colonna derivata]"
                   description="Input della trasformazione Colonna derivata"
                   name="Input colonna derivata">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Inputs[Input colonna derivata].Columns[time_code]"
+                      refId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Inputs[Input colonna derivata].Columns[time_code]"
                       cachedDataType="dbDate"
                       cachedName="time_code"
                       lineageId="Package\Attività Flusso di dati\TableScan(Gpu_sales).Outputs[Output origine OLE DB].Columns[time_code]" />
@@ -275,18 +275,18 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output colonna derivata]"
+                  refId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output colonna derivata]"
                   description="Output predefinito della trasformazione Colonna derivata"
                   exclusionGroup="1"
                   name="Output colonna derivata"
-                  synchronousInputId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Inputs[Input colonna derivata]">
+                  synchronousInputId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Inputs[Input colonna derivata]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output colonna derivata].Columns[year]"
+                      refId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output colonna derivata].Columns[year]"
                       dataType="i4"
                       errorOrTruncationOperation="Calcolo"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output colonna derivata].Columns[year]"
+                      lineageId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output colonna derivata].Columns[year]"
                       name="year"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -307,23 +307,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output errori colonna derivata]"
+                  refId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output errori colonna derivata]"
                   description="Output degli errori della trasformazione Colonna derivata"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Output errori colonna derivata"
-                  synchronousInputId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Inputs[Input colonna derivata]">
+                  synchronousInputId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Inputs[Input colonna derivata]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                      refId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output errori colonna derivata].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                      lineageId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output errori colonna derivata].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                      refId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                      lineageId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -866,10 +866,10 @@ where [refTable].[gpu_code] = ?</property>
               refId="Package\Attività Flusso di dati.Paths[Output colonna derivata]"
               endId="Package\Attività Flusso di dati\GroupBy({year, brand\}, {SUM(sales_usd) AS tot_sales_usd\}).Inputs[Input aggregazione 1]"
               name="Output colonna derivata"
-              startId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Outputs[Output colonna derivata]" />
+              startId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Outputs[Output colonna derivata]" />
             <path
               refId="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca]"
-              endId="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year ).Inputs[Input colonna derivata]"
+              endId="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year ).Inputs[Input colonna derivata]"
               name="Output corrispondenza ricerca"
               startId="Package\Attività Flusso di dati\StarJoinIndexFilter(Gpu_product, IdxGpu_code).Outputs[Output corrispondenza ricerca]" />
             <path
@@ -912,8 +912,8 @@ where [refTable].[gpu_code] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="247.2,41.6"
-          Id="Package\Attività Flusso di dati\Project( YEAR(time_code) AS year )"
+          Size="259.2,41.6"
+          Id="Package\Attività Flusso di dati\Project( *, YEAR(time_code) AS year )"
           TopLeft="245.000004172325,227.88235613714" />
         <NodeLayout
           Size="202.4,41.6"
@@ -981,7 +981,7 @@ where [refTable].[gpu_code] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca]"
-          TopLeft="370.800001319817,312.235294106922">
+          TopLeft="373.800001319817,312.235294106922">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1005,7 +1005,7 @@ where [refTable].[gpu_code] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output colonna derivata]"
-          TopLeft="368.257144097892,227.88235613714">
+          TopLeft="371.257144097892,227.88235613714">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
