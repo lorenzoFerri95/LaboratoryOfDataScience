@@ -1,0 +1,29 @@
+<AnalysisServicesUserConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <UserIDs>
+          <ConfigurationSetting>
+            <Id>Food Mart</Id>
+            <Name>Food Mart</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAHUoIwTBwcUiYrDuZiKjtGwAAAAAUAAAARgBvAG8AZAAgAE0AYQByAHQAAAAQZgAAAAEAACAAAADw+fTqa6h2or58GV7tnGKio2tvXIMnwjTM8yLS/Q4rsAAAAAAOgAAAAAIAACAAAABB+dSEKQC8lu9Aiy1WA/ARiH/YP+mgbhtKY5JS+TAWuBAAAADcInnL4YChhHXA/fS+Ju6gQAAAAKmBZz0TV/bILUfw+6HpxIpZJgHciB5e6APBodc+AHEouW0S8aFqONvr4O+oF5WbKnYiu7ig/WHGwp+6D7KtS1k=</Value>
+          </ConfigurationSetting>
+        </UserIDs>
+        <UserPasswords>
+          <ConfigurationSetting>
+            <Id>Food Mart</Id>
+            <Name>Food Mart</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAHUoIwTBwcUiYrDuZiKjtGwAAAAAUAAAARgBvAG8AZAAgAE0AYQByAHQAAAAQZgAAAAEAACAAAAAUd2VmDKW6wfq1YOQhEHWB+EzY9iPBpttB7ma/hQyqFAAAAAAOgAAAAAIAACAAAAAV8WXQY3d8Tb7Q0sQ0EYk6Px+TsobGvDqAoXYU6U7rtBAAAADxWFlB7Fsc/ejn1k58EGajQAAAAApNJoatbIyQSWwA4owldixSC6dNj7hYYrlfczIajdxy6TJdGPS2W+c3gyDMJ+A6nYR9OUCra2ChnojFv28SlW8=</Value>
+          </ConfigurationSetting>
+        </UserPasswords>
+        <TargetServer>http://apa.di.unipi.it/olap/msmdpump.dll</TargetServer>
+        <TargetDatabase>monreale_foodmart</TargetDatabase>
+        <StartObject>
+          <ObjectId></ObjectId>
+          <ObjectType>Current</ObjectType>
+        </StartObject>
+      </Options>
+    </Configuration>
+  </Configurations>
+</AnalysisServicesUserConfiguration>

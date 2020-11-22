@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "01_Export_Import_Update", "01_Export_Import_Update\01_Export_Import_Update.dtproj", "{5965DE9E-4B74-4D47-9EE1-938B683045A0}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "02_Transformations", "02_Transformations\02_Transformations.dtproj", "{E0A34F48-ED30-4091-AA99-4157C94B7E06}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "03_DW_ETL", "03_DW_ETL\03_DW_ETL.dtproj", "{0ECC3108-E44F-4FBA-9595-55A1A4F6F1D1}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "04_Change_Data_Capture", "04_Change_Data_Capture\04_Change_Data_Capture.dtproj", "{623CF57F-2DAD-4EA2-B00E-7D30BDB52091}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5965DE9E-4B74-4D47-9EE1-938B683045A0}.Development|Default.ActiveCfg = Development
+		{5965DE9E-4B74-4D47-9EE1-938B683045A0}.Development|Default.Build.0 = Development
+		{E0A34F48-ED30-4091-AA99-4157C94B7E06}.Development|Default.ActiveCfg = Development
+		{E0A34F48-ED30-4091-AA99-4157C94B7E06}.Development|Default.Build.0 = Development
+		{0ECC3108-E44F-4FBA-9595-55A1A4F6F1D1}.Development|Default.ActiveCfg = Development
+		{0ECC3108-E44F-4FBA-9595-55A1A4F6F1D1}.Development|Default.Build.0 = Development
+		{623CF57F-2DAD-4EA2-B00E-7D30BDB52091}.Development|Default.ActiveCfg = Development
+		{623CF57F-2DAD-4EA2-B00E-7D30BDB52091}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

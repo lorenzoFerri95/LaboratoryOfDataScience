@@ -1,0 +1,2136 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/7/2011 5:15:42 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="AXTH1"
+  DTS:CreatorName="CLI\ruggieri"
+  DTS:DTSID="{04558191-D5FD-4D99-915D-06D6E6605ABD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2150.2"
+  DTS:LocaleID="1040"
+  DTS:ObjectName="SCD"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{A4AF1C07-F4F1-44FB-93DA-E6FD44C420A2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[apa.di.unipi.it.foodmart.lbi]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5D84FD17-0AA5-4BC7-9660-96815FC5AC24}"
+      DTS:ObjectName="apa.di.unipi.it.foodmart.lbi">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=apa.di.unipi.it;User ID=lbi;Initial Catalog=foodmart;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-SCD12-{5D84FD17-0AA5-4BC7-9660-96815FC5AC24}apa.di.unipi.it.foodmart.lbi;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4hFMfBsqDk+9Xuye9mhrGgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA+Ph1NuEEo5sTatWapcK1MAAAAAASAAACgAAAAEAAAACoJslD+5mkFNYB16HUiKIwQAAAAMQXS0tEwcpj7D1MpfmyhDRQAAAA8Gi433cHhp37cZmbhuzZ1ga6adA</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[apa.di.unipi.it.lbi.lbi]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DDBBB20A-7997-4A2E-9B3A-2699302330B0}"
+      DTS:ObjectName="apa.di.unipi.it.lbi.lbi">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=apa.di.unipi.it;User ID=lbi;Initial Catalog=lbi;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-SCD12-{DDBBB20A-7997-4A2E-9B3A-2699302330B0}apa.di.unipi.it.lbi.lbi;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4hFMfBsqDk+9Xuye9mhrGgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC/dNgrRpWIl3nLL5CrI9FAAAAAAASAAACgAAAAEAAAAFvvjfRz7U9Kw32elvl1sccQAAAA/R5Lbjo1PNpzVfiU8sJoHRQAAAD9oEHyjf7zKrYxprErTqFKHKhp0g</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Create dimensional table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{51a5f444-73a2-4f72-8d90-12d63ae75d59}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create dimensional table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DDBBB20A-7997-4A2E-9B3A-2699302330B0}"
+          SQLTask:SqlStatementSource="if object_id('[customer_dim]') is null &#xA;  CREATE TABLE [customer_dim](&#xA;&#x9;[surrogate_key] [int] IDENTITY(1,1) NOT NULL,&#xA;&#x9;[customer_id] [int] NOT NULL,&#xA;&#x9;[customer_name] [nvarchar](151) NOT NULL,&#xA;&#x9;[address] [nvarchar](304) NOT NULL,&#xA;&#x9;[date_start] [date] NOT NULL,&#xA;&#x9;[date_end] [date] NULL&#xA;) " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SCD"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{4ABA5A8D-AE17-4758-AEDF-15D2CFE8F1AD}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SCD"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          version="1">
+          <components>
+            <component
+              refId="Package\SCD\Close surrogate key date"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Executes an SQL command for each row in a dataset."
+              name="Close surrogate key date"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update customer_dim
+set date_end = ?
+where surrogate_key = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SCD\Close surrogate key date.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.lbi.lbi]"
+                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.lbi.lbi]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SCD\Close surrogate key date.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SCD\Close surrogate key date.Inputs[OLE DB Command Input].Columns[date_today]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date_today"
+                      externalMetadataColumnId="Package\SCD\Close surrogate key date.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[date_today]" />
+                    <inputColumn
+                      refId="Package\SCD\Close surrogate key date.Inputs[OLE DB Command Input].Columns[surrogate_key]"
+                      cachedDataType="i4"
+                      cachedName="surrogate_key"
+                      externalMetadataColumnId="Package\SCD\Close surrogate key date.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\SCD\Lookup.Outputs[Lookup Match Output].Columns[surrogate_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SCD\Close surrogate key date.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="dbDate"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\SCD\Close surrogate key date.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SCD\Close surrogate key date.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\SCD\Close surrogate key date.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SCD\Close surrogate key date.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\SCD\Close surrogate key date.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD\Close surrogate key date.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SCD\Close surrogate key date.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SCD\Close surrogate key date.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SCD\Close surrogate key date.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SCD\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Evaluates and directs rows in a dataset."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\SCD\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SCD\Conditional Split.Inputs[Conditional Split Input].Columns[customer_name]"
+                      cachedDataType="wstr"
+                      cachedLength="151"
+                      cachedName="customer_name"
+                      lineageId="Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[customer_name]" />
+                    <inputColumn
+                      refId="Package\SCD\Conditional Split.Inputs[Conditional Split Input].Columns[customer_name1]"
+                      cachedDataType="wstr"
+                      cachedLength="151"
+                      cachedName="customer_name"
+                      lineageId="Package\SCD\Lookup.Outputs[Lookup Match Output].Columns[customer_name]" />
+                    <inputColumn
+                      refId="Package\SCD\Conditional Split.Inputs[Conditional Split Input].Columns[address]"
+                      cachedDataType="wstr"
+                      cachedLength="304"
+                      cachedName="address"
+                      lineageId="Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[address]" />
+                    <inputColumn
+                      refId="Package\SCD\Conditional Split.Inputs[Conditional Split Input].Columns[address1]"
+                      cachedDataType="wstr"
+                      cachedLength="304"
+                      cachedName="address"
+                      lineageId="Package\SCD\Lookup.Outputs[Lookup Match Output].Columns[address]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SCD\Conditional Split.Outputs[Different name same address]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Different name same address"
+                  synchronousInputId="Package\SCD\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[customer_name]} != #{Package\SCD\Lookup.Outputs[Lookup Match Output].Columns[customer_name]} &amp;&amp; #{Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[address]} == #{Package\SCD\Lookup.Outputs[Lookup Match Output].Columns[address]}</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">[Derived Column].customer_name != Lookup.customer_name &amp;&amp; [Derived Column].address == Lookup.address</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SCD\Conditional Split.Outputs[Different address]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Different address"
+                  synchronousInputId="Package\SCD\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[address]} != #{Package\SCD\Lookup.Outputs[Lookup Match Output].Columns[address]}</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">[Derived Column].address != Lookup.address</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SCD\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\SCD\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SCD\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\SCD\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SCD\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SCD\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SCD\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SCD\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Updates column values using expressions"
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\SCD\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SCD\Derived Column.Inputs[Derived Column Input].Columns[lname]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="lname"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[lname]" />
+                    <inputColumn
+                      refId="Package\SCD\Derived Column.Inputs[Derived Column Input].Columns[fname]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="fname"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[fname]" />
+                    <inputColumn
+                      refId="Package\SCD\Derived Column.Inputs[Derived Column Input].Columns[address1]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="address1"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[address1]" />
+                    <inputColumn
+                      refId="Package\SCD\Derived Column.Inputs[Derived Column Input].Columns[city]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="city"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\SCD\Derived Column.Inputs[Derived Column Input].Columns[state_province]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="state_province"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[state_province]" />
+                    <inputColumn
+                      refId="Package\SCD\Derived Column.Inputs[Derived Column Input].Columns[postal_code]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="postal_code"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[postal_code]" />
+                    <inputColumn
+                      refId="Package\SCD\Derived Column.Inputs[Derived Column Input].Columns[country]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="country"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[country]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SCD\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\SCD\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[customer_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="151"
+                      lineageId="Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[customer_name]"
+                      name="customer_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[lname]} + " " + #{Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[fname]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">lname + " " + fname</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[address]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="304"
+                      lineageId="Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[address]"
+                      name="address"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[address1]} + " " + #{Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[city]} + " " + #{Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[postal_code]} + " " + #{Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[state_province]} + " " + #{Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[country]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">address1 + " " + city + " " + postal_code + " " + state_province + " " + country</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[date_today]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[date_today]"
+                      name="date_today"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SCD\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\SCD\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SCD\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SCD\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SCD\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SCD\Insert new"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert new"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[lbi].[customer_dim]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SCD\Insert new.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.lbi.lbi]"
+                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.lbi.lbi]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SCD\Insert new.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SCD\Insert new.Inputs[OLE DB Destination Input].Columns[customer_name]"
+                      cachedDataType="wstr"
+                      cachedLength="151"
+                      cachedName="customer_name"
+                      externalMetadataColumnId="Package\SCD\Insert new.Inputs[OLE DB Destination Input].ExternalColumns[customer_name]"
+                      lineageId="Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[customer_name]" />
+                    <inputColumn
+                      refId="Package\SCD\Insert new.Inputs[OLE DB Destination Input].Columns[address]"
+                      cachedDataType="wstr"
+                      cachedLength="304"
+                      cachedName="address"
+                      externalMetadataColumnId="Package\SCD\Insert new.Inputs[OLE DB Destination Input].ExternalColumns[address]"
+                      lineageId="Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[address]" />
+                    <inputColumn
+                      refId="Package\SCD\Insert new.Inputs[OLE DB Destination Input].Columns[customer_id]"
+                      cachedDataType="i4"
+                      cachedName="customer_id"
+                      externalMetadataColumnId="Package\SCD\Insert new.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]" />
+                    <inputColumn
+                      refId="Package\SCD\Insert new.Inputs[OLE DB Destination Input].Columns[date_today]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date_today"
+                      externalMetadataColumnId="Package\SCD\Insert new.Inputs[OLE DB Destination Input].ExternalColumns[date_start]"
+                      lineageId="Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[date_today]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SCD\Insert new.Inputs[OLE DB Destination Input].ExternalColumns[surrogate_key]"
+                      dataType="i4"
+                      name="surrogate_key" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\Insert new.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      dataType="i4"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\Insert new.Inputs[OLE DB Destination Input].ExternalColumns[customer_name]"
+                      dataType="wstr"
+                      length="151"
+                      name="customer_name" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\Insert new.Inputs[OLE DB Destination Input].ExternalColumns[address]"
+                      dataType="wstr"
+                      length="304"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\Insert new.Inputs[OLE DB Destination Input].ExternalColumns[date_start]"
+                      dataType="dbDate"
+                      name="date_start" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\Insert new.Inputs[OLE DB Destination Input].ExternalColumns[date_end]"
+                      dataType="dbDate"
+                      name="date_end" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SCD\Insert new.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\SCD\Insert new.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD\Insert new.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SCD\Insert new.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SCD\Insert new.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SCD\Insert new.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SCD\Insert new surrogate key"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert new surrogate key"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[lbi].[customer_dim]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SCD\Insert new surrogate key.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.lbi.lbi]"
+                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.lbi.lbi]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SCD\Insert new surrogate key.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SCD\Insert new surrogate key.Inputs[OLE DB Destination Input].Columns[customer_id]"
+                      cachedDataType="i4"
+                      cachedName="customer_id"
+                      externalMetadataColumnId="Package\SCD\Insert new surrogate key.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]" />
+                    <inputColumn
+                      refId="Package\SCD\Insert new surrogate key.Inputs[OLE DB Destination Input].Columns[address]"
+                      cachedDataType="wstr"
+                      cachedLength="304"
+                      cachedName="address"
+                      externalMetadataColumnId="Package\SCD\Insert new surrogate key.Inputs[OLE DB Destination Input].ExternalColumns[address]"
+                      lineageId="Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[address]" />
+                    <inputColumn
+                      refId="Package\SCD\Insert new surrogate key.Inputs[OLE DB Destination Input].Columns[customer_name]"
+                      cachedDataType="wstr"
+                      cachedLength="151"
+                      cachedName="customer_name"
+                      externalMetadataColumnId="Package\SCD\Insert new surrogate key.Inputs[OLE DB Destination Input].ExternalColumns[customer_name]"
+                      lineageId="Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[customer_name]" />
+                    <inputColumn
+                      refId="Package\SCD\Insert new surrogate key.Inputs[OLE DB Destination Input].Columns[date_today]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date_today"
+                      externalMetadataColumnId="Package\SCD\Insert new surrogate key.Inputs[OLE DB Destination Input].ExternalColumns[date_start]"
+                      lineageId="Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[date_today]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SCD\Insert new surrogate key.Inputs[OLE DB Destination Input].ExternalColumns[surrogate_key]"
+                      dataType="i4"
+                      name="surrogate_key" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\Insert new surrogate key.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      dataType="i4"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\Insert new surrogate key.Inputs[OLE DB Destination Input].ExternalColumns[customer_name]"
+                      dataType="wstr"
+                      length="151"
+                      name="customer_name" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\Insert new surrogate key.Inputs[OLE DB Destination Input].ExternalColumns[address]"
+                      dataType="wstr"
+                      length="304"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\Insert new surrogate key.Inputs[OLE DB Destination Input].ExternalColumns[date_start]"
+                      dataType="dbDate"
+                      name="date_start" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\Insert new surrogate key.Inputs[OLE DB Destination Input].ExternalColumns[date_end]"
+                      dataType="dbDate"
+                      name="date_end" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SCD\Insert new surrogate key.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\SCD\Insert new surrogate key.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD\Insert new surrogate key.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SCD\Insert new surrogate key.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SCD\Insert new surrogate key.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SCD\Insert new surrogate key.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SCD\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="Looks up values in a reference dataset by using exact matching."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from customer_dim where date_end is null</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from customer_dim where date_end is null) [refTable]
+where [refTable].[customer_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="surrogate_key" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="customer_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="customer_name" dataType="DT_WSTR" length="151" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="address" dataType="DT_WSTR" length="304" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="date_start" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="date_end" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SCD\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.lbi.lbi]"
+                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.lbi.lbi]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SCD\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SCD\Lookup.Inputs[Lookup Input].Columns[customer_id]"
+                      cachedDataType="i4"
+                      cachedName="customer_id"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">customer_id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SCD\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\SCD\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD\Lookup.Outputs[Lookup Match Output].Columns[customer_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="151"
+                      lineageId="Package\SCD\Lookup.Outputs[Lookup Match Output].Columns[customer_name]"
+                      name="customer_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">customer_name</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SCD\Lookup.Outputs[Lookup Match Output].Columns[surrogate_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\SCD\Lookup.Outputs[Lookup Match Output].Columns[surrogate_key]"
+                      name="surrogate_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">surrogate_key</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SCD\Lookup.Outputs[Lookup Match Output].Columns[address]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="304"
+                      lineageId="Package\SCD\Lookup.Outputs[Lookup Match Output].Columns[address]"
+                      name="address"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">address</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SCD\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\SCD\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SCD\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\SCD\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SCD\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SCD\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SCD\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SCD\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[customer]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SCD\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.foodmart.lbi]"
+                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.foodmart.lbi]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      name="customer_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[account_num]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[account_num]"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[account_num]"
+                      name="account_num"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[lname]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[lname]"
+                      length="100"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[lname]"
+                      name="lname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[fname]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[fname]"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[fname]"
+                      name="fname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[mi]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mi]"
+                      length="20"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[mi]"
+                      name="mi"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[address1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[address1]"
+                      length="100"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[address1]"
+                      name="address1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[address2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[address2]"
+                      length="100"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[address2]"
+                      name="address2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[address3]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[address3]"
+                      length="100"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[address3]"
+                      name="address3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[address4]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[address4]"
+                      length="100"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[address4]"
+                      name="address4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[city]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[city]"
+                      name="city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[state_province]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[state_province]"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[state_province]"
+                      name="state_province"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[postal_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[postal_code]"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[postal_code]"
+                      name="postal_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_region_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_region_id]"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_region_id]"
+                      name="customer_region_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[phone1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[phone1]"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[phone1]"
+                      name="phone1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[phone2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[phone2]"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[phone2]"
+                      name="phone2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[birthdate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[birthdate]"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[birthdate]"
+                      name="birthdate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[marital_status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[marital_status]"
+                      length="1"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[marital_status]"
+                      name="marital_status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[yearly_income]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[yearly_income]"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[yearly_income]"
+                      name="yearly_income"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[gender]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[gender]"
+                      length="1"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[gender]"
+                      name="gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[total_children]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[total_children]"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[total_children]"
+                      name="total_children"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[num_children_at_home]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[num_children_at_home]"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[num_children_at_home]"
+                      name="num_children_at_home"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[education]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[education]"
+                      length="30"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[education]"
+                      name="education"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[date_accnt_opened]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date_accnt_opened]"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[date_accnt_opened]"
+                      name="date_accnt_opened"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[member_card]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[member_card]"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[member_card]"
+                      name="member_card"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[occupation]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[occupation]"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[occupation]"
+                      name="occupation"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[houseowner]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[houseowner]"
+                      length="1"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[houseowner]"
+                      name="houseowner"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[num_cars_owned]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[num_cars_owned]"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[num_cars_owned]"
+                      name="num_cars_owned"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      dataType="i4"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[account_num]"
+                      dataType="r8"
+                      name="account_num" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[lname]"
+                      dataType="wstr"
+                      length="100"
+                      name="lname" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[fname]"
+                      dataType="wstr"
+                      length="50"
+                      name="fname" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mi]"
+                      dataType="wstr"
+                      length="20"
+                      name="mi" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[address1]"
+                      dataType="wstr"
+                      length="100"
+                      name="address1" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[address2]"
+                      dataType="wstr"
+                      length="100"
+                      name="address2" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[address3]"
+                      dataType="wstr"
+                      length="100"
+                      name="address3" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[address4]"
+                      dataType="wstr"
+                      length="100"
+                      name="address4" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      dataType="wstr"
+                      length="50"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[state_province]"
+                      dataType="wstr"
+                      length="50"
+                      name="state_province" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[postal_code]"
+                      dataType="wstr"
+                      length="50"
+                      name="postal_code" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      dataType="wstr"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_region_id]"
+                      dataType="i4"
+                      name="customer_region_id" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[phone1]"
+                      dataType="wstr"
+                      length="50"
+                      name="phone1" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[phone2]"
+                      dataType="wstr"
+                      length="50"
+                      name="phone2" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[birthdate]"
+                      dataType="dbTimeStamp"
+                      name="birthdate" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[marital_status]"
+                      dataType="wstr"
+                      length="1"
+                      name="marital_status" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[yearly_income]"
+                      dataType="wstr"
+                      length="50"
+                      name="yearly_income" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[gender]"
+                      dataType="wstr"
+                      length="1"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[total_children]"
+                      dataType="i2"
+                      name="total_children" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[num_children_at_home]"
+                      dataType="i2"
+                      name="num_children_at_home" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[education]"
+                      dataType="wstr"
+                      length="30"
+                      name="education" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date_accnt_opened]"
+                      dataType="dbTimeStamp"
+                      name="date_accnt_opened" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[member_card]"
+                      dataType="wstr"
+                      length="50"
+                      name="member_card" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[occupation]"
+                      dataType="wstr"
+                      length="50"
+                      name="occupation" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[houseowner]"
+                      dataType="wstr"
+                      length="1"
+                      name="houseowner" />
+                    <externalMetadataColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[num_cars_owned]"
+                      dataType="i2"
+                      name="num_cars_owned" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      dataType="i4"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      name="customer_id" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[account_num]"
+                      dataType="r8"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[account_num]"
+                      name="account_num" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[lname]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[lname]"
+                      name="lname" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[fname]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[fname]"
+                      name="fname" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mi]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mi]"
+                      name="mi" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[address1]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[address1]"
+                      name="address1" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[address2]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[address2]"
+                      name="address2" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[address3]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[address3]"
+                      name="address3" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[address4]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[address4]"
+                      name="address4" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[city]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[city]"
+                      name="city" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[state_province]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[state_province]"
+                      name="state_province" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[postal_code]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[postal_code]"
+                      name="postal_code" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[country]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[country]"
+                      name="country" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_region_id]"
+                      dataType="i4"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_region_id]"
+                      name="customer_region_id" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[phone1]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[phone1]"
+                      name="phone1" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[phone2]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[phone2]"
+                      name="phone2" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[birthdate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[birthdate]"
+                      name="birthdate" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[marital_status]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[marital_status]"
+                      name="marital_status" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[yearly_income]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[yearly_income]"
+                      name="yearly_income" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[gender]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[gender]"
+                      name="gender" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[total_children]"
+                      dataType="i2"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[total_children]"
+                      name="total_children" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[num_children_at_home]"
+                      dataType="i2"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[num_children_at_home]"
+                      name="num_children_at_home" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[education]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[education]"
+                      name="education" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date_accnt_opened]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date_accnt_opened]"
+                      name="date_accnt_opened" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[member_card]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[member_card]"
+                      name="member_card" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[occupation]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[occupation]"
+                      name="occupation" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[houseowner]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[houseowner]"
+                      name="houseowner" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[num_cars_owned]"
+                      dataType="i2"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[num_cars_owned]"
+                      name="num_cars_owned" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SCD\Update name"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Executes an SQL command for each row in a dataset."
+              name="Update name"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update customer_dim
+set customer_name = ?
+where customer_id = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SCD\Update name.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.lbi.lbi]"
+                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.lbi.lbi]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SCD\Update name.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SCD\Update name.Inputs[OLE DB Command Input].Columns[customer_name]"
+                      cachedDataType="wstr"
+                      cachedLength="151"
+                      cachedName="customer_name"
+                      externalMetadataColumnId="Package\SCD\Update name.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\SCD\Derived Column.Outputs[Derived Column Output].Columns[customer_name]" />
+                    <inputColumn
+                      refId="Package\SCD\Update name.Inputs[OLE DB Command Input].Columns[customer_id]"
+                      cachedDataType="i4"
+                      cachedName="customer_id"
+                      externalMetadataColumnId="Package\SCD\Update name.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SCD\Update name.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="151"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\SCD\Update name.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SCD\Update name.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\SCD\Update name.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SCD\Update name.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\SCD\Update name.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SCD\Update name.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SCD\Update name.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SCD\Update name.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SCD\Update name.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\SCD.Paths[Derived Column Output]"
+              endId="Package\SCD\Lookup.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\SCD\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\SCD.Paths[Diverso indirizzo]"
+              endId="Package\SCD\Close surrogate key date.Inputs[OLE DB Command Input]"
+              name="Diverso indirizzo"
+              startId="Package\SCD\Conditional Split.Outputs[Different address]" />
+            <path
+              refId="Package\SCD.Paths[Diverso Nome]"
+              endId="Package\SCD\Update name.Inputs[OLE DB Command Input]"
+              name="Diverso Nome"
+              startId="Package\SCD\Conditional Split.Outputs[Different name same address]" />
+            <path
+              refId="Package\SCD.Paths[Lookup Match Output]"
+              endId="Package\SCD\Conditional Split.Inputs[Conditional Split Input]"
+              name="Lookup Match Output"
+              startId="Package\SCD\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\SCD.Paths[Lookup No Match Output]"
+              endId="Package\SCD\Insert new.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\SCD\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\SCD.Paths[OLE DB Command Output]"
+              endId="Package\SCD\Insert new surrogate key.Inputs[OLE DB Destination Input]"
+              name="OLE DB Command Output"
+              startId="Package\SCD\Close surrogate key date.Outputs[OLE DB Command Output]" />
+            <path
+              refId="Package\SCD.Paths[OLE DB Source Output]"
+              endId="Package\SCD\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\SCD\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{BC1D7119-84A4-4BB1-BFDB-2ADDA920CDC8}"
+      DTS:From="Package\Create dimensional table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\SCD" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="99,42"
+          Id="Package\SCD"
+          TopLeft="243.5,126.5" />
+        <NodeLayout
+          Size="201,44"
+          Id="Package\Create dimensional table"
+          TopLeft="136.5,29.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="237,73.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="56,53"
+              Start="0,0"
+              End="56,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="52,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="52,26.5"
+                    Point2="56,26.5"
+                    Point3="56,30.5" />
+                  <mssgle:LineSegment
+                    End="56,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SCD">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\SCD\Conditional Split"
+          TopLeft="351,307.5" />
+        <NodeLayout
+          Size="115,42"
+          Id="Package\SCD\Lookup"
+          TopLeft="252,195.5" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\SCD\Update name"
+          TopLeft="161.5,419.5" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\SCD\Insert new"
+          TopLeft="38.5,311.5" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\SCD\OLE DB Source"
+          TopLeft="233.5,5.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\SCD\Derived Column"
+          TopLeft="231.5,107.5" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\SCD\Close surrogate key date"
+          TopLeft="420.5,410.5" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\SCD\Insert new surrogate key"
+          TopLeft="420,522.5" />
+        <EdgeLayout
+          Id="Package\SCD.Paths[OLE DB Source Output]"
+          TopLeft="309.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SCD.Paths[OLE DB Command Output]"
+          TopLeft="519.5,452.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70"
+              Start="0,0"
+              End="0,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SCD.Paths[Lookup No Match Output]"
+          TopLeft="291.666666666667,237.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-187.166666666667,74"
+              Start="0,0"
+              End="-187.166666666667,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2092624356775" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.2092624356775"
+                    Point2="0,30.2092624356775"
+                    Point3="-4,30.2092624356775" />
+                  <mssgle:LineSegment
+                    End="-183.166666666667,30.2092624356775" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-183.166666666667,30.2092624356775"
+                    Point2="-187.166666666667,30.2092624356775"
+                    Point3="-187.166666666667,34.2092624356775" />
+                  <mssgle:LineSegment
+                    End="-187.166666666667,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-149.389720052083,35.2092624356775,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SCD.Paths[Lookup Match Output]"
+          TopLeft="327.333333333333,237.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="102.166666666667,70"
+              Start="0,0"
+              End="102.166666666667,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5763293310463" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5763293310463"
+                    Point2="0,28.5763293310463"
+                    Point3="4,28.5763293310463" />
+                  <mssgle:LineSegment
+                    End="98.1666666666667,28.5763293310463" />
+                  <mssgle:CubicBezierSegment
+                    Point1="98.1666666666667,28.5763293310463"
+                    Point2="102.166666666667,28.5763293310463"
+                    Point3="102.166666666667,32.5763293310463" />
+                  <mssgle:LineSegment
+                    End="102.166666666667,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="2.89194661458334,33.5763293310463,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SCD.Paths[Diverso Nome]"
+          TopLeft="404.666666666667,349.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-171.166666666667,70"
+              Start="0,0"
+              End="-171.166666666667,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.4237074401009" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.4237074401009"
+                    Point2="0,28.4237074401009"
+                    Point3="-4,28.4237074401009" />
+                  <mssgle:LineSegment
+                    End="-167.166666666667,28.4237074401009" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-167.166666666667,28.4237074401009"
+                    Point2="-171.166666666667,28.4237074401009"
+                    Point3="-171.166666666667,32.4237074401009" />
+                  <mssgle:LineSegment
+                    End="-171.166666666667,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-151.025911458333,33.4237074401009,130.88515625,9.7978515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SCD.Paths[Diverso indirizzo]"
+          TopLeft="454.333333333333,349.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="65.1666666666667,61"
+              Start="0,0"
+              End="65.1666666666667,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.7692307692308" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.7692307692308"
+                    Point2="0,24.7692307692308"
+                    Point3="4,24.7692307692308" />
+                  <mssgle:LineSegment
+                    End="61.1666666666667,24.7692307692308" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61.1666666666667,24.7692307692308"
+                    Point2="65.1666666666667,24.7692307692308"
+                    Point3="65.1666666666667,28.7692307692308" />
+                  <mssgle:LineSegment
+                    End="65.1666666666667,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-5.79924479166666,29.7692307692308,76.76515625,9.7978515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SCD.Paths[Derived Column Output]"
+          TopLeft="309.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SCD\Insert new surrogate key">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

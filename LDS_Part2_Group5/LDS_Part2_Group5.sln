@@ -1,22 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30523.141
+VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "LDS_Part2_Group5", "LDS_Part2_Group5.dtproj", "{04FF990F-7E49-4B32-A471-D3CE29F22971}"
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "LDS_Part2_Group5", "LDS_Part2_Group5\LDS_Part2_Group5.dtproj", "{C1EA1FAB-1586-411A-9AEA-B1EC93942F58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{04FF990F-7E49-4B32-A471-D3CE29F22971}.Development|Default.ActiveCfg = Development
-		{04FF990F-7E49-4B32-A471-D3CE29F22971}.Development|Default.Build.0 = Development
+		{C1EA1FAB-1586-411A-9AEA-B1EC93942F58}.Development|Default.ActiveCfg = Development
+		{C1EA1FAB-1586-411A-9AEA-B1EC93942F58}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {03A291A4-077A-4EB1-B13A-1D66187333CA}
+		SolutionGuid = {998155D1-6250-42AF-824E-ACDE6137D4BA}
 	EndGlobalSection
 EndGlobal

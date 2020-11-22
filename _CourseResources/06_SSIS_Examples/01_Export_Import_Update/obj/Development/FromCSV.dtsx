@@ -1,0 +1,1313 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/8/2011 5:42:34 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="AXT8"
+  DTS:CreatorName="CLI\ruggieri"
+  DTS:DTSID="{1835457B-D176-42B3-8B3A-1264CC7357B0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2150.2"
+  DTS:LocaleID="1040"
+  DTS:ObjectName="FromCSV"
+  DTS:PackageType="5"
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{20EDD1EE-02CA-4B13-969F-9AC72042F376}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[apa.di.unipi.it.lbi.lbi]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D71534C1-96E1-460A-A3E3-C621C7F5D6F0}"
+      DTS:ObjectName="apa.di.unipi.it.lbi.lbi">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=apa.di.unipi.it;User ID=lbi;Initial Catalog=lbi;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-FromCSV-{D71534C1-96E1-460A-A3E3-C621C7F5D6F0}apa.di.unipi.it.lbi.lbi;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4hFMfBsqDk+9Xuye9mhrGgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACDC9yBPn0ZK3fT1DTaYUdHAAAAAASAAACgAAAAEAAAAIyQeMoTD271UjeUVIvEMVwQAAAAQLkLZJ9MfD2kIySGSH5ZCBQAAABnpZxh7tcBYQoMvvocXlC1w+S6vw</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[census]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7E56BA24-C89F-4A1F-856F-2DA49FEF141C}"
+      DTS:ObjectName="census">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1040"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="Z:\temp\census.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{0C7C1B3A-091D-4B13-B73B-37351FDC8AD7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age"
+              DTS:DTSID="{BEDEB137-3A84-42D3-86E8-16058E7AF2CB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="workclass"
+              DTS:DTSID="{92D9D5EA-ABF0-4C9D-95D6-0A971F432079}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fnlwgt"
+              DTS:DTSID="{E3DCEEEE-C8C4-4C69-BCD5-414BC349BC6D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="education"
+              DTS:DTSID="{74BE6A48-CC6F-4961-8FD3-9F48394F213B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="education_num"
+              DTS:DTSID="{78D306C6-A819-4519-AAEB-E1750F16BCE5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="marital_status"
+              DTS:DTSID="{2B0E91BF-EA95-443C-9B9D-BDEA853C4A3F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="occupation"
+              DTS:DTSID="{BF52A701-4791-4437-B777-EC0648B90AB7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="relationship"
+              DTS:DTSID="{1ABB4923-4BFE-43CF-9557-B790778F5EDA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="race"
+              DTS:DTSID="{D7686E3D-3F29-4DC3-8A15-2C8486ED7C8D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sex"
+              DTS:DTSID="{B1D060C6-FDD2-4882-84C5-1262D20231BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="capital_gain"
+              DTS:DTSID="{4BEA8F38-A8B7-46E8-BEBF-450E54C23403}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="capital_loss"
+              DTS:DTSID="{759A9BE9-124F-4C97-B92F-2DC85E9B92FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="hours_per_week"
+              DTS:DTSID="{05E32809-4C0C-4A4A-A8F3-7693E50DD134}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="native_country"
+              DTS:DTSID="{C6BBA945-DD2D-45D9-9E94-59B930400ECB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="class"
+              DTS:DTSID="{6E4E319C-A184-454A-B689-1BAB4E24B2B5}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[census error]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{78FA32FB-4C2E-47F0-93E6-BFA91768E19D}"
+      DTS:ObjectName="census error">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1040"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="Z:\temp\census_error.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Flat File Source Error Output Column"
+              DTS:DTSID="{73037BED-FDF0-400C-82FE-F7A8B8F8DA67}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{D61DA911-C9BA-49C0-9058-B7139C2F5359}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{06646998-51F4-4F21-8BD1-8AF9D021F2A3}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Create census2"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0AB4FD97-AA4C-4117-BA42-9CDA0A4EB1E5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create census2"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D71534C1-96E1-460A-A3E3-C621C7F5D6F0}"
+          SQLTask:SqlStatementSource="if object_id('census2') is null&#xA;select top 0 * into census2 from census&#xA;&#xA;truncate table census2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate census2"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C5019C41-4B6C-40BE-AF8F-5F61F4FF5DED}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate census2"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          version="1">
+          <components>
+            <component
+              refId="Package\Populate census2\census on csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1040"
+              name="census on csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate census2\census on csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[census]"
+                  connectionManagerRefId="Package.ConnectionManagers[census]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[age]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[age]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[age]"
+                      name="age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[workclass]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[workclass]"
+                      length="50"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[workclass]"
+                      name="workclass"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[fnlwgt]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[fnlwgt]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[fnlwgt]"
+                      name="fnlwgt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[education]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[education]"
+                      length="50"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[education]"
+                      name="education"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[education_num]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[education_num]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[education_num]"
+                      name="education_num"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[marital_status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[marital_status]"
+                      length="50"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[marital_status]"
+                      name="marital_status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[occupation]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[occupation]"
+                      length="50"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[occupation]"
+                      name="occupation"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[relationship]"
+                      length="50"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[relationship]"
+                      name="relationship"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[race]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[race]"
+                      length="50"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[race]"
+                      name="race"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[sex]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[sex]"
+                      length="50"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[sex]"
+                      name="sex"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[capital_gain]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[capital_gain]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[capital_gain]"
+                      name="capital_gain"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[capital_loss]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[capital_loss]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[capital_loss]"
+                      name="capital_loss"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[hours_per_week]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[hours_per_week]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[hours_per_week]"
+                      name="hours_per_week"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[native_country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[native_country]"
+                      length="50"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[native_country]"
+                      name="native_country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[class]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[class]"
+                      length="50"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[class]"
+                      name="class"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[age]"
+                      dataType="i1"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[workclass]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="workclass" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[fnlwgt]"
+                      dataType="i4"
+                      name="fnlwgt" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[education]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="education" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[education_num]"
+                      dataType="i1"
+                      name="education_num" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[marital_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="marital_status" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[occupation]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="occupation" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="relationship" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[race]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="race" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[sex]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="sex" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[capital_gain]"
+                      dataType="i4"
+                      name="capital_gain" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[capital_loss]"
+                      dataType="i2"
+                      name="capital_loss" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[hours_per_week]"
+                      dataType="i1"
+                      name="hours_per_week" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[native_country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="native_country" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].ExternalColumns[class]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="class" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populate census2\census on csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate census2\census on csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate census2\census2 table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="census2 table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[lbi].[census2]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate census2\census2 table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.lbi.lbi]"
+                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.lbi.lbi]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].Columns[age]"
+                      cachedDataType="i1"
+                      cachedName="age"
+                      externalMetadataColumnId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[age]" />
+                    <inputColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].Columns[workclass]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="workclass"
+                      externalMetadataColumnId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[workclass]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[workclass]" />
+                    <inputColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].Columns[fnlwgt]"
+                      cachedDataType="i4"
+                      cachedName="fnlwgt"
+                      externalMetadataColumnId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[fnlwgt]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[fnlwgt]" />
+                    <inputColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].Columns[education]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="education"
+                      externalMetadataColumnId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[education]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[education]" />
+                    <inputColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].Columns[education_num]"
+                      cachedDataType="i1"
+                      cachedName="education_num"
+                      externalMetadataColumnId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[education_num]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[education_num]" />
+                    <inputColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].Columns[marital_status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="marital_status"
+                      externalMetadataColumnId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[marital_status]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[marital_status]" />
+                    <inputColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].Columns[occupation]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="occupation"
+                      externalMetadataColumnId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[occupation]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[occupation]" />
+                    <inputColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].Columns[relationship]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="relationship"
+                      externalMetadataColumnId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[relationship]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[relationship]" />
+                    <inputColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].Columns[race]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="race"
+                      externalMetadataColumnId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[race]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[race]" />
+                    <inputColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].Columns[sex]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="sex"
+                      externalMetadataColumnId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[sex]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[sex]" />
+                    <inputColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].Columns[capital_gain]"
+                      cachedDataType="i4"
+                      cachedName="capital_gain"
+                      externalMetadataColumnId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[capital_gain]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[capital_gain]" />
+                    <inputColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].Columns[capital_loss]"
+                      cachedDataType="i2"
+                      cachedName="capital_loss"
+                      externalMetadataColumnId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[capital_loss]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[capital_loss]" />
+                    <inputColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].Columns[hours_per_week]"
+                      cachedDataType="i1"
+                      cachedName="hours_per_week"
+                      externalMetadataColumnId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[hours_per_week]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[hours_per_week]" />
+                    <inputColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].Columns[native_country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="native_country"
+                      externalMetadataColumnId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[native_country]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[native_country]" />
+                    <inputColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].Columns[class]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="class"
+                      externalMetadataColumnId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[class]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Output].Columns[class]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                      dataType="ui1"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[workclass]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="workclass" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[fnlwgt]"
+                      dataType="i4"
+                      name="fnlwgt" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[education]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="education" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[education_num]"
+                      dataType="ui1"
+                      name="education_num" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[marital_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="marital_status" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[occupation]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="occupation" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="relationship" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[race]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="race" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[sex]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="sex" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[capital_gain]"
+                      dataType="i4"
+                      name="capital_gain" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[capital_loss]"
+                      dataType="i4"
+                      name="capital_loss" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[hours_per_week]"
+                      dataType="ui1"
+                      name="hours_per_week" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[native_country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="native_country" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input].ExternalColumns[class]"
+                      codePage="1252"
+                      dataType="str"
+                      length="256"
+                      name="class" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate census2\census2 table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate census2\census2 table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate census2\census2 table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate census2\census2 table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate census2\census2 table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate census2\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="1040"
+              name="Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate census2\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[census error]"
+                  connectionManagerRefId="Package.ConnectionManagers[census error]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate census2\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate census2\Flat File Destination.Inputs[Flat File Destination Input].Columns[Flat File Source Error Output Column]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Flat File Source Error Output Column"
+                      externalMetadataColumnId="Package\Populate census2\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Flat File Source Error Output Column]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]" />
+                    <inputColumn
+                      refId="Package\Populate census2\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Populate census2\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Populate census2\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Populate census2\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Populate census2\census on csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Flat File Source Error Output Column" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Populate census2\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Populate census2.Paths[Flat File Source Error Output]"
+              endId="Package\Populate census2\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Flat File Source Error Output"
+              startId="Package\Populate census2\census on csv.Outputs[Flat File Source Error Output]" />
+            <path
+              refId="Package\Populate census2.Paths[Flat File Source Output]"
+              endId="Package\Populate census2\census2 table.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Populate census2\census on csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{1C7AB977-F7AF-499F-A6C3-6B7582AAA229}"
+      DTS:From="Package\Create census2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Populate census2" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Create census2"
+          TopLeft="109.5,23.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Populate census2"
+          TopLeft="165.5,124.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="186,65.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61,59"
+              Start="0,0"
+              End="61,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.5"
+                    Point2="0,29.5"
+                    Point3="4,29.5" />
+                  <mssgle:LineSegment
+                    End="57,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="57,29.5"
+                    Point2="61,29.5"
+                    Point3="61,33.5" />
+                  <mssgle:LineSegment
+                    End="61,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Populate census2">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Populate census2\census2 table"
+          TopLeft="134.5,146.5" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Populate census2\census on csv"
+          TopLeft="378.5,44.5" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Populate census2\Flat File Destination"
+          TopLeft="506,150.5" />
+        <EdgeLayout
+          Id="Package\Populate census2.Paths[Flat File Source Output]"
+          TopLeft="428.5,86.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-221.5,60"
+              Start="0,0"
+              End="-221.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.390243902439" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.390243902439"
+                    Point2="0,24.390243902439"
+                    Point3="-4,24.390243902439" />
+                  <mssgle:LineSegment
+                    End="-217.5,24.390243902439" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-217.5,24.390243902439"
+                    Point2="-221.5,24.390243902439"
+                    Point3="-221.5,28.390243902439" />
+                  <mssgle:LineSegment
+                    End="-221.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate census2.Paths[Flat File Source Error Output]"
+          TopLeft="474.5,86.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118.5,64"
+              Start="0,0"
+              End="118.5,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.0162601626016" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.0162601626016"
+                    Point2="0,26.0162601626016"
+                    Point3="4,26.0162601626016" />
+                  <mssgle:LineSegment
+                    End="114.5,26.0162601626016" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114.5,26.0162601626016"
+                    Point2="118.5,26.0162601626016"
+                    Point3="118.5,30.0162601626016" />
+                  <mssgle:LineSegment
+                    End="118.5,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-4.37638671874999,31.0162601626016,127.2527734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate census2\census2 table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
