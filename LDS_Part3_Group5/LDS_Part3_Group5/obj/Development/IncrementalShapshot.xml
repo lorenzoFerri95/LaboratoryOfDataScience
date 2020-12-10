@@ -1,0 +1,82 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>LDS_Part3_Group5</Database>
+    <Server>http://apa.di.unipi.it/olap/msmdpump.dll</Server>
+    <ConnectionString>Data Source=http://apa.di.unipi.it/olap/msmdpump.dll;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>hIKYzinWHUSW5me7jiUDLu7zfxE=09/12/2020 15:25:0009/12/2020 15:25:00</TimeStamp>
+        <ID>
+          <String>Group5HW Mart</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>0rv2Lf1erpKvRlKl0DpsffbLKdo=09/12/2020 17:35:2109/12/2020 15:27:07</TimeStamp>
+        <ID>
+          <String>Group5HW Mart</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>dNEe3sSgIP5pIFnB0miE+Gvy9F0=09/12/2020 15:59:3809/12/2020 15:30:32</TimeStamp>
+        <ID>
+          <String>Gpu Product</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>ur4XURFaER5qfm3ftRELZDKYCmk=09/12/2020 16:00:2009/12/2020 15:32:59</TimeStamp>
+        <ID>
+          <String>Vendor</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>OaQokyHqMyKtqumIO38948El48c=09/12/2020 17:48:2609/12/2020 15:33:58</TimeStamp>
+        <ID>
+          <String>Geography</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>H1ev30NGAOc9SNYcL/+uWE9iahg=10/12/2020 18:56:3409/12/2020 15:49:22</TimeStamp>
+        <ID>
+          <String>Time</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>MY+852a6TyG/VqRlv/Yb/aDCOH0=10/12/2020 18:53:3909/12/2020 16:48:3772pHpZxcss/0KvgpnAIkMxwPqYw=09/12/2020 16:48:3709/12/2020 16:48:37</TimeStamp>
+        <ID>
+          <String>Group5HW Mart</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>vUkoaLxIxQGih9IOcXiyqBM6rfA=10/12/2020 18:40:4009/12/2020 15:05:01</TimeStamp>
+      <ID>
+        <String>LDS_Part3_Group5</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2020-12-10T18:06:29.72Z</LastDeployed>
+</DeploymentSnapshot>

@@ -27,7 +27,7 @@
 
 \title{\includegraphics[width=7cm]{UNIPI_logo.png}\\Laboratory of Data Science Report}
 \author{
-Federica Di Pasquale (493195) \\ email:  \href{federica.dipasquale@hotmail.com}{federica.dipasquale@hotmail.com} \and
+Federica Di Pasquale (493195) \\ email:  \href{f.dipasquale1@studenti.unipi.it}{f.dipasquale1@studenti.unipi.it} \and
 Ferri Lorenzo (607828) \\ email:  \href{mailto:l.ferri11@studenti.unipi.it}{l.ferri11@studenti.unipi.it}
 }
 \date{Anno accademico 2020/2021}
@@ -43,7 +43,7 @@ Ferri Lorenzo (607828) \\ email:  \href{mailto:l.ferri11@studenti.unipi.it}{l.fe
 \section{Part 1}
 
 \subsection{Assignment 0}
-Il Constellation Schema assegnato è stato riprodotto mediante le query presenti nel file "01\_DB\_creation.sql". Valori nulli sono ammessi solo per gli attributi diversi dalle Chiavi Primarie presenti nelle Dimension Tables. Nelle tre Fact Tables non sono ammessi valori nulli per le Chiavi Esterne, al fine di non perdere ennuple a seguito di uno Star-Join. \newline
+Il Constellation Schema assegnato è stato riprodotto mediante la query presente nel file "01\_DB\_creation.sql". Valori nulli sono ammessi solo per gli attributi diversi dalle Chiavi Primarie presenti nelle Dimension Tables. Nelle tre Fact Tables non sono ammessi valori nulli per le Chiavi Esterne, al fine di non perdere ennuple a seguito di uno Star-Join. \newline
 I valori della Chiave Primaria della Dimension Table Time, "time\_code", sono stati trasformati nel formato yyyy-mm-dd per renderli compatibili con il Data Type "Date" di SQL Server.
 Sono stati imposti vincoli di Chiave Primaria nelle Dimension Tables e di Chiave Esterna nelle Fact Tables, dunque i file vengono forniti nell'ordine in cui devono essere eseguiti per riempire prima le Dimensions e poi i Facts.
 
@@ -85,6 +85,27 @@ Le Dimension Tables sono state riempite con i due file: "02\_dimensions.py", per
 
 
 \section{Part 2}
+Si vuole rispondere ad alcune \textit{business questions} utilizzando \textit{Sequel Server Integration Services} (SSIS) e sviluppando delle soluzioni che calcolino i risultati dal lato client. In particolare è stata sviluppata un' unica soluzione contenente tre progetti relativi alle tre \textit{business questions} assegnate. 
+
+
+\subsection{Assignement 0}
+\textit{Business Question:} For every year, the brand of gpu ordered by sales.\\\\
+Tramite il nodo "Origine OLE DB" sono state lette solo le colonne necessarie della tabella Gpu\_sales (gpu\_code, time\_code, sales\_usd). Con il nodo "Ricerca" è stata operata la giunzione (tramite indice) con la colonna "brand" della tabella Gpu\_product. Anziché operare una nuova ricerca per l'attributo "year" nella tabella Time, si è sfruttato il nodo "Colonna derivata" con cui si è estratto l'anno dal "time\_code": quest'operazione permette un risparmio computazionale ed è stata resa possibile dalla trasformazione dell'attributo time\_code effettuata al momento del popolamento della DW. E' stato poi eseguito il raggruppamento per gli attributi "year" e "brand", calcolando la funzione di aggregazione SUM(sales\_usd) con nome "tot\_sales\_usd". Infine si è ordinato il risultato per (year, tot\_sales\_usd), in modo da avere per ogni anno la somma dei sales ordinata, come da richiesta. Il risultato finale viene scritto su un file di testo.
+
+    
+
+\subsection{Assignement 1}
+\textit{Business Question:} For any given country, a product is said to have full regional spread if it was sold in all the regions of that country. List all the AMD brand cpus that do not have full regional spread in Germany.\\\\
+\noindent Per rispondere a questa domanda, è necessario accedere ai dati presenti nel DW ed in particolare alle tre tabelle Cpu\_product, Cpu\_Sales e Geography.\newline
+\noindent Inizialmente è stato fatto un accesso alla tabella Cpu\_Sales tramite un nodo "Origine OLE DB" selezionando solo le colonne necessarie. Successivamente, tramite un nodo "Ricerca" è stata recuperata la colonna relativa al "brand" delle Cpu dalla tabella Cpu\_Product. In questo modo è stato possibile selezionare solo le cpu relative al brand "AMD" attraverso un nodo "Conditional Split".\newline
+\noindent Dal momento che si cercano le cpu che non hanno "full regional spread" è stato necessario recuperare anche le informazioni relative al luogo di vendita. A questo scopo, tramite un ulteriore nodo "Ricerca", sono state recuperate le colonne "Country" e "Region" dalla tabella Geography (utilizzando geo\_code) e sono state selezionate solo le cpu vendute nella nazione Germania. Successivamente il flusso di dati è stato suddiviso tramite un nodo "Multicast" in modo da poter calcolare nei due branch rispettivamente il numero di regioni distinte per ogni nazione e, per ogni cpu e nazione, il numero di regioni distinte in cui è stata venduta tale cpu. Una volta che sono state calcolate tutte le informazioni necessarie, è stato possibile selezionare le cpu che non hanno "full regional spread" facendo una Join fra i risultati dei due flussi di dati precedenti (preventivamente ordinati rispetto a "Country") e infine selezionando solo le cpu per cui il numero di regioni distinte in cui sono state vendute è minore del numero totale di regioni distinte per nazione. Infine il risultato è stato scritto in un file tramite un nodo "Destinazione file flat".\newline
+\noindent Nel caso specifico di questa Business question, l'ultimo ordinamento rispetto a "Country" risulta superfluo, in quanto è stata precedentemente selezionata solo la regione Germania; tuttavia si è preferito costruire una soluzione più generale che funzioni anche nel caso in cui non ci si voglia restringere ad una sola nazione.   
+ 
+    
+\subsection{Assignement 2}
+\textit{Business Question:} Calculate which processor manufacturer yields the most sales, for each country and year.\\\\
+Analogamente ai casi visti fin quì, dalla Fact Table "Gpu\_sales" si ottengono gli attributi geo\_code, time\_code, gpu\_code e sales\_usd. country e processor\_manufacturer si ottengono mediante una ricerca con Indice, mentre year si ottiene di nuovo con una funzione applicata su time\_code. A questo punto sono necessarie due aggregazioni successive: una per (country, year, processor\_manufacturer), per calcolare la somma dei sales; e un'altra per (country, year), in modo da ottenere il valore massimo della somma dei sales già calcolata, per ogni country e year. La prima aggregazione viene calcolata subito e dopo di essa la tabella viene duplicata con un nodo di "Multicast". In questo modo la seconda aggregazione può essere prodotta solo su una delle due tabelle identiche, lasciando l'altra invariata. Le due tabelle vengono poi ricongiunte con un nodo "Merge join" su uguaglianza degli attributi country e year (previo ordinamento per tali attributi). La tabella risultante conterrà sia la somma dei sales per l'aggregazione (country, year, processor\_manufacturer) che il valore della somma dei sales massima ripetuto per ogni country e year distinti. Basterà quindi imporre un'uguaglianza tra queste due metriche per ottenere solo le ennuple dove la somma dei sales è effettivamente pari a quella massima. Il risultato viene scritto su file di testo.
+
 
 
 
