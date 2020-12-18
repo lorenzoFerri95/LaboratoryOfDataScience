@@ -61,7 +61,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>MY+852a6TyG/VqRlv/Yb/aDCOH0=10/12/2020 18:53:3909/12/2020 16:48:3772pHpZxcss/0KvgpnAIkMxwPqYw=09/12/2020 16:48:3709/12/2020 16:48:37</TimeStamp>
+        <TimeStamp>XC0Nb3/yKPC83PL/yI49ygav14s=17/12/2020 18:24:2909/12/2020 16:48:3772pHpZxcss/0KvgpnAIkMxwPqYw=09/12/2020 16:48:3709/12/2020 16:48:37</TimeStamp>
         <ID>
           <String>Group5HW Mart</String>
         </ID>
@@ -78,5 +78,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2020-12-10T18:06:29.72Z</LastDeployed>
+  <LastDeployed>2020-12-17T17:34:06.073333Z</LastDeployed>
 </DeploymentSnapshot>

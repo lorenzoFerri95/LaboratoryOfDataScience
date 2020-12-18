@@ -1,0 +1,14 @@
+WITH
+MEMBER monthly_avg_sales AS
+AVG([Time].[Time_Hierarchy].currentmember,
+[Measures].[Sales Usd])
+-- oppure:  sum([Time].[Time_Hierarchy].currentmember, [Measures].[Sales Usd])/count([Time].[Time_Hierarchy].currentmember)
+SELECT
+monthly_avg_sales ON COLUMNS,
+NONEMPTY(
+([Geography].[Geography_Hierarchy].[Region],
+TOPCOUNT( [Gpu Product].[Brand].[Brand], 5,
+monthly_avg_sales) ) ) ON ROWS
+FROM [Group5HW Mart]
+WHERE [Geography].[Continent].&[Europe]
+---  or [Geography].[Geography_Hierarchy].[Continent].&[Europe] ?

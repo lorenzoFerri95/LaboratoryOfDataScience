@@ -1,0 +1,16 @@
+WITH
+MEMBER diff AS
+[Measures].[Sales Usd] - [Measures].[Sales Currency]
+MEMBER running_diff AS
+SUM(PERIODSTODATE(
+[Time].[Time_Hierarchy].[year], [Time].[Time_Hierarchy].currentmember),
+diff),
+FORMAT_STRING = "Currency"
+
+SELECT
+{[Measures].[Sales Usd], [Measures].[Sales Currency],
+diff, running_diff} ON COLUMNS,
+NONEMPTY([Time].[Time_Hierarchy].[Month For The Hierarchy]) ON ROWS
+FROM [Group5HW Mart]
+WHERE [Geography].[Country].&[Germany]
+--- or [Geography].[Geography_Hierarchy].[Country].&[Germany] ?

@@ -1,0 +1,8 @@
+SELECT
+[Measures].[Sales Usd] ON COLUMNS,
+{NONEMPTY(
+([Geography].[Geography_Hierarchy].[Country],
+[Vendor].[Name].[Name]) ),
+([Geography].[Geography_Hierarchy].[Continent],
+[Vendor].[Name].[All]) } ON ROWS
+FROM [Group5HW Mart]
