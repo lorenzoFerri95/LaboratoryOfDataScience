@@ -7,7 +7,7 @@ SELECT
 monthly_avg_sales ON COLUMNS,
 NONEMPTY(GENERATE(
 ([Geography].[Region].[Region],
-[Gpu Product].[Brand].[Brand]),  --  o .currentmember
+[Gpu Product].[Brand].[Brand]),
 TOPCOUNT(([Geography].[Region].currentmember,
 [Gpu Product].[Brand].[Brand]), 5,
 monthly_avg_sales) ) ) ON ROWS
