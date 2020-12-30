@@ -35,7 +35,7 @@ CREATE TABLE [group5].[Ram_product] (
 
 CREATE TABLE [group5].[Time] (
     [time_code]   DATE         NOT NULL,
-    [year]        INT		   NULL,
+    [year]        INT          NULL,
     [quarter]     VARCHAR (50) NULL,
     [month]       INT          NULL,
     [week]        INT          NULL,
