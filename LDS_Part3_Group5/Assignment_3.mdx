@@ -6,8 +6,7 @@ AVG([Time].[Time_Hierarchy].[Month For The Hierarchy],
 SELECT
 monthly_avg_sales ON COLUMNS,
 NONEMPTY(GENERATE(
-([Geography].[Region].[Region],
-[Gpu Product].[Brand].[Brand]),
+[Geography].[Region].[Region],
 TOPCOUNT(([Geography].[Region].currentmember,
 [Gpu Product].[Brand].[Brand]), 5,
 monthly_avg_sales) ) ) ON ROWS

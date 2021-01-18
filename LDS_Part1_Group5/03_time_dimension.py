@@ -68,7 +68,7 @@ if __name__ == "__main__":
     database = 'Group5HWMart' 
     username = 'group5' 
     password = 'w9hez' 
-    connectionString = 'DRIVER={};SERVER={};DATABASE={};UID={};PWD={}'.format(
+    connectionString = 'DRIVER={0};SERVER={1};DATABASE={2};UID={3};PWD={4}'.format(
         driver, server, database, username, password )
 
     cnxn = pyodbc.connect(connectionString)

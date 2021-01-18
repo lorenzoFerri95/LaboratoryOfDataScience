@@ -1,0 +1,5 @@
+---- Lab of Data Sceince
+OLAP Server:  http://apa.di.unipi.it/olap/msmdpump.dll
+hostname Remote Server: apa.di.unipi.it
+Login:  group5
+Password:  w9hez

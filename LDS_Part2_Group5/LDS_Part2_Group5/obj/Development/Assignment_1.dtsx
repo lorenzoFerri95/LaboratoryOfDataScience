@@ -11,8 +11,8 @@
   DTS:LocaleID="1040"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="53"
-  DTS:VersionGUID="{601AC826-1996-42A0-B06C-FD1B02BDFEFA}">
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{5FAA4F67-DB20-463D-A287-8F382194ED92}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADZ07udbzgfuw0sNDfY+qPHySFeBdDBCZU8le5AiR4ymwAAAAAOgAAAAAIAACAAAAB4tgWbSusVyrdw0Eng8Fwm56/21y9/3eSKema7sN3uGhAAAABB3HeEAmYwMFsI+4Wu2z9HQAAAACv6hf04kM+KE65qeq8RX+R/n0TI04ZSWOj2XR0Vje73Ih1rEnoAe0p60b3Zvcw8vrIMOydFn5CgHHcNUXt0NMI</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gSbbHBpk2iBxedlxHkQwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACBk+rqEI8N5Y2Q6CSkJoJbURNsL1LZbQsaG7gy6wc2dQAAAAAOgAAAAAIAACAAAABoCjAFTIR1JJUTe/3H+xP27nW1vPb5AxLASTpixTW+uRAAAAASBvek/dGq6ioxelVahMWZQAAAAMQ+CRsO2jLbpOOSZuUQjoSB0ls9NMFwAmFdVxLgfC8JI43jOEN2JssBIeKm7KqgPMtAe4Hf9fCy/F3s2MbKe1g</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -85,44 +85,6 @@
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\Attività Flusso di dati\DuplicateTable"
-              componentClassID="Microsoft.Multicast"
-              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
-              description="Distribuisce ogni riga di input a ogni riga di uno o più output. Ad esempio, creare un nuovo ramo del flusso di dati per creare una copia dei dati in modo che sia possibile mascherare alcuni valori prima di condividerli con partner esterni."
-              name="DuplicateTable">
-              <inputs>
-                <input
-                  refId="Package\Attività Flusso di dati\DuplicateTable.Inputs[Multicast Input 1]"
-                  name="Multicast Input 1">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Attività Flusso di dati\DuplicateTable.Outputs[Output multicast 1]"
-                  deleteOutputOnPathDetached="true"
-                  name="Output multicast 1"
-                  synchronousInputId="Package\Attività Flusso di dati\DuplicateTable.Inputs[Multicast Input 1]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Attività Flusso di dati\DuplicateTable.Outputs[Output multicast 2]"
-                  deleteOutputOnPathDetached="true"
-                  name="Output multicast 2"
-                  synchronousInputId="Package\Attività Flusso di dati\DuplicateTable.Inputs[Multicast Input 1]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Attività Flusso di dati\DuplicateTable.Outputs[Output multicast 3]"
-                  dangling="true"
-                  deleteOutputOnPathDetached="true"
-                  name="Output multicast 3"
-                  synchronousInputId="Package\Attività Flusso di dati\DuplicateTable.Inputs[Multicast Input 1]">
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD)"
               componentClassID="Microsoft.ConditionalSplit"
@@ -441,14 +403,14 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="country"
-                      lineageId="Package\Attività Flusso di dati\StarJoinIndexFilter(Geography, IdxGeo_code).Outputs[Output corrispondenza ricerca].Columns[country]" />
+                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[country]" />
                     <inputColumn
                       refId="Package\Attività Flusso di dati\GroupBy({country\}, {COUNT(DISTINCT region) AS nbr_distinct_regions_2\}).Inputs[Input aggregazione 1].Columns[region]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="region"
-                      lineageId="Package\Attività Flusso di dati\StarJoinIndexFilter(Geography, IdxGeo_code).Outputs[Output corrispondenza ricerca].Columns[region]" />
+                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[region]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -481,7 +443,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
-                          name="AggregationColumnId">#{Package\Attività Flusso di dati\StarJoinIndexFilter(Geography, IdxGeo_code).Outputs[Output corrispondenza ricerca].Columns[country]}</property>
+                          name="AggregationColumnId">#{Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[country]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifica il tipo di aggregazione."
@@ -507,7 +469,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
-                          name="AggregationColumnId">#{Package\Attività Flusso di dati\StarJoinIndexFilter(Geography, IdxGeo_code).Outputs[Output corrispondenza ricerca].Columns[region]}</property>
+                          name="AggregationColumnId">#{Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[region]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifica il tipo di aggregazione."
@@ -734,6 +696,158 @@
                           name="CountDistinctKeys">0</property>
                       </properties>
                     </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\Origine OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+              description="Origine OLE DB"
+              name="Origine OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowset">[group5].[Geography]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL da eseguire."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variabile che contiene il comando SQL da eseguire."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la modalità utilizzata per accedere al database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mapping tra i parametri nel comando SQL e le variabili."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Attività Flusso di dati\Origine OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5]"
+                  connectionManagerRefId="Package.ConnectionManagers[apa.di.unipi.it.Group5HWMart.group5]"
+                  description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB]"
+                  name="Output origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[country]"
+                      length="50"
+                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[region]"
+                      length="50"
+                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].Columns[region]"
+                      name="region"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[geo_code]"
+                      dataType="i4"
+                      name="geo_code" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[continent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="continent" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB].ExternalColumns[currency]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="currency" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB]"
+                  isErrorOut="true"
+                  name="Output errori origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[country]"
+                      name="country" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[region]"
+                      name="region" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1717,7 +1831,7 @@ where [refTable].[geo_code] = ?</property>
               startId="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD).Outputs[AMD_sales]" />
             <path
               refId="Package\Attività Flusso di dati.Paths[Germany_sales]"
-              endId="Package\Attività Flusso di dati\DuplicateTable.Inputs[Multicast Input 1]"
+              endId="Package\Attività Flusso di dati\GroupBy({cpu_code, cpu_name, country\}, {COUNT(DISTINCT region) AS nbr_distinct_regions\}).Inputs[Input aggregazione 1]"
               name="Germany_sales"
               startId="Package\Attività Flusso di dati\Filter(country &lt;equal&gt; Germany).Outputs[Germany_sales]" />
             <path
@@ -1751,16 +1865,6 @@ where [refTable].[geo_code] = ?</property>
               name="Output merge join"
               startId="Package\Attività Flusso di dati\SortMerge(country).Outputs[Output merge join]" />
             <path
-              refId="Package\Attività Flusso di dati.Paths[Output multicast 1]"
-              endId="Package\Attività Flusso di dati\GroupBy({country\}, {COUNT(DISTINCT region) AS nbr_distinct_regions_2\}).Inputs[Input aggregazione 1]"
-              name="Output multicast 1"
-              startId="Package\Attività Flusso di dati\DuplicateTable.Outputs[Output multicast 1]" />
-            <path
-              refId="Package\Attività Flusso di dati.Paths[Output multicast 2]"
-              endId="Package\Attività Flusso di dati\GroupBy({cpu_code, cpu_name, country\}, {COUNT(DISTINCT region) AS nbr_distinct_regions\}).Inputs[Input aggregazione 1]"
-              name="Output multicast 2"
-              startId="Package\Attività Flusso di dati\DuplicateTable.Outputs[Output multicast 2]" />
-            <path
               refId="Package\Attività Flusso di dati.Paths[Output ordinamento]"
               endId="Package\Attività Flusso di dati\SortMerge(country).Inputs[Input merge join sinistro]"
               name="Output ordinamento"
@@ -1775,6 +1879,11 @@ where [refTable].[geo_code] = ?</property>
               endId="Package\Attività Flusso di dati\StarJoinIndexFilter(Cpu_product, IdxCpu_code).Inputs[Input ricerca]"
               name="Output origine OLE DB"
               startId="Package\Attività Flusso di dati\TableScan(Cpu_sales).Outputs[Output origine OLE DB]" />
+            <path
+              refId="Package\Attività Flusso di dati.Paths[Output origine OLE DB1]"
+              endId="Package\Attività Flusso di dati\GroupBy({country\}, {COUNT(DISTINCT region) AS nbr_distinct_regions_2\}).Inputs[Input aggregazione 1]"
+              name="Output origine OLE DB"
+              startId="Package\Attività Flusso di dati\Origine OLE DB.Outputs[Output origine OLE DB]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1852,10 +1961,6 @@ where [refTable].[geo_code] = ?</property>
           Size="206.4,41.6"
           Id="Package\Attività Flusso di dati\Filter(brand &lt;equal&gt; AMD)"
           TopLeft="553.571437998694,578.588242286628" />
-        <NodeLayout
-          Size="148,41.6"
-          Id="Package\Attività Flusso di dati\DuplicateTable"
-          TopLeft="579.285724150892,347.494122419555" />
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output aggregazione 1]"
           TopLeft="896.400011920931,241.411767923296">
@@ -1899,30 +2004,6 @@ where [refTable].[geo_code] = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-54.799609375,-18.7412516851327,109.59921875,11.7119140625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Attività Flusso di dati.Paths[Germany_sales]"
-          TopLeft="656.514295263194,428.04706440038">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-38.9529419808249"
-              Start="0,0"
-              End="0,-31.4529419808249">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-31.4529419808249" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-34.20509765625,-21.5311584904125,68.4101953125,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2008,74 +2089,6 @@ where [refTable].[geo_code] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="84.728576050972,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Attività Flusso di dati.Paths[Output multicast 2]"
-          TopLeft="629.952390817559,347.494122419555">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-235.552389114569,-63.482354313939"
-              Start="0,0"
-              End="-235.552389114569,-55.982354313939">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-21.8003151222426" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-21.8003151222426"
-                    Point2="0,-25.8003151222426"
-                    Point3="-4,-25.8003151222426" />
-                  <mssgle:LineSegment
-                    End="-231.552389114569,-25.8003151222426" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-231.552389114569,-25.8003151222426"
-                    Point2="-235.552389114569,-25.8003151222426"
-                    Point3="-235.552389114569,-29.8003151222426" />
-                  <mssgle:LineSegment
-                    End="-235.552389114569,-55.982354313939" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Attività Flusso di dati.Paths[Output multicast 1]"
-          TopLeft="676.619057484225,347.494122419555">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="220.066666751818,-64.48235449626"
-              Start="0,0"
-              End="220.066666751818,-56.98235449626">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-22.2067323086404" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-22.2067323086404"
-                    Point2="0,-26.2067323086404"
-                    Point3="4,-26.2067323086404" />
-                  <mssgle:LineSegment
-                    End="216.066666751818,-26.2067323086404" />
-                  <mssgle:CubicBezierSegment
-                    Point1="216.066666751818,-26.2067323086404"
-                    Point2="220.066666751818,-26.2067323086404"
-                    Point3="220.066666751818,-30.2067323086404" />
-                  <mssgle:LineSegment
-                    End="220.066666751818,-56.98235449626" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2176,6 +2189,68 @@ where [refTable].[geo_code] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Germany_sales]"
+          TopLeft="659.742866375496,428.04706440038">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-265.342864672506,-144.035296294764"
+              Start="0,0"
+              End="-265.342864672506,-136.535296294764">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-68.017648147382" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-68.017648147382"
+                    Point2="0,-72.017648147382"
+                    Point3="-4,-72.017648147382" />
+                  <mssgle:LineSegment
+                    End="-261.342864672506,-72.017648147382" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-261.342864672506,-72.017648147382"
+                    Point2="-265.342864672506,-72.017648147382"
+                    Point3="-265.342864672506,-76.017648147382" />
+                  <mssgle:LineSegment
+                    End="-265.342864672506,-136.535296294764" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-166.876529992503,-67.017648147382,68.4101953125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Attività Flusso di dati\Origine OLE DB"
+          TopLeft="821.257155507925,319.411763912254" />
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output origine OLE DB1]"
+          TopLeft="896.771439871984,319.411763912254">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-36.3999959889587"
+              Start="0,0"
+              End="0,-28.8999959889587">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-28.8999959889587" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -2235,6 +2310,19 @@ where [refTable].[geo_code] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Attività Flusso di dati\Origine OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

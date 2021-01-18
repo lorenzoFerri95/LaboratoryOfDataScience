@@ -28,8 +28,9 @@ for filename, table in files_tables:
     file = reader(fp)
     header = next(file)
     
-    # Build query
-    tablename = "[Group5HWMart].[group5].["+ table +"]"
+    # Build query    
+    tablename = "[Group5HWMart].[group5].["+ table +"] (" + ", ".join(header) + ")"
+
     placeholders = "?"
     for i in range(len(header) - 1): 
         placeholders += ",?"
